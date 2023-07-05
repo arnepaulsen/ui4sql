@@ -1,0 +1,86 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm() {
+
+
+	
+	if (document.Form1.chair_flag.checked == false ) {
+		document.Form1.chair_flag.value = 'N';
+		document.Form1.chair_flag.checked = true;
+	}
+	
+	if (document.Form1.liaison_flag.checked == false ) {
+		document.Form1.liaison_flag.value = 'N';
+		document.Form1.liaison_flag.checked = true;
+	}
+	
+	if (document.Form1.meeting_coord_flag.checked == false ) {
+		document.Form1.meeting_coord_flag.value = 'N';
+		document.Form1.meeting_coord_flag.checked = true;
+	}
+	
+	
+	if (document.Form1.primary_rsrc_flag.checked == false ) {
+		document.Form1.primary_rsrc_flag.value = 'N';
+		document.Form1.primary_rsrc_flag.checked = true;
+	}
+
+	if (document.Form1.local_domain_lead_flag.checked == false ) {
+		document.Form1.local_domain_lead_flag.value = 'N';
+		document.Form1.local_domain_lead_flag.checked = true;
+	}
+
+
+	return true;
+}
+	
+
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Contact Information</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<tr class="bg2"><TD width="150">Domain Group</td><td width="450"><KBD ID='hc_domain_cd'></KBD></td></tr>
+<tr class="bg2"><TD width="150">Company ID</td><td width="450"><KBD ID='nuid_nm'></KBD></td></tr>
+
+<tr class="bg1"><td colspan=2>Name Info</td></tr>
+<tr class="bg2"><TD width="250">First Name</td><td width="450"><KBD ID='first_nm'></KBD></td></tr>	
+<tr class="bg2"><TD>MI:</TD><TD><KBD ID='mi_nm'></KBD></TD></TR>
+<tr class="bg2"><TD>Last Name:</TD><TD><KBD ID='last_nm'></KBD></TD></TR>
+<tr class="bg2"><TD>Suffix:</TD><TD><KBD ID='suffix_nm'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Roles</td></tr>
+<tr class="bg2"><TD>Role</td><td width="450"><KBD ID='reg_domain_role_cd'></KBD></td></tr>
+<tr class="bg2"><TD>Peer Group Chair?</TD><TD><KBD ID='chair_flag'></KBD></TD></TR>
+<tr class="bg2"><TD>Peer Group Liaison?</TD><TD><KBD ID='liaison_flag'></KBD></TD></TR>
+<tr class="bg2"><TD>Meeting Coordinator?</TD><TD><KBD ID='meeting_coord_flag'></KBD></TD></TR>
+<tr class="bg2"><TD>Primary Resource?</TD><TD><KBD ID='primary_rsrc_flag'></KBD></TD></TR>
+<tr class="bg2"><TD>Domain Lead?</TD><TD><KBD ID='local_domain_lead_flag'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Person Info</td></tr>
+<tr class="bg2"><TD>Title</TD><TD><KBD ID='title_nm'></KBD></TD></TR>
+<tr class="bg2"><TD>Tie Line</TD><TD><KBD ID='tieline_tx'></KBD></TD></TR>
+<tr class="bg2"><TD>Phone</TD><TD><KBD ID='phone_tx'></KBD></TD></TR>
+
+<tr class="bg2"><TD>Address</TD><TD><KBD ID='address_tx'></KBD></TD></TR>
+<tr class="bg2"><TD>Facility</TD><TD><KBD ID='facility_cd'></KBD></TD></TR>
+<tr class="bg2"><TD>Subgroup</TD><TD><KBD ID='hc_sub_domain_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Misc</td></tr>
+<tr class="bg2"><TD>Notes</TD><TD><KBD ID='notes_tx'></KBD></TD></TR>
+<tr class="bg2"><TD>Email Dist</TD><TD><KBD ID='lotus_dist_tx'></KBD></TD></TR>
+<tr class="bg2"><TD>Suite</TD><TD><KBD ID='suit_cd'></KBD></TD></TR>
+<tr class="bg2"><TD>Facility Live Date</TD><TD><KBD ID='facl_live_date'></KBD> </TD></TR>
+
+<tr class="bg1"></tr>
+<tr class="bg1"><td colspan=2>Audit</td></tr>
+<TR CLASS="bg2"><TD>Added By:</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR CLASS="bg2"><TD>Updated By:</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+</table>

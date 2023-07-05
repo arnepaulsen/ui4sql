@@ -1,0 +1,89 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (isInteger(document.Form1.max_fte_no.value) == false ) {
+		alert("Please set Max Days to a valid number.");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.max_interface_no.value) == false ) {
+		alert("Please set Max Interfaces to a valid number.");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.max_function_point_no.value) == false ) {
+		alert("Please set Max Function Points to a valid number.");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.max_structure_no.value) == false ) {
+		alert("Please set Data Structure to a valid number.");
+		return false;
+	}
+	
+	
+	if (isInteger(document.Form1.max_program_no.value) == false ) {
+		alert("Please set Max Programs to a valid number.");
+		return false;
+	}
+	
+	
+	if (isInteger(document.Form1.max_dollar_k_amt.value) == false ) {
+		alert("Please set Max Dollars to a number.");
+		return false;
+	}
+	
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<TR class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Process Definition</TD><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='500'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Reference Id.</TD><TD  ><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Menu</TD><TD ><KBD ID='menu_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Full Description Doc. URL</TD><TD ><KBD ID='url_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Status</TD><TD ><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Author</TD><TD ><KBD ID='author_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>Effective Date</TD><TD ><KBD ID='effective_date'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Description</TD><TD width=500><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Criteria</TD><TD width=500><KBD ID='criteria_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Exclusions</TD><TD ><KBD ID='exclusion_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD width=500><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Process Rules - Maximums</td></tr>
+<TR class="bg2"><TD>Cost (000)</TD><TD ><KBD ID='max_dollar_k_amt'></KBD></TD></TR>
+<TR class="bg2"><TD>FTE Days</TD><TD ><KBD ID='max_fte_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Data Structures</TD><TD ><KBD ID='max_structure_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Programs</TD><TD ><KBD ID='max_program_no'></KBD></TD></TR>
+<TR class="bg2"><TD>System Interfaces</TD><TD ><KBD ID='max_interface_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Total Function Points</TD><TD ><KBD ID='max_function_point_no'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+<tr><td><KBD ID='oldstatuscode'></KBD></td></tr>
+</table>
+
+
+
+
+
+

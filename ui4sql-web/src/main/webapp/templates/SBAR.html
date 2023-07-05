@@ -1,0 +1,104 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (document.Form1.reference_nm.value.length == 0 ) {
+		alert('Please enter an ID.');
+		return false;
+	}
+	
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter the Topic.');
+		return false;
+	}
+	
+	var id_date;
+	id_date = document.Form1.id_date.value
+	if (document.Form1.id_date.value.length > 0) {
+	if (isDate(id_date)==false){alert('ID Date is invalid.');return false}
+	}
+	
+	
+	var sbar_present_date;
+	sbar_present_date = document.Form1.sbar_present_date.value
+	if (document.Form1.sbar_present_date.value.length > 0) {
+	if (isDate(sbar_present_date)==false){alert('SBAR Present Date is invalid.');return false}
+	}
+	
+	
+	
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<TR class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Issue Triage <b>Proprietary &amp; Confidential. For Internal Use Only</b></TD><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TR>
+<TR class="bg2"><TD>ID</TD><TD  ><KBD ID='reference_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='250'>Topic</TD><TD WIDTH='500'><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='250'>Request</TD><TD WIDTH='500'><KBD ID='desc_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Info</td></tr>
+<TR class="bg2"><TD>Submit Date</TD><TD ><KBD ID='id_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='id_date_js'></KBD>&nbsp;Submitted By: <KBD ID='submitted_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>SBAR Presented</TD><TD ><KBD ID='sbar_present_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='sbar_present_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Initial Workplan Presented</TD><TD ><KBD ID='workplan_recv_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='workplan_recv_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Latest Workplan Updates</TD><TD ><KBD ID='workplan_present_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='workplan_present_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Recommendation to Close</TD><TD ><KBD ID='recommend_recv_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='recommend_recv_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Priority</TD><TD ><KBD ID='priority_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Category</TD><TD ><KBD ID='sub_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Combined Category</TD><TD ><KBD ID='combined_cat_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Status</TD><TD ><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Estimated Completion Date</TD><TD ><KBD ID='install_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='install_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Communication Date</TD><TD ><KBD ID='communication_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='communication_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Implementation Date</TD><TD ><KBD ID='implementation_date'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='implementation_date_js'></KBD></TD></TR>
+<TR class="bg2"><TD>Related SBAR's</TD><TD width=500><KBD ID='prod_rfc_no'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Ownership</td></tr>
+<TR class="bg2"><TD>Business Owner</TD><TD ><KBD ID='owner_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Project Manager</TD><TD ><KBD ID='pm_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Triage Assigned Follow-Up</TD><TD ><KBD ID='follow_up_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>Assigned To</TD><TD ><KBD ID='assigned_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Other Assignees</TD><TD width=500><KBD ID='requestor_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Progress</td></tr>
+<TR class="bg2"><TD>Initial Discussion</TD><TD width=500><KBD ID='discussion_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Proposed Solution</TD><TD width=500><KBD ID='proposed_solution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Mitigation Steps</TD><TD width=500><KBD ID='mitigated_steps_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Progress</TD><TD ><KBD ID='progress_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Resolution</TD><TD width=500><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Facility Action Required</TD><TD width=500><KBD ID='fac_actn_reqr_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Facility Action</TD><TD width=500><KBD ID='facility_action_blob'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>SBAR</td></tr>
+<TR class="bg2"><TD>Situation</TD><TD width=500><KBD ID='situation_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Background</TD><TD width=500><KBD ID='background_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Assessment</TD><TD width=500><KBD ID='assessment_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Recommendation</TD><TD width=500><KBD ID='recommendations_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Issue Triage Workgroup Recommendation / Comments</td></tr>
+<TR class="bg2"><TD>Definition of SBAR</TD><TD width=500 ><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr><td><KBD ID='oldstatuscode'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+<TR class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT></TD><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TR>
+
+
+</table>
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm()	{
+	if (isInteger(document.Form1.field_length.value) == false ) {
+		alert("Please set 'Length' to a number");
+		return false;
+	}
+	
+	return true;}
+
+function isInteger(s){
+	var i;
+    for (i = 0; i < s.length; i++){   
+        // Check that current character is number.
+        var c = s.charAt(i);
+        if (((c < "0") || (c > "9"))) return false;
+    }
+    // All characters are numbers.
+    return true;
+}
+
+
+</SCRIPT>
+<TABLE  >
+<tr class='bg0'><td ALIGN=LEFT>Custom Field</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></tr>
+
+<tr class='bg2'><TD colspan=2>Be very carefull about your changes. You can crash the system.</TD></TR>
+
+<tr class='bg2'><TD>Name:</TD><TD width='400'><KBD ID='field_nm'></KBD></TD></TR>
+<tr class='bg2'><TD>Form</td><td><KBD ID='form_id'></KBD></td></tr>	
+<tr class='bg2'><TD>Sub-Set</td><td><KBD ID='form_subgroup'></KBD></td></tr>	
+<tr class='bg2'><TD>Web Prompt Tag Id</td><td><KBD ID='html_prompt_nm'></KBD></td></tr>
+<tr class='bg2'><TD>Web Prompt Text</td><td><KBD ID='html_prompt_tx'></KBD></td></tr>
+<tr class='bg2'><TD>Database Column Name</td><td><KBD ID='db_field_nm'></KBD></td></tr>
+<tr class='bg2'><TD>Type</td><td><KBD ID='field_type_cd'></KBD></td></tr>	
+<tr class='bg2'><TD>Lookup Table (only for data type 'Choice')</td><td><KBD ID='code_type_nm'></KBD></td></tr>	
+<tr class='bg2'><TD>Length</td><td><KBD ID='field_length'></KBD></td></tr>	
+	
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+		

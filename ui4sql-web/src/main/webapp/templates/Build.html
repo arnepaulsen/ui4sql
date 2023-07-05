@@ -1,0 +1,494 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.maintenance.value == 'YES' ) {
+		if (document.Form1.maintenance_type_cd.value == '0' ) { 
+			alert('Must choose a Config Type.');
+			return false;
+		}
+	}
+	
+	if (document.Form1.mode.value == 'add') {
+		if (document.Form1.product_cd.value == '0' ) { 
+			alert('Must choose Product.');
+			return false;
+		}
+	}
+
+	if (document.Form1.driver_cd.value == '0' ) { 
+			alert('Must select a trigger type.');
+			return false;
+	}
+		
+	if (document.Form1.driver_no.value.length == 0 || document.Form1.driver_no.value == '0') {
+		alert('Need a trigger #.');
+		return false;
+	}
+	
+	if (document.Form1.desc_blob.value.length == 0 ) {
+		alert('Please enter a description.');
+		return false;
+	}
+		
+	var dt1;
+	dt1 = document.Form1.wits_ca_dt.value
+	if (document.Form1.wits_ca_dt.value.length > 0) {
+	if (isDate(dt1)==false){	alert('WITS/Capitol date is invalid.');return false}
+	}
+	var dt2;
+	dt2 = document.Form1.wits_cc_dt.value
+	if (document.Form1.wits_cc_dt.value.length > 0) {
+	if (isDate(dt2)==false){	alert('WITS/Central date is invalid.');return false}
+	}
+	var dt3;
+	dt3 = document.Form1.wits_gg_dt.value
+	if (document.Form1.wits_gg_dt.value.length > 0) {
+	if (isDate(dt3)==false){	alert('WITS/West Bay date is invalid.');return false}
+	}
+	var dt4;
+	dt4 = document.Form1.wits_eb_dt.value
+	if (document.Form1.wits_eb_dt.value.length > 0) {
+	if (isDate(dt4)==false){	alert('WITS/East Bay date is invalid.');return false}
+	}
+	var dt5;
+	dt5 = document.Form1.wits_nb_dt.value
+	if (document.Form1.wits_nb_dt.value.length > 0) {
+	if (isDate(dt5)==false){alert('WITS/North Bay date is invalid.');return false}
+	}
+
+	var dt6;
+	dt6 = document.Form1.wits_sb_dt.value
+	if (document.Form1.wits_sb_dt.value.length > 0) {
+	if (isDate(dt6)==false){alert('WITS/South Bay date is invalid.');return false}
+	}
+	
+	var dt7;
+	dt7 = document.Form1.wits_nc_dt.value
+	if (document.Form1.wits_nc_dt.value.length > 0) {
+	if (isDate(dt7)==false){	alert('WITS/Lead date is invalid.');return false}
+	}
+	
+	var witsca3;
+	witsca3 = document.Form1.wit3_ca_dt.value
+	if (document.Form1.wit3_ca_dt.value.length > 0) {
+	if (isDate(witsca3)==false){	alert('WIT3/Capitol date is invalid.');return false}
+	}
+	var witscc3;
+	witscc3 = document.Form1.wit3_cc_dt.value
+	if (document.Form1.wit3_cc_dt.value.length > 0) {
+	if (isDate(witscc3)==false){	alert('WIT3/Central date is invalid.');return false}
+	}
+	var witseb3;
+	witseb3 = document.Form1.wit3_eb_dt.value
+	if (document.Form1.wit3_eb_dt.value.length > 0) {
+	if (isDate(witseb3)==false){	alert('WIT3/East Bay date is invalid.');return false}
+	}
+	var witsgg3;
+	witsgg3 = document.Form1.wit3_gg_dt.value
+	if (document.Form1.wit3_gg_dt.value.length > 0) {
+	if (isDate(witsgg3)==false){	alert('WIT3/Golden Gate date is invalid.');return false}
+	}
+	var witssb3;
+	witssb3 = document.Form1.wit3_sb_dt.value
+	if (document.Form1.wit3_sb_dt.value.length > 0) {
+	if (isDate(witssb3)==false){	alert('WIT3/South Bay date is invalid.');return false}
+	}
+	var witsnb3;
+	witsnb3 = document.Form1.wit3_nb_dt.value
+	if (document.Form1.wit3_nb_dt.value.length > 0) {
+	if (isDate(witsnb3)==false){	alert('WIT3/North Bay date is invalid.');return false}
+	}
+	
+	var witsnc3;
+	witsnc3 = document.Form1.wit3_nc_dt.value
+	if (document.Form1.wit3_nc_dt.value.length > 0) {
+	if (isDate(witsnc3)==false){	alert('WIT3/Lead date is invalid.');return false}
+	}
+	
+	var stgn1;
+	stgn1 = document.Form1.stgn_ca_dt.value
+	if (document.Form1.stgn_ca_dt.value.length > 0) {
+	if (isDate(stgn1)==false){	alert('stgn/Capitol date is invalid.');return false}
+	}
+	var stgn2;
+	stgn2 = document.Form1.stgn_cc_dt.value
+	if (document.Form1.stgn_cc_dt.value.length > 0) {
+	if (isDate(stgn2)==false){	alert('stgn/Central date is invalid.');return false}
+	}
+	var stgn3;
+	stgn3 = document.Form1.stgn_gg_dt.value
+	if (document.Form1.stgn_gg_dt.value.length > 0) {
+	if (isDate(stgn3)==false){	alert('stgn/West Bay date is invalid.');return false}
+	}
+	var stgn4;
+	stgn4 = document.Form1.stgn_eb_dt.value
+	if (document.Form1.stgn_eb_dt.value.length > 0) {
+	if (isDate(stgn4)==false){	alert('stgn/East Bay date is invalid.');return false}
+	}
+	var stgn5;
+	stgn5 = document.Form1.stgn_nb_dt.value
+	if (document.Form1.stgn_nb_dt.value.length > 0) {
+	if (isDate(stgn5)==false){alert('stgn/North Bay date is invalid.');return false}
+	}
+	var stgn6;
+	stgn6 = document.Form1.stgn_sb_dt.value
+	if (document.Form1.stgn_sb_dt.value.length > 0) {
+	if (isDate(stgn6)==false){	alert('stgn/South Bay date is invalid.');return false}
+	}
+	var stgn7;
+	stgn7 = document.Form1.stgn_nc_dt.value
+	if (document.Form1.stgn_nc_dt.value.length > 0) {
+	if (isDate(stgn7)==false){	alert('stgn/Lead date is invalid.');return false}
+	}
+		
+	var psup1;
+	psup1 = document.Form1.psup_ca_dt.value
+	if (document.Form1.psup_ca_dt.value.length > 0) {
+	if (isDate(psup1)==false){	alert('PSUP/Capitol date is invalid.');return false}
+	}
+	var psup2;
+	psup2 = document.Form1.psup_cc_dt.value
+	if (document.Form1.psup_cc_dt.value.length > 0) {
+	if (isDate(psup2)==false){	alert('PSUP/Central date is invalid.');return false}
+	}
+	var psup3;
+	psup3 = document.Form1.psup_gg_dt.value
+	if (document.Form1.psup_gg_dt.value.length > 0) {
+	if (isDate(psup3)==false){	alert('PSUP/West Bay date is invalid.');return false}
+	}
+	var psup4;
+	psup4 = document.Form1.psup_eb_dt.value
+	if (document.Form1.psup_eb_dt.value.length > 0) {
+	if (isDate(psup4)==false){	alert('PSUP/East Bay date is invalid.');return false}
+	}
+	var psup5;
+	psup5 = document.Form1.psup_nb_dt.value
+	if (document.Form1.psup_nb_dt.value.length > 0) {
+	if (isDate(psup5)==false){alert('PSUP/North Bay date is invalid.');return false}
+	}
+	var psup6;
+	psup6 = document.Form1.psup_sb_dt.value
+	if (document.Form1.psup_sb_dt.value.length > 0) {
+	if (isDate(psup6)==false){	alert('PSUP/South Bay date is invalid.');return false}
+	}
+	var psup7;
+	psup7 = document.Form1.psup_nc_dt.value
+	if (document.Form1.psup_nc_dt.value.length > 0) {
+	if (isDate(psup7)==false){	alert('PSUP/Lead date is invalid.');return false}
+	}	
+	
+	
+	var train1;
+	train1 = document.Form1.train_ca_dt.value
+	if (document.Form1.train_ca_dt.value.length > 0) {
+	if (isDate(train1)==false){	alert('TRAIN/Capitol date is invalid.');return false}
+	}
+	var train2;
+	train2 = document.Form1.train_cc_dt.value
+	if (document.Form1.train_cc_dt.value.length > 0) {
+	if (isDate(train2)==false){	alert('TRAIN/Central date is invalid.');return false}
+	}
+	var train3;
+	train3 = document.Form1.train_gg_dt.value
+	if (document.Form1.train_gg_dt.value.length > 0) {
+	if (isDate(train3)==false){	alert('TRAIN/West Bay date is invalid.');return false}
+	}
+	var train4;
+	train4 = document.Form1.train_eb_dt.value
+	if (document.Form1.train_eb_dt.value.length > 0) {
+	if (isDate(train4)==false){	alert('TRAIN/East Bay date is invalid.');return false}
+	}
+	var train5;
+	train5 = document.Form1.train_nb_dt.value
+	if (document.Form1.train_nb_dt.value.length > 0) {
+	if (isDate(train5)==false){alert('TRAIN/North Bay date is invalid.');return false}
+	}
+	var train6;
+	train6 = document.Form1.train_sb_dt.value
+	if (document.Form1.train_sb_dt.value.length > 0) {
+	if (isDate(train6)==false){	alert('TRAIN/South Bay date is invalid.');return false}
+	}
+	
+	var train7;
+	train7 = document.Form1.train_nc_dt.value
+	if (document.Form1.train_nc_dt.value.length > 0) {
+	if (isDate(train7)==false){	alert('TRAIN/Lead date is invalid.');return false}
+	}	
+	
+	if (document.Form1.wits_ca_dt.value.length > 0 || document.Form1.wits_cc_dt.value.length > 0 ||document.Form1.wits_gg_dt.value.length > 0 ||document.Form1.wits_eb_dt.value.length > 0 ||document.Form1.wits_nb_dt.value.length > 0 ||document.Form1.wits_sb_dt.value.length > 0 || document.Form1.wits_nc_dt.value.length > 0 ) {
+		if ((document.Form1.rfc_wits_no.value.length < 4) || (isInteger(document.Form1.rfc_wits_no.value) == false )) { 
+	 		alert('Must have WITS RFC # if any instances are configured.'); 
+	 		return false;
+		}
+	}	
+				
+	if (document.Form1.wit3_ca_dt.value.length > 0 || document.Form1.wit3_cc_dt.value.length > 0 ||document.Form1.wit3_gg_dt.value.length > 0 ||document.Form1.wit3_eb_dt.value.length > 0 ||document.Form1.wit3_nb_dt.value.length > 0 ||document.Form1.wit3_sb_dt.value.length > 0 || document.Form1.wit3_nc_dt.value.length > 0 ){
+		if ((document.Form1.rfc_wit3_no.value.length < 4) || (isInteger(document.Form1.rfc_wit3_no.value) == false)) { 
+	 			alert('Must have WITS3 RFC # if any instances are configured.'); 
+	 			return false;
+		}
+	}	
+
+	if (document.Form1.stgn_ca_dt.value.length > 0 || document.Form1.stgn_cc_dt.value.length > 0 ||document.Form1.stgn_gg_dt.value.length > 0 ||document.Form1.stgn_eb_dt.value.length > 0 ||document.Form1.stgn_nb_dt.value.length > 0 ||document.Form1.stgn_sb_dt.value.length > 0 || document.Form1.stgn_nc_dt.value.length > 0 ){
+		if ((document.Form1.rfc_stgn_no.value.length < 4) || (isInteger(document.Form1.rfc_stgn_no.value) == false)) { 
+	 			alert('Must have STGN RFC # if any instances are configured.'); 
+	 			return false;
+		}
+	}	
+		
+	if (document.Form1.psup_ca_dt.value.length > 0 || document.Form1.psup_cc_dt.value.length > 0 ||document.Form1.psup_gg_dt.value.length > 0 ||document.Form1.psup_eb_dt.value.length > 0 ||document.Form1.psup_nb_dt.value.length > 0 ||document.Form1.psup_sb_dt.value.length > 0 || document.Form1.psup_nc_dt.value.length > 0 ){
+		if ((document.Form1.rfc_psup_no.value.length < 4) || (isInteger(document.Form1.rfc_psup_no.value) == false)) { 
+	 			alert('Must have PSUP RFC # if any instances are configured.'); 
+	 			return false;
+		}
+	}		
+	
+	if (document.Form1.mode.value == 'add' ) {
+		return true;
+	}
+	
+	var prod1;
+	prod1 = document.Form1.prod_ca_dt.value
+	if (document.Form1.prod_ca_dt.value.length > 0) {
+	if (isDate(prod1)==false){	alert('Production/Capitol date is invalid.');return false}
+	}
+	var prod2;
+	prod2 = document.Form1.prod_cc_dt.value
+	if (document.Form1.prod_cc_dt.value.length > 0) {
+	if (isDate(prod2)==false){	alert('Production/Central date is invalid.');return false}
+	}
+	var prod3;
+	prod3 = document.Form1.prod_gg_dt.value
+	if (document.Form1.prod_gg_dt.value.length > 0) {
+	if (isDate(prod3)==false){	alert('Production/West Bay date is invalid.');return false}
+	}
+	var prod4;
+	prod4 = document.Form1.prod_eb_dt.value
+	if (document.Form1.prod_eb_dt.value.length > 0) {
+	if (isDate(prod4)==false){	alert('Production/East Bay date is invalid.');return false}
+	}
+	var prod5;
+	prod5 = document.Form1.prod_nb_dt.value
+	if (document.Form1.prod_nb_dt.value.length > 0) {
+	if (isDate(prod5)==false){alert('Production/North Bay date is invalid.');return false}
+	}
+	var prod6;
+	prod6 = document.Form1.prod_sb_dt.value
+	if (document.Form1.prod_sb_dt.value.length > 0) {
+	if (isDate(prod6)==false){	alert('Production/South Bay date is invalid.');return false}
+	}
+	var prod7;
+	prod7 = document.Form1.prod_nc_dt.value
+	if (document.Form1.prod_nc_dt.value.length > 0) {
+	if (isDate(prod7)==false){	alert('Production/Lead date is invalid.');return false}
+	}
+			
+	if (document.Form1.prod_ca_dt.value.length > 0 || document.Form1.prod_cc_dt.value.length > 0 ||document.Form1.prod_gg_dt.value.length > 0 ||document.Form1.prod_eb_dt.value.length > 0 ||document.Form1.prod_nb_dt.value.length > 0 ||document.Form1.prod_sb_dt.value.length > 0 || document.Form1.prod_nc_dt.value.length > 0 ){
+	 	if ((document.Form1.rfc_prod_no.value.length < 4) || (isInteger(document.Form1.rfc_prod_no.value) == false)) 
+	 	{ 
+	 		alert('Must have PROD RFC # if any instances are configured.'); 
+	 		return false;
+		}
+	}	
+	
+	var stat ;
+	stat = document.Form1.status_cd.value;
+	
+	if (stat == 'C') {
+		if (document.Form1.rfc_prod_no.value.length > 1)  { 
+	 		if (document.Form1.prod_ca_dt.value.length < 4 && document.Form1.prod_cc_dt.value.length < 4 && document.Form1.prod_gg_dt.value.length < 4  && document.Form1.prod_eb_dt.value.length < 4 && document.Form1.prod_nb_dt.value.length < 4 && document.Form1.prod_sb_dt.value.length < 4 && document.Form1.prod_nc_dt.value.length < 4 ) {
+		 	alert('Must have at least one Production date when RFC# present and status is closed.'); 
+	 		return false;
+			}
+		}
+	}
+	
+	
+	if (prod1.length > 0 || prod2.length > 0 || prod3.length > 0 ||	prod4.length > 0 || prod5.length > 0 || prod6.length > 0 || prod7.length > 0 ){
+		if (stat != 'C') {
+			alert ('Status must be closed if any production instance is built.');
+			return false;
+		}
+	}	
+	
+	if (prod1.length == 0 && prod2.length == 0 && prod3.length == 0 && prod4.length == 0 && prod5.length == 0 && prod6.length == 0 && prod7.length == 0 ){
+		if (stat == 'C') {
+			alert ('At least one production instance must be configured if status is closed.');
+			return false;
+		}
+	}	
+		
+	if (document.Form1.status_cd.value == 'C') {
+		if (document.Form1.database_id.value == '0') 	{
+			alert ('Select a Masterfile to close.');
+			return false;
+		}
+		
+		if (document.Form1.cat_list_nm.value.length < 1) {
+			alert('Enter Component Category to close');
+			return false; 
+		}
+		
+		
+		if (document.Form1.rfc_wits_no.value.length > 1)  { 
+	 		if (document.Form1.wits_ca_dt.value.length < 4 && document.Form1.wits_cc_dt.value.length < 4 && document.Form1.wits_gg_dt.value.length < 4  && document.Form1.wits_eb_dt.value.length < 4 && document.Form1.wits_nb_dt.value.length < 4 && document.Form1.wits_sb_dt.value.length < 4 && document.Form1.wits_nc_dt.value.length < 4 ) 		{
+		 	alert('Must have at least one WITS date when RFC# present and status is closed.'); 
+			return false;
+			}
+		}
+	
+	
+		if (document.Form1.rfc_wit3_no.value.length > 1)  { 
+	 		if (document.Form1.wit3_ca_dt.value.length < 4 && document.Form1.wit3_cc_dt.value.length < 4 && document.Form1.wit3_gg_dt.value.length < 4  && document.Form1.wit3_eb_dt.value.length < 4 && document.Form1.wit3_nb_dt.value.length < 4 && document.Form1.wit3_sb_dt.value.length < 4 && document.Form1.wit3_nc_dt.value.length < 4 ) 	{
+			alert('Must have at least one WITS3 date when RFC# present and status is closed.'); 
+	 		return false;
+			}
+		}	
+		
+		if (document.Form1.rfc_psup_no.value.length > 1)  { 
+	 		if (document.Form1.psup_ca_dt.value.length < 4 && document.Form1.psup_cc_dt.value.length < 4 && document.Form1.psup_gg_dt.value.length < 4  && document.Form1.psup_eb_dt.value.length < 4 && document.Form1.psup_nb_dt.value.length < 4 && document.Form1.psup_sb_dt.value.length < 4 && document.Form1.psup_nc_dt.value.length < 4 )	{
+			 	alert('Must have at least one PSUP date when RFC# present.'); 
+	 			return false;
+			}
+		}
+	
+	
+		if (document.Form1.rfc_stgn_no.value.length > 1)  	{ 
+	 		if (document.Form1.stgn_ca_dt.value.length < 4 && document.Form1.stgn_cc_dt.value.length < 4 && document.Form1.stgn_gg_dt.value.length < 4  && document.Form1.stgn_eb_dt.value.length < 4 && document.Form1.stgn_nb_dt.value.length < 4 && document.Form1.stgn_sb_dt.value.length < 4 && document.Form1.stgn_nc_dt.value.length < 4 )	{
+		 	alert('Must have at least one STGN date when RFC# present and status is closed.'); 
+			return false;
+			}
+		}	
+	}	
+	
+
+	if (document.Form1.status_cd.value == 'X'){
+		if (document.Form1.cancel_reason_tx.value.length < 2) {
+			alert('Please enter a cancel reason.');
+			return false;	
+		}
+	}
+	
+	
+	if (document.Form1.status_cd.value == 'P'){
+		if (document.Form1.comments_blob.value.length < 2) {
+			alert('Please enter a comment when status is set to pending.');
+			return false;	
+		}
+	}
+	
+	return true;
+}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD colspan=9><TABLE ><TR><TD ALIGN=LEFT>Build Tracker</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class="bg2"><TD>Config Type</TD><TD COLSPAN=8><KBD ID='maintenance_type_cd'></KBD></TD></TR>
+<tr class="bg2"><TD width=200>Product</TD><TD COLSPAN=8><KBD ID='product_cd'></KBD></TD></TR>
+<tr class="bg2"><TD>Tracker #</TD><TD colspan=8><KBD ID='build_no'></KBD></TD></TR>
+<tr class="bg2"><TD>Owner</TD><TD COLSPAN=8><KBD ID='owner_uid'></KBD></TD></TR>
+<tr class="bg2"><TD>Status</TD><TD COLSPAN=8><KBD ID='status_cd'></KBD></TD></TR>
+<tr class="bg2"><TD>Trigger</TD><TD COLSPAN=8><KBD ID='driver_cd'></KBD>&nbsp;&nbsp;&nbsp;#&nbsp;<KBD ID='driver_no'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=9>Detail</td></tr>
+<tr class="bg2"><TD>Component Category</TD><TD COLSPAN=8><KBD ID='cat_list_nm'></KBD></TD></TR>
+<tr class="bg2"><TD>Primary Masterfile</TD><TD COLSPAN=8><KBD ID='database_id'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Other Masterfiles:<KBD ID='database2_id'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='database3_id'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='database4_id'></KBD></TD></TR>
+<tr class="bg2"><TD>Change Description</TD><TD COLSPAN=8><KBD ID='desc_blob'></KBD></TD></TR>
+<tr class="bg2"><TD>Comments</TD><TD COLSPAN=8><KBD ID='comments_blob'></KBD></TD></TR>
+<tr class="bg2"><TD>Cancel Reason</TD><TD COLSPAN=8><KBD ID='cancel_reason_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=9>Build Out</td></tr>
+
+<tr class="BG2"><TD>Environment</TD>
+<TD ALIGN=CENTER >Remedy#</TD>
+<TD ALIGN=CENTER width=100>CA</TD>
+<TD ALIGN=CENTER width=100>CC</TD>
+<TD ALIGN=CENTER width=100>GG</TD>
+<TD ALIGN=CENTER width=100>EB</TD>
+<TD ALIGN=CENTER width=100>NB</TD>
+<TD ALIGN=CENTER width=100>SB</TD>
+<TD ALIGN=CENTER width=100>LEAD</TD>
+</tr>
+
+<tr class="BG2"><TD>WITS2</TD>
+<td width=70><KBD ID='rfc_wits_no'></KBD></td>
+<TD ><KBD ID='wits_ca_dt'></KBD></TD>
+<TD ><KBD ID='wits_cc_dt'></KBD></TD>
+<TD ><KBD ID='wits_gg_dt'></KBD></TD>
+<TD ><KBD ID='wits_eb_dt'></KBD></TD>
+<TD ><KBD ID='wits_nb_dt'></KBD></TD>
+<TD ><KBD ID='wits_sb_dt'></KBD></TD>
+<TD ><KBD ID='wits_nc_dt'></KBD></TD>
+</tr>
+
+<tr class="BG2"><TD>WITS3</TD>
+<td ><KBD ID='rfc_wit3_no'></KBD></td>
+<TD ><KBD ID='wit3_ca_dt'></KBD></TD>
+<TD ><KBD ID='wit3_cc_dt'></KBD></TD>
+<TD ><KBD ID='wit3_gg_dt'></KBD></TD>
+<TD ><KBD ID='wit3_eb_dt'></KBD></TD>
+<TD ><KBD ID='wit3_nb_dt'></KBD></TD>
+<TD ><KBD ID='wit3_sb_dt'></KBD></TD>
+<TD ><KBD ID='wit3_nc_dt'></KBD></TD>
+</tr>
+
+<TR class="BG2"><TD>STGN</TD>
+<td ><KBD ID='rfc_stgn_no'></KBD></td>
+<TD ><KBD ID='stgn_ca_dt'></KBD></TD>
+<TD ><KBD ID='stgn_cc_dt'></KBD></TD>
+<TD ><KBD ID='stgn_gg_dt'></KBD></TD>
+<TD ><KBD ID='stgn_eb_dt'></KBD></TD>
+<TD ><KBD ID='stgn_nb_dt'></KBD></TD>
+<TD ><KBD ID='stgn_sb_dt'></KBD></TD>
+<TD ><KBD ID='stgn_nc_dt'></KBD></TD>
+</tr>
+
+<TR class="BG2"><TD>PSUP</TD>
+<td ><KBD ID='rfc_psup_no'></KBD></td>
+<TD ><KBD ID='psup_ca_dt'></KBD></TD>
+<TD ><KBD ID='psup_cc_dt'></KBD></TD>
+<TD ><KBD ID='psup_gg_dt'></KBD></TD>
+<TD ><KBD ID='psup_eb_dt'></KBD></TD>
+<TD ><KBD ID='psup_nb_dt'></KBD></TD>
+<TD ><KBD ID='psup_sb_dt'></KBD></TD>
+<TD ><KBD ID='psup_nc_dt'></KBD></TD>
+</tr>
+
+
+<TR class="BG2"><TD>PROD</TD>
+<td ><KBD ID='rfc_prod_no'></KBD></td>
+<TD ><KBD ID='prod_ca_dt'></KBD></TD>
+<TD ><KBD ID='prod_cc_dt'></KBD></TD>
+<TD ><KBD ID='prod_gg_dt'></KBD></TD>
+<TD ><KBD ID='prod_eb_dt'></KBD></TD>
+<TD ><KBD ID='prod_nb_dt'></KBD></TD>
+<TD ><KBD ID='prod_sb_dt'></KBD></TD>
+<TD ><KBD ID='prod_nc_dt'></KBD></TD>
+</tr>
+
+<TR class="BG2">
+<TD>TRAIN</TD>
+<td >&nbsp;</td>
+<TD ><KBD ID='train_ca_dt'></KBD></TD>
+<TD ><KBD ID='train_cc_dt'></KBD></TD>
+<TD ><KBD ID='train_gg_dt'></KBD></TD>
+<TD ><KBD ID='train_eb_dt'></KBD></TD>
+<TD ><KBD ID='train_nb_dt'></KBD></TD>
+<TD ><KBD ID='train_sb_dt'></KBD></TD>
+<TD ><KBD ID='train_nc_dt'></KBD></TD>
+</tr>
+
+<tr><td><KBD ID='mode'></KBD></td></tr>
+<tr><td><KBD ID='maintenance'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=9>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD colspan=8><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD colspan=8><KBD ID='updated_by'></KBD></TD></TR>
+</table>

@@ -1,0 +1,253 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	var dt1;
+	dt1 = document.Form1.tigr_rv_date.value
+	if (document.Form1.tigr_rv_date.value.length > 0) {
+	if (isDate(dt1)==false){	alert('TIGR Date is invalid.');return false}
+	}
+	
+	if (document.Form1.priority_cd.value.length > 0 ) {
+		if (document.Form1.priority_cd.value == 'LIVE') {
+			if (document.Form1.facility_cd.value.length == 0 || document.Form1.facility_cd.value == "0") {
+				alert("Facility is required when Priority is 'Need for Go-Live'")
+				return false
+			}
+		} 
+	}
+	
+	
+	if (document.Form1.reviewType.value == 'S') {
+		
+		var dt2;
+		dt2 = document.Form1.suit_apv_date.value
+		if (document.Form1.suit_apv_date.value.length > 0) {
+		if (isDate(dt2)==false){alert('SUIT Date is invalid.');return false}
+		}
+		var dt3;
+		dt3 = document.Form1.suit_apv_done_date.value
+		if (document.Form1.suit_apv_done_date.value.length > 0) {
+		if (isDate(dt3)==false){alert('SUIT Approve Done Date is invalid.');return false}
+		}
+	}
+	
+	
+	if (document.Form1.reviewType.value == 'D') {
+			
+		var dt4;
+		dt4 = document.Form1.dom_md_apv_content_date.value
+		if (document.Form1.dom_md_apv_content_date.value.length > 0) {
+		if (isDate(dt4)==false){alert('Domain MD Approve Content date.');return false}
+		}
+		var dt5;
+		dt5 = document.Form1.dom_md_apv_content_done_date.value
+		if (document.Form1.dom_md_apv_content_done_date.value.length > 0) {
+		if (isDate(dt5)==false){alert('Domain MD Approve Content done date.');return false}
+		}
+		
+		var dt6;
+		dt6 = document.Form1.dom_rn_apv_content_date.value
+		if (document.Form1.dom_md_apv_content_date.value.length > 0) {
+		if (isDate(dt6)==false){alert('Domain RN Approve Content date.');return false}
+		}
+		var dt7;
+		dt7 = document.Form1.dom_rn_apv_content_done_date.value
+		if (document.Form1.dom_rn_apv_content_done_date.value.length > 0) {
+		if (isDate(dt7)==false){alert('Domain RN Approve Content done date.');return false}
+		}
+		
+	}
+	
+	
+	var dt8;
+	dt8 = document.Form1.med_ctr_rv_date.value
+	if (document.Form1.med_ctr_rv_date.value.length > 0) {
+	if (isDate(dt8)==false){alert('Medical Center review date is invalid.');return false}
+	}
+	var dt9;
+	dt9 = document.Form1.med_ctr_rv_done_date.value
+	if (document.Form1.med_ctr_rv_done_date.value.length > 0) {
+	if (isDate(dt9)==false){alert('Medical Ctr. review done Date is invalid.');return false}
+	}
+	var dt10;
+	dt10 = document.Form1.collate_rc_date.value
+	if (document.Form1.collate_rc_date.value.length > 0) {
+	if (isDate(dt10)==false){alert('Collate R&C Date is invalid.');return false}
+	}
+	var dt11;
+	dt11 = document.Form1.collate_rc_done_date.value
+	if (document.Form1.collate_rc_done_date.value.length > 0) {
+	if (isDate(dt11)==false){alert('Collate R&C done date is invalid.');return false}
+	}
+	
+	var dt12;
+	dt12 = document.Form1.screen_shot_date.value
+	if (document.Form1.screen_shot_date.value.length > 0) {
+	if (isDate(dt12)==false){alert('Final Screen Shotes date is invalid.');return false}
+	}
+	
+	var screenDone;
+	screenDone = document.Form1.screen_shot_done_date.value
+	if (document.Form1.screen_shot_done_date.value.length > 0) {
+	if (isDate(screenDone)==false){alert('Final Screen Shot Done date is invalid.');return false}
+	}
+	
+	
+	var dt13;
+	dt13 = document.Form1.adv_dist_hcg_date.value
+	if (document.Form1.adv_dist_hcg_date.value.length > 0) {
+	if (isDate(dt13)==false){alert('Advance Distribution date is invalid.');return false}
+	}
+	
+	
+	var dt16;
+	dt16 = document.Form1.document_date.value
+	if (document.Form1.document_date.value.length > 0) {
+	if (isDate(dt16)==false){alert('Documentation date is invalid.');return false}
+	}
+	var dt17;
+	dt17 = document.Form1.document_date.value
+	if (document.Form1.document_date.value.length > 0) {
+	if (isDate(dt17)==false){alert('Documentation done date is invalid.');return false}
+	}
+	
+	var dt18;
+	dt18 = document.Form1.med_exec_comm_date.value
+	if (document.Form1.med_exec_comm_date.value.length > 0) {
+	if (isDate(dt18)==false){alert('Medical Ctr. Communication date is invalid.');return false}
+	}
+	var dt19;
+	dt19 = document.Form1.document_date.value
+	if (document.Form1.document_date.value.length > 0) {
+	if (isDate(dt19)==false){alert('Medical Ctr. Communication done date is invalid.');return false}
+	}
+	
+	
+	var dt20;
+	dt20 = document.Form1.rlse_notify_date.value
+	if (document.Form1.rlse_notify_date.value.length > 0) {
+	if (isDate(dt20)==false){alert('Release Notification date is invalid.');return false}
+	}
+	
+
+	var dt23;
+	dt23 = document.Form1.reg_med_ctr_apv_date.value
+	if (document.Form1.reg_med_ctr_apv_date.value.length > 0) {
+	if (isDate(dt23)==false){alert('Reg. Med. Center approve date is invalid.');return false}
+	}
+	
+	var dt24;
+	dt24 = document.Form1.reg_med_ctr_apv_done_date.value
+	if (document.Form1.reg_med_ctr_apv_done_date.value.length > 0) {
+	if (isDate(dt24)==false){alert('Reg. Med. Center approve done date is invalid.');return false}
+	}
+	
+	return true}
+	
+function popup() {
+	window.open('http://<KBD ID="host"></KBD>/<KBD ID="tomcat_name"></KBD>/Router?Target=Popup','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+}
+
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD colspan=6><TABLE ><TR><TD ALIGN=LEFT><KBD ID='pagename'></KBD></td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TD></tr>
+
+<tr class="bg1"><td colspan=6 bgcolor=yellow>PHASE 1</td></tr>
+<tr class='bg1'><td colspan=6>Change Info (As of: <KBD ID='remedy_asof_date'></KBD>)&nbsp;<a href="javascript:popup()">Show attributes.</a></td></tr>
+<TR class="BG2"><TD width='300'>SR No.</TD><TD colspan=5><KBD ID='sr_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='300'>Summary</TD><TD  colspan=5 WIDTH='650'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="BG2"><TD width='300'>Description</TD><TD colspan=5 WIDTH='450'><KBD ID='description_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Status</TD><TD colspan=5><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Pending</TD><TD colspan=5><KBD ID='remedy_pending_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Closure Code</TD><TD colspan=5><KBD ID='closure_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Resolution Code</TD><TD colspan=5><KBD ID='resolution_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Owner</TD><TD colspan=5><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Requestor</TD><TD colspan=5><KBD ID='requester_uid'></KBD>&nbsp;&nbsp;&nbsp;<KBD ID='RequesterDept'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='RequesterFacl'></KBD></TD></TR>
+<TR class="BG2"><TD>Group</TD><TD colspan=5><KBD ID='remedy_grp_tx'></KBD></TD></TR>
+
+<TR class="BG2"><TD width='300'>Date Created </TD><TD colspan=5><KBD ID='remedy_create_dt'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6>TIGR&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<TR class="BG2"><TD>Keywords</TD><TD colspan=5><KBD ID='keyword_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Order Sets</TD><TD colspan=5><KBD ID='setlist'></KBD></TD></TR>
+<TR class="BG2"><TD>2nd Owner</TD><TD colspan=5 ><KBD ID='alt_owner_tx'></KBD></TD></TR>
+
+<TR class="BG2"><TD>Domain 1</TD><TD colspan=5><KBD ID='domain_1_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 2</TD><TD colspan=5><KBD ID='domain_2_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 3</TD><TD colspan=5><KBD ID='domain_3_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 4</TD><TD colspan=5><KBD ID='domain_4_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 5</TD><TD colspan=5><KBD ID='domain_5_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 6</TD><TD colspan=5><KBD ID='domain_6_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 7</TD><TD colspan=5><KBD ID='domain_7_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 8</TD><TD colspan=5><KBD ID='domain_8_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>SUIT</TD><TD colspan=5><KBD ID='suite_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Primary Sponsor</TD><TD colspan=5><KBD ID='prim_sponsor_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Secondary Sponsor</TD><TD colspan=5><KBD ID='sec_sponsor_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Approval</TD><TD colspan=5 ><KBD ID='rv_grp_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Revision/New</TD><TD colspan=5><KBD ID='revision_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>TIGR Review Date</TD><TD colspan=5><KBD ID='tigr_rv_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Level of Change</TD><TD colspan=5><KBD ID='level_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Priority</TD><TD colspan=5><KBD ID='priority_cd'></KBD>&nbsp;&nbsp;Facility:&nbsp;<KBD ID='facility_cd'></KBD></TD></TR>
+
+
+<TR class="BG2"><TD valign=top>Regional Approval of <br>&nbsp;&nbsp;&nbsp;&nbsp;Med. Center Request</TD><TD valign=middle>Due:&nbsp;<KBD ID='reg_med_ctr_apv_date'></KBD></td><td  valign=middle>Done:</td><td><KBD ID='reg_med_ctr_apv_done_date'></KBD></td><td  valign=middle>Approvers:</td><td  valign=middle><KBD ID='reg_med_apvr_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6>Builder&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+
+<TR class="BG2"><TD>Screen Shots</TD><TD WIDTH='450' colspan=5><KBD ID='screen_shot_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Builder Notes</TD><TD WIDTH='450' colspan=5><KBD ID='alt_build_env_tx'></KBD></TD></TR>
+<TR class="BG2"><TD valign=top colspan=1>SUIT Approval</TD><TD>Due:&nbsp;<KBD ID='suit_apv_date'></KBD></td><td>Done:</td><td width=60><KBD ID='suit_apv_done_date'></KBD></td><td>Approvers:</td><td><KBD ID='suit_apvr_tx'></KBD></TD></TR>
+<TR class="BG2"><TD valign="top" colspan=1>Domain RN Approve Content</TD><TD valign="top">Due:&nbsp;<KBD ID='dom_rn_apv_content_date'></KBD></td><td>Done:</td><td width=60><KBD ID='dom_rn_apv_content_done_date'></KBD></td><td>Approvers:</td><td><KBD ID='nrse_apvr_1a_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain MD Approve Content</TD><TD >Due:&nbsp;<KBD ID='dom_md_apv_content_date'></KBD></td><td>Done:</td><td width=60><KBD ID='dom_md_apv_content_done_date'></KBD></td><td>Approvers:</td><td><KBD ID='phy_apvr_1b_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6>Governance&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<TR class="BG2" VALIGN=TOP><TD valign="top" colspan=1>Domain MD Approve SUIT Content</TD><TD  valign="top">Due:&nbsp;<KBD ID='dom_md_apv_suit_date'></KBD></td><td>Done:</td><td width=60><KBD ID='dom_md_apv_suit_done_date'></KBD></td><td>Approvers:</td><td><KBD ID='dom_md_apv_suit_tx'></KBD></TD></TR>
+<TR class="BG2" VALIGN=TOP><TD valign="top" colspan=1>Domain RN Approve SUIT Content</TD><TD  valign="top">Due:&nbsp;<KBD ID='dom_rn_apv_suit_date'></KBD></td><td>Done:</td><td width=60><KBD ID='dom_rn_apv_suit_done_date'></KBD></td><td>Approvers:</td><td><KBD ID='dom_rn_apv_suit_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6 bgcolor=yellow>PHASE 2 &nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<tr class="bg1"><td colspan=6>Remedy Info</td></tr>
+<TR CLASS='bg2'><TD width='300'>Planned Start Date</TD><TD colspan=5><KBD ID='remedy_start_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='300'>Planned End/Prod Date</TD><TD colspan=5><KBD ID='remedy_end_dt'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6>Builder&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<TR class="BG2"><TD valign=top>Deadline for Governance</TD><TD valign=middle>Due:&nbsp;<KBD ID='gov_due_date'></KBD></td><td  valign=middle>Done:</td><td><KBD ID='gov_done_date'></KBD></td><td  colspan=2 valign=middle></TD></TR>
+
+<tr class="bg1"><td colspan=6>Governance&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<TR class="BG2"><TD>Planned HCG Meeting</TD><TD colspan=5><KBD ID='hcg_meet_date'></KBD></TD></TR>
+<TR class="BG2"><TD valign=top>Medical Center Review</TD><TD valign=middle>Deadline:&nbsp;<KBD ID='med_ctr_rv_date'></KBD></td><td  valign=middle>Sent:</td><td><KBD ID='med_ctr_rv_done_date'></KBD></td><td></td><td></td></TR>
+<TR class="BG2"><TD valign=top>Collate R&amp;C and Send to Sponsor</TD><TD valign=middle>Due:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='collate_rc_date'></KBD></td><td  valign=middle>Sent:</td><td><KBD ID='collate_rc_done_date'></KBD></td><td colspan=2  valign=middle></TD></TR>
+<TR class="BG2"><TD valign=top>Response From Sponsor</TD><TD valign=middle>Due:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='sponsor_due_date'></KBD></td><td  valign=middle>Done:</td><td><KBD ID='sponsor_done_date'></KBD></td><td colspan=2  valign=middle></TD></TR>
+<TR class="BG2"><TD valign=top colspan=1>Final Screen Shots</TD><TD>Deadline:&nbsp;<KBD ID='screen_shot_deadline_date'></KBD></td><td>Due:</td><td width=60><KBD ID='screen_shot_date'></KBD></td><td>Done:</td><td><KBD ID='screen_shot_done_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Advance Distribution HCG</TD><TD colspan=5>Due:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='adv_dist_hcg_date'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6 bgcolor=yellow>PHASE 3&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<tr class="bg1"><td colspan=6>Remedy Info</td></tr>
+<TR class="BG2"><TD width='300'>Actual Production</TD><TD colspan=5><KBD ID='remedy_act_end_dt'></KBD></TD></TR>
+	
+<tr class="bg1"><td colspan=6>Governance&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></td></tr>
+<TR class="BG2"><TD>Revisions from HCG</TD><TD >Due:&nbsp;<KBD ID='document_date'></KBD></td><td colspan=4>Done:&nbsp;<KBD ID='document_done_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Medical Center Communication</TD><TD >Due:&nbsp;<KBD ID='med_exec_comm_date'></KBD></td><td colspan=4>Done:&nbsp;<KBD ID='med_exec_comm_done_date'></KBD></TD></TR>
+<TR class="BG2"><TD>KPHC Release Notification</TD><TD >Due:&nbsp;<KBD ID='rlse_notify_date'></KBD></td><td colspan=4>Done:&nbsp;<KBD ID='rlse_notify_done_date'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=6>Other&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a> </td></tr>
+<TR CLASS='bg2'><TD valign=top width='300'>Remedy Comments</TD><TD colspan=5><KBD ID='remedy_comment_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Notes</TD><TD WIDTH='450' colspan=5><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr><td><KBD ID='reviewType'></KBD></td></tr>
+<tr><td><KBD ID='remedyno'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=6>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='#top'>Top of Page</a></TD></TR>
+<TR id='added_by' class="aud2"><TD colspan=1>Added By</TD><TD colspan=5><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD colspan=1>Updated By</TD><TD colspan=5><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>
+
+

@@ -1,0 +1,13 @@
+ds.search-scope=SUBTREE_SCOPE
+
+ad.directory.port=389
+
+ad.directory.username=D576781
+ad.directory.password=Listen2me
+
+ad.directory.hostname=arnepaulsenjr.com
+ad.directory.dn=dc=cs,dc=msds,dc=kp,dc=org
+ad.directory.filter=(& (sn=Arne) (givenName=Paulsen))
+ad.directory.search-attributes=displayName,name,sn,givenName,sAMAccountName,memberOf,distinguishedName,homedirectory,homedrive,scriptPath,whenCreated,whenChanged,description
+
+

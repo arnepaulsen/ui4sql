@@ -1,0 +1,83 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.accepted_flag.checked == false ) {
+		document.Form1.accepted_flag.value = 'N';
+		document.Form1.accepted_flag.checked = true;
+	}
+	return true;
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Business Qualifying Form</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR class="bg0"><TD colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='impactlink'></KBD></TD></TR>
+
+
+<TR class="bg2"><TD>Request Initiation Date</TD><TD><KBD ID='request_dt'></KBD></TD></TR>
+<TR class="bg2"><TD>RFC #</TD><TD><KBD ID='rfc_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Requesting Region</TD><TD><KBD ID='regions_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Requestor</TD><TD><KBD ID='requestor_uid'></KBD></TD></TR>	
+<TR class="bg2"><TD>Sponsor</TD><TD><KBD ID='sponsor_nm'></KBD></TD></TR>	
+
+<TR class="bg2"><TD>National AC Name</TD><TD><KBD ID='natl_ac_nm'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>Request</TD></TR>
+<TR CLASS='bg2'><TD WIDTH='250'>Title of <br>Service Request</TD><TD WIDTH='550'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>BQF Ref #</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>Info</TD></TR>
+<TR class="bg2"><TD width=250>Description of Change</TD><TD width=550><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Primary Affected INI</TD><TD><KBD ID='epic_ini_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>CMT Data Change Only</TD><TD><KBD ID='cmt_only_cd'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Status Note</TD><TD><KBD ID='status_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>	
+
+<TR class="bg0"><TD colspan=2>Info</TD></TR>
+<TR class="bg2"><TD>Reason</TD><TD><KBD ID='reason_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Project Type</TD><TD><KBD ID='size_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='product_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Budgeted Request</TD><TD><KBD ID='budgeted_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Required Date</TD><TD><KBD ID='required_dt'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Analysis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='impactlink'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Benefit of Change</TD><TD width=550><KBD ID='reason_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Impact of Not<br>Making Change</TD><TD width=550><KBD ID='impact_not_do_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Alternative Options</TD><TD width=550><KBD ID='alternative_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Potential Impacts<br>Other Apps, Interfaces</TD><TD width=550><KBD ID='impacts_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Other Teams<br>Affected</TD><TD width=550><KBD ID='other_teams_nm'></KBD></TD></TR>
+
+<TR class="bg2"><TD width=250>Description of <br>Impacts Other Teams</TD><TD width=550><KBD ID='team_impacts_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Other Region(s)<br>Affected</TD><TD width=550><KBD ID='areas_blob'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Disposition</TD></TR>
+<TR class="bg2"><TD>Accepted</TD><TD><KBD ID='accepted_flag'></KBD></TD></TR>	
+<TR class="bg2"><TD>Accepted Date</TD><TD><KBD ID='accept_dt'></KBD></TD></TR>	
+<TR class="bg2"><TD>Qualifications</TD><TD><KBD ID='qualify_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Rejection Notes (if any)</TD><TD><KBD ID='rejection_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

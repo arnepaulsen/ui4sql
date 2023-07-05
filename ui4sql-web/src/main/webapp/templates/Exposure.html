@@ -1,0 +1,69 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	if (isInteger(document.Form1.exposure_amt.value) == false ) {
+		alert("Please set 'Exposure Amount' to a number");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.probability_pct.value) == false ) {
+		alert("Please set 'Probability Percent' to a number");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.loss_amt.value) == false ) {
+		alert("Please set 'Realized Losses' zero or a number");
+		return false;
+	}
+	
+	
+	return true
+}
+	
+
+
+</SCRIPT>
+
+<TABLE  >
+
+<tr class="bg0" ><TD COLSPAN=2><TABLE><TR><TD ALIGN=LEFT>System Exposure</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR CLASS="BG2"><TD>Assigned To</TD><TD><KBD ID='assign_to_uid'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Reference Id</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="BG2"><TD WIDTH=150>Title</TD><TD width=650><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+
+<TR CLASS="BG2"><TD>Status</TD><TD><KBD ID='state_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR CLASS="BG2"><TD>Exposure Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Probability Percent</TD><TD><KBD ID='probability_pct'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Exposure Amount (000's)</TD><TD><KBD ID='exposure_amt'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Expected Loss (000's)</TD><TD><KBD ID='expected_loss'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Realized Loss (000's)</TD><TD><KBD ID='loss_amt'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Exposure Management</td></tr>
+<TR CLASS="BG2"><TD WIDTH=150>Description</TD><TD width=650><KBD ID='desc_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD WIDTH=150>Consequence</TD><TD width=650><KBD ID='consequence_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD WIDTH=150>Mitigation</TD><TD width=650><KBD ID='mitigation_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD WIDTH=150>Contingency</TD><TD width=650><KBD ID='contingency_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>
+
+
+

@@ -1,0 +1,52 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	var dt ;
+	dt = document.Form1.start_date.value
+	if (isDate(dt)==false){	alert('Date is invalid.');dt.focus;return false}
+
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Event</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD >Title</TD><TD><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD width="150">Remedy PR #</TD><TD width="450"><KBD ID='pr_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Interface</TD><TD><KBD ID='interface_id'></KBD></TD></TR>	
+<TR class="bg2"><TD>Instance</TD><TD><KBD ID='instance_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Event Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Impact</TD><TD><KBD ID='impact_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Date</TD><TD><TABLE><TR><TD><KBD ID='start_date'></KBD>&nbsp;&nbsp;&nbsp;Time:&nbsp;&nbsp;<KBD ID='time_tx'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>Logged By</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>ETA Info</TD><TD width="500"><KBD ID='eta_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Description</TD><TD width="500" ><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Impact</TD><TD width="500"><KBD ID='notes_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Communication</TD><TD width="500"><KBD ID='communication_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Work-Around</TD><TD width="500"><KBD ID='mitigation_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Resolution</td></tr>
+<TR class="bg2"><TD>Actual Hours</TD><TD><KBD ID='act_hours_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>How Resolved</TD><TD width="500"><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Root Cause</TD><TD width="500"><KBD ID='cause_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Follow-up</TD><TD width="500"><KBD ID='followup_blob'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

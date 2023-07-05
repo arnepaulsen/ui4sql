@@ -1,0 +1,74 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){ 
+
+	if (isInteger(document.Form1.release_note_id.value) == false ) {
+		alert("Please set Release Note # to a valid number");
+		return false;
+	}
+	
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a job title.');
+		return false;
+	}return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Release Note</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD>Note Id</TD><TD ><KBD ID='release_note_id'></KBD></TD></TR>
+<TR class="bg2"><TD width=150>Title</TD><TD width=650><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+
+<tr class="bg1"><td colspan=2>Info</td></tr>
+<TR class="bg2"><TD>Release</TD><TD><KBD ID='release_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Type   </TD><TD><KBD ID='type_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Set-up</TD><TD><KBD ID='setup_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Logs</TD><TD><KBD ID='logs_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Records</TD><TD><KBD ID='record_type_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Client/Server</TD><TD><KBD ID='client_server_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Products</TD><TD><KBD ID='products_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Interface</TD><TD><KBD ID='interface_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Applications</TD><TD><KBD ID='appl_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Description</TD><TD width=650><KBD ID='desc_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Configuration</TD><TD width=650><KBD ID='notes_tx'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>H/C Input</td></tr>
+<TR class="bg2"><TD>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>-Comment</TD><TD><KBD ID='priority_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Deploy Decision</TD><TD><KBD ID='deploy_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>-Comment</TD><TD><KBD ID='deploy_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Configuration Required</TD><TD><KBD ID='config_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>-Comment</TD><TD><KBD ID='config_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Training</TD><TD><KBD ID='training_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>-Comment</TD><TD><KBD ID='training_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Testing</TD><TD><KBD ID='testing_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>-Comment</TD><TD><KBD ID='testing_tx'></KBD></TD></TR>
+
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+		
+		
+		

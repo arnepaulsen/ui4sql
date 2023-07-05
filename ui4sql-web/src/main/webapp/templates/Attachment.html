@@ -1,0 +1,43 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){return true}
+
+function popup() {
+
+	if (document.Form1.mode.value == 'add' ) {
+		return;
+	}	
+	
+	window.open('http://<KBD ID='host'></KBD>/<KBD ID='tomcat_name'></KBD>/UploadAttachment.html?AttachmentId=<KBD ID='rowid'></KBD>','StarTeam','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+}
+
+function popup2() {
+
+	window.open('http://<KBD ID='host'></KBD>/<KBD ID='tomcat_name'></KBD>/DownloadAttachment.html?AttachmentId=<KBD ID='rowid'></KBD>','StarTeam','width=800, height=400, menubar=1, toolbar=1, scrollbars=1, resizable=1');
+}
+
+
+</SCRIPT>
+<TABLE  >
+<TR class='bg2'><TD width='100'></TD><TD width='400'><KBD ID='message'></KBD></TD></TR>
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Document Attachment</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class='bg2'><TD width='100'>Reference</TD><TD width='400'><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class='bg2'><TD >Title</TD><TD><KBD ID='title_nm'></KBD></TD></TR>
+<TR class='bg2'><TD>File</TD><TD><KBD ID='file_nm'></KBD><a href="javascript:popup()"><KBD ID='linktext'></KBD></a>&nbsp;&nbsp;&nbsp;<a href="javascript:popup2()"><KBD ID='linktext2'></KBD></a></TD></TR>
+<TR class='bg2'><TD>Description</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class='bg2'><TD>Notes</TD><TD><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr><td><KBD ID='mode'></KBD></td></tr>
+<tr><td><KBD ID='showlink'></KBD></td></tr>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>

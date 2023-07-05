@@ -1,0 +1,71 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	return true
+ }
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Voice of the Customer</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='450'><KBD ID='title_nm'></KBD></TD></TR>
+<tr class='bg2'><td>Reference</td><td ><KBD ID='reference_nm'></KBD></Td></TR>
+<tr class='bg2'><td>Owner</td><td ><KBD ID='owner_uid'></KBD></Td></TR>
+<tr class='bg2'><td>Version</td><td ><KBD ID='version_nm'></KBD></Td></TR>
+<tr class='bg2'><td>Status</td><td ><KBD ID='status_cd'></KBD></Td></TR>
+<tr class='bg2'><td>Cut-Off Date</td><td ><KBD ID='version_date'></KBD></Td></TR>
+
+<tr class='bg1'><td colspan=2>Background</td></tr>
+<tr class='bg2'><td>Source:</td><td><KBD ID='blob_back_source'></KBD></td></tr>
+<tr class='bg2'><td>Environment:</td><td><KBD ID='blob_back_environment'></KBD></td></tr>
+
+<tr class='bg1'><td colspan=2>VOC Plan</td></tr>
+<tr class='bg2' ><td colspan=2 align=left>Scope:</td></tr>
+<tr class='bg2'><td>Target Audience</td><td><KBD ID='blob_plan_scope_audience'></KBD></tr>
+<tr class='bg2'><td>Population</td><td><KBD ID='blob_plan_scope_population'></KBD></td></tr>
+<tr class='bg2'><td>Location</td><td><KBD ID='blob_plan_scope_location'></KBD></td></tr>
+
+<tr class='bg1'><td colspan=2>Approach</td></tr>
+
+<tr class='bg2'><td>Communication</td><td><KBD ID='blob_plan_approach_comm'></KBD></tr>
+<tr class='bg2'><td>Logistics</td><td><KBD ID='blob_plan_approach_logistics'></KBD></tr>
+<tr class='bg2'><td>Recording Data</td><td><KBD ID='blob_plan_approach_record_data'></KBD></tr>
+<tr class='bg2'><td>Analysis</td><td><KBD ID='blob_plan_approach_analysis'></KBD></tr>
+<tr class='bg2'><td>Timeline</td><td><KBD ID='blob_plan_timeline'></KBD></tr>
+<tr class='bg2'><td colspan=2>Resources</td></tr>
+<tr class='bg2'><td>Staff</td><td><KBD ID='blob_plan_resources_staff'></KBD></tr>
+<tr class='bg2'><td>Budget</td><td><KBD ID='blob_plan_resources_budget'></KBD></tr>
+<tr class='bg2'><td>Other</td><td><KBD ID='blob_plan_other'></KBD></tr>
+
+<tr class='bg1'><td colspan=2 >Customer Needs</td></tr>
+
+<tr class='bg2'><td>Description of <br>Customer Problem</td><td><KBD ID='blob_need_problem_desc'></KBD></tr>
+<tr class='bg2'><td>Prioritized List <br>of Customer Needs</td><td>See Requirements</TD></tr>
+<tr class='bg2'><td>Prioritized List of Service / <br> Support Requirements</td><td>See Requirements</TD></tr>
+<tr class='bg2'><td>Prioritized List of Customer Wants</td><td>See Requirements</TD></tr>
+<tr class='bg2'><td>Follow-up Enhancements</td><td><KBD ID='blob_followup_enhancements'></KBD></TD></tr>
+
+<tr class='bg1'><td colspan=2>Approval / Contact Information</td></tr>
+<tr class='bg2'><td>Project Parties</td><td>See Responsibility Matrix</td></tr>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
+

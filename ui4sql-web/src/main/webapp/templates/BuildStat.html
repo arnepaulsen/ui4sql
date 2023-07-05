@@ -1,0 +1,310 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.mode.value == 'add' ) {
+		if (document.Form1.product_cd.value == '0' ) { 
+			alert('Must choose product.');
+			return false;
+		}
+	}	
+	
+		
+	var dt1;
+	dt1 = document.Form1.wits_ca_no.value
+	if (document.Form1.wits_ca_no.value.length > 0) {
+	if (isNum(dt1)==false){	alert('WITS/Capitol date is invalid.');return false}
+	}
+	var dt2;
+	dt2 = document.Form1.wits_cc_no.value
+	if (document.Form1.wits_cc_no.value.length > 0) {
+	if (isNum(dt2)==false){	alert('WITS/Central date is invalid.');return false}
+	}
+	var dt3;
+	dt3 = document.Form1.wits_gg_no.value
+	if (document.Form1.wits_gg_no.value.length > 0) {
+	if (isNum(dt3)==false){	alert('WITS/West Bay date is invalid.');return false}
+	}
+	var dt4;
+	dt4 = document.Form1.wits_eb_no.value
+	if (document.Form1.wits_eb_no.value.length > 0) {
+	if (isNum(dt4)==false){	alert('WITS/East Bay date is invalid.');return false}
+	}
+	var dt5;
+	dt5 = document.Form1.wits_nb_no.value
+	if (document.Form1.wits_nb_no.value.length > 0) {
+	if (isNum(dt5)==false){alert('WITS/North Bay date is invalid.');return false}
+	}
+
+	var dt6;
+	dt6 = document.Form1.wits_sb_no.value
+	if (document.Form1.wits_sb_no.value.length > 0) {
+	if (isNum(dt6)==false){alert('WITS/South Bay date is invalid.');return false}
+	}
+	
+	var dt7;
+	dt7 = document.Form1.wits_nc_no.value
+	if (document.Form1.wits_nc_no.value.length > 0) {
+	if (isNum(dt7)==false){	alert('WITS/Lead date is invalid.');return false}
+	}
+	
+	var witsca3;
+	witsca3 = document.Form1.wit3_ca_no.value
+	if (document.Form1.wit3_ca_no.value.length > 0) {
+	if (isNum(witsca3)==false){	alert('WIT3/Capitol date is invalid.');return false}
+	}
+	var witscc3;
+	witscc3 = document.Form1.wit3_cc_no.value
+	if (document.Form1.wit3_cc_no.value.length > 0) {
+	if (isNum(witscc3)==false){	alert('WIT3/Central date is invalid.');return false}
+	}
+	var witseb3;
+	witseb3 = document.Form1.wit3_eb_no.value
+	if (document.Form1.wit3_eb_no.value.length > 0) {
+	if (isNum(witseb3)==false){	alert('WIT3/East Bay date is invalid.');return false}
+	}
+	var witsgg3;
+	witsgg3 = document.Form1.wit3_gg_no.value
+	if (document.Form1.wit3_gg_no.value.length > 0) {
+	if (isNum(witsgg3)==false){	alert('WIT3/Golden Gate date is invalid.');return false}
+	}
+	var witssb3;
+	witssb3 = document.Form1.wit3_sb_no.value
+	if (document.Form1.wit3_sb_no.value.length > 0) {
+	if (isNum(witssb3)==false){	alert('WIT3/South Bay date is invalid.');return false}
+	}
+	var witsnb3;
+	witsnb3 = document.Form1.wit3_nb_no.value
+	if (document.Form1.wit3_nb_no.value.length > 0) {
+	if (isNum(witsnb3)==false){	alert('WIT3/North Bay date is invalid.');return false}
+	}
+	
+	var witsnc3;
+	witsnc3 = document.Form1.wit3_nc_no.value
+	if (document.Form1.wit3_nc_no.value.length > 0) {
+	if (isNum(witsnc3)==false){	alert('WIT3/Lead date is invalid.');return false}
+	}
+	
+	var stgn1;
+	stgn1 = document.Form1.stgn_ca_no.value
+	if (document.Form1.stgn_ca_no.value.length > 0) {
+	if (isNum(stgn1)==false){	alert('stgn/Capitol date is invalid.');return false}
+	}
+	var stgn2;
+	stgn2 = document.Form1.stgn_cc_no.value
+	if (document.Form1.stgn_cc_no.value.length > 0) {
+	if (isNum(stgn2)==false){	alert('stgn/Central date is invalid.');return false}
+	}
+	var stgn3;
+	stgn3 = document.Form1.stgn_gg_no.value
+	if (document.Form1.stgn_gg_no.value.length > 0) {
+	if (isNum(stgn3)==false){	alert('stgn/West Bay date is invalid.');return false}
+	}
+	var stgn4;
+	stgn4 = document.Form1.stgn_eb_no.value
+	if (document.Form1.stgn_eb_no.value.length > 0) {
+	if (isNum(stgn4)==false){	alert('stgn/East Bay date is invalid.');return false}
+	}
+	var stgn5;
+	stgn5 = document.Form1.stgn_nb_no.value
+	if (document.Form1.stgn_nb_no.value.length > 0) {
+	if (isNum(stgn5)==false){alert('stgn/North Bay date is invalid.');return false}
+	}
+	var stgn6;
+	stgn6 = document.Form1.stgn_sb_no.value
+	if (document.Form1.stgn_sb_no.value.length > 0) {
+	if (isNum(stgn6)==false){	alert('stgn/South Bay date is invalid.');return false}
+	}
+	var stgn7;
+	stgn7 = document.Form1.stgn_nc_no.value
+	if (document.Form1.stgn_nc_no.value.length > 0) {
+	if (isNum(stgn7)==false){	alert('stgn/Lead date is invalid.');return false}
+	}
+		
+	var psup1;
+	psup1 = document.Form1.psup_ca_no.value
+	if (document.Form1.psup_ca_no.value.length > 0) {
+	if (isNum(psup1)==false){	alert('PSUP/Capitol date is invalid.');return false}
+	}
+	var psup2;
+	psup2 = document.Form1.psup_cc_no.value
+	if (document.Form1.psup_cc_no.value.length > 0) {
+	if (isNum(psup2)==false){	alert('PSUP/Central date is invalid.');return false}
+	}
+	var psup3;
+	psup3 = document.Form1.psup_gg_no.value
+	if (document.Form1.psup_gg_no.value.length > 0) {
+	if (isNum(psup3)==false){	alert('PSUP/West Bay date is invalid.');return false}
+	}
+	var psup4;
+	psup4 = document.Form1.psup_eb_no.value
+	if (document.Form1.psup_eb_no.value.length > 0) {
+	if (isNum(psup4)==false){	alert('PSUP/East Bay date is invalid.');return false}
+	}
+	var psup5;
+	psup5 = document.Form1.psup_nb_no.value
+	if (document.Form1.psup_nb_no.value.length > 0) {
+	if (isNum(psup5)==false){alert('PSUP/North Bay date is invalid.');return false}
+	}
+	var psup6;
+	psup6 = document.Form1.psup_sb_no.value
+	if (document.Form1.psup_sb_no.value.length > 0) {
+	if (isNum(psup6)==false){	alert('PSUP/South Bay date is invalid.');return false}
+	}
+	var psup7;
+	psup7 = document.Form1.psup_nc_no.value
+	if (document.Form1.psup_nc_no.value.length > 0) {
+	if (isNum(psup7)==false){	alert('PSUP/Lead date is invalid.');return false}
+	}	
+	
+	
+	var train1;
+	train1 = document.Form1.train_ca_no.value
+	if (document.Form1.train_ca_no.value.length > 0) {
+	if (isNum(train1)==false){	alert('TRAIN/Capitol date is invalid.');return false}
+	}
+	var train2;
+	train2 = document.Form1.train_cc_no.value
+	if (document.Form1.train_cc_no.value.length > 0) {
+	if (isNum(train2)==false){	alert('TRAIN/Central date is invalid.');return false}
+	}
+	var train3;
+	train3 = document.Form1.train_gg_no.value
+	if (document.Form1.train_gg_no.value.length > 0) {
+	if (isNum(train3)==false){	alert('TRAIN/West Bay date is invalid.');return false}
+	}
+	var train4;
+	train4 = document.Form1.train_eb_no.value
+	if (document.Form1.train_eb_no.value.length > 0) {
+	if (isNum(train4)==false){	alert('TRAIN/East Bay date is invalid.');return false}
+	}
+	var train5;
+	train5 = document.Form1.train_nb_no.value
+	if (document.Form1.train_nb_no.value.length > 0) {
+	if (isNum(train5)==false){alert('TRAIN/North Bay date is invalid.');return false}
+	}
+	var train6;
+	train6 = document.Form1.train_sb_no.value
+	if (document.Form1.train_sb_no.value.length > 0) {
+	if (isNum(train6)==false){	alert('TRAIN/South Bay date is invalid.');return false}
+	}
+	
+	var train7;
+	train7 = document.Form1.train_nc_no.value
+	if (document.Form1.train_nc_no.value.length > 0) {
+	if (isNum(train7)==false){	alert('TRAIN/Lead date is invalid.');return false}
+	}	
+	
+	var prod1;
+	prod1 = document.Form1.prod_ca_no.value
+	if (document.Form1.prod_ca_no.value.length > 0) {
+	if (isNum(prod1)==false){	alert('Production/Capitol date is invalid.');return false}
+	}
+	var prod2;
+	prod2 = document.Form1.prod_cc_no.value
+	if (document.Form1.prod_cc_no.value.length > 0) {
+	if (isNum(prod2)==false){	alert('Production/Central date is invalid.');return false}
+	}
+	var prod3;
+	prod3 = document.Form1.prod_gg_no.value
+	if (document.Form1.prod_gg_no.value.length > 0) {
+	if (isNum(prod3)==false){	alert('Production/West Bay date is invalid.');return false}
+	}
+	var prod4;
+	prod4 = document.Form1.prod_eb_no.value
+	if (document.Form1.prod_eb_no.value.length > 0) {
+	if (isNum(prod4)==false){	alert('Production/East Bay date is invalid.');return false}
+	}
+	var prod5;
+	prod5 = document.Form1.prod_nb_no.value
+	if (document.Form1.prod_nb_no.value.length > 0) {
+	if (isNum(prod5)==false){alert('Production/North Bay date is invalid.');return false}
+	}
+	var prod6;
+	prod6 = document.Form1.prod_sb_no.value
+	if (document.Form1.prod_sb_no.value.length > 0) {
+	if (isNum(prod6)==false){	alert('Production/South Bay date is invalid.');return false}
+	}
+	var prod7;
+	prod7 = document.Form1.prod_nc_no.value
+	if (document.Form1.prod_nc_no.value.length > 0) {
+	if (isNum(prod7)==false){	alert('Production/Lead date is invalid.');return false}
+	}
+			
+	
+
+	
+	return true;
+}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD colspan=9><TABLE ><TR><TD ALIGN=LEFT>Build Tracker</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class="bg2"><TD width=200>Product</TD><TD COLSPAN=8><KBD ID='product_cd'></KBD></TD></TR>
+<tr class="bg2"><TD width=200>Trigger</TD><TD COLSPAN=8><KBD ID='trigger_cd'></KBD></TD></TR>
+
+
+<tr class="BG2"><TD>Environment</TD>
+<TD ALIGN=CENTER width=100>Jan</TD>
+<TD ALIGN=CENTER width=100>Feb</TD>
+<TD ALIGN=CENTER width=100>Mar</TD>
+<TD ALIGN=CENTER width=100>Apr</TD>
+<TD ALIGN=CENTER width=100>May</TD>
+<TD ALIGN=CENTER width=100>Jun</TD>
+<TD ALIGN=CENTER width=100>Jul</TD>
+<TD ALIGN=CENTER width=100>Aug</TD>
+<TD ALIGN=CENTER width=100>Sep</TD>
+<TD ALIGN=CENTER width=100>Oct</TD>
+<TD ALIGN=CENTER width=100>Nov</TD>
+<TD ALIGN=CENTER width=100>Dec</TD>
+<TD ALIGN=CENTER width=100>Tot</TD>
+</tr>
+
+<tr class="BG2"><TD>Problem Report</TD>
+<TD ><KBD ID='hd_jan_no'></KBD></TD>
+<TD ><KBD ID='hd_feb_no'></KBD></TD>
+<TD ><KBD ID='hd_mar_no'></KBD></TD>
+<TD ><KBD ID='hd_apr_no'></KBD></TD>
+<TD ><KBD ID='hd_may_no'></KBD></TD>
+<TD ><KBD ID='hd_jun_no'></KBD></TD>
+<TD ><KBD ID='hd_jul_no'></KBD></TD>
+<TD ><KBD ID='hd_aug_no'></KBD></TD>
+<TD ><KBD ID='hd_sep_no'></KBD></TD>
+<TD ><KBD ID='hd_oct_no'></KBD></TD>
+<TD ><KBD ID='hd_nov_no'></KBD></TD>
+<TD ><KBD ID='hd_dec_no'></KBD></TD>
+<TD ><KBD ID='hd_tot_no'></KBD></TD>
+</tr>
+
+<tr class="BG2"><TD>RFC/SR</TD>
+<TD ><KBD ID='sr_jan_no'></KBD></TD>
+<TD ><KBD ID='sr_feb_no'></KBD></TD>
+<TD ><KBD ID='sr_mar_no'></KBD></TD>
+<TD ><KBD ID='sr_apr_no'></KBD></TD>
+<TD ><KBD ID='sr_may_no'></KBD></TD>
+<TD ><KBD ID='sr_jun_no'></KBD></TD>
+<TD ><KBD ID='sr_jul_no'></KBD></TD>
+<TD ><KBD ID='sr_aug_no'></KBD></TD>
+<TD ><KBD ID='sr_sep_no'></KBD></TD>
+<TD ><KBD ID='sr_oct_no'></KBD></TD>
+<TD ><KBD ID='sr_nov_no'></KBD></TD>
+<TD ><KBD ID='sr_dec_no'></KBD></TD>
+<TD ><KBD ID='sr_tot_no'></KBD></TD>
+</tr>
+
+
+
+<tr><td><KBD ID='mode'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=9>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD colspan=8><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD colspan=8><KBD ID='updated_by'></KBD></TD></TR>
+</table>

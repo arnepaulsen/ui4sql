@@ -1,0 +1,1057 @@
+/**
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+ */
+table		{
+			border-width:	0;
+/*			border:			2px solid red; */
+			}
+
+
+table td	{
+			font-family:	verdana;
+			font-size:		70%;
+/*			border:			2px solid green; */
+			}
+
+table td input	{
+			font-family:	verdana;
+			font-size:		100%;
+			}
+
+table td select	{
+			font-family:	verdana;
+			font-size:		100%;
+			}
+
+img	{
+	border:		0;
+	}
+
+body
+	{
+	background-color:	#FFFBEF;
+	margin:				0px;
+ 	}
+
+body.exactforms
+	{
+	background-color:	#FFFFFF;
+	margin:				0px;
+	}
+
+a	{
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+	}
+
+table.t100	{
+		width:				100%;
+		padding:			0px;
+		border-collapse:	collapse;
+		border-width:		0;
+		}
+
+table.t100 td	{	padding: 0px;	}
+
+	
+/** override v70 for selects in table cells so we don't get microscopic selects **/
+
+td select.v70		{	font-size:		100%;	font-family:	verdana; }
+td input.v70		{	font-size:		100%;	}
+td textarea.v70		{	font-size:		100%;	}
+td div.v70			{	font-size:		100%;	}
+
+td div.v80			{	font-size:		120%;	}
+
+input.tight			{	height:			13px;	margin:	0px;}
+
+
+/* "Subtle" links don't look like links until you roll over them. */
+
+a.slk				{	color :	black;			text-decoration : none;}
+a.slk:hover			{	color :	#0000ff;		text-decoration : underline;}
+
+/* For invalid multiple choice items */
+
+a.slkBad			{	color :	red;			text-decoration : none;}
+a.slkBad:hover		{	color :	#0000ff;		text-decoration : underline;}
+
+a.muted			{	text-decoration: none;		color: #0851A7	}
+a.muted:hover	{	text-decoration: underline;	color: #0000ff	}
+
+a.verymuted					{	text-decoration:none;		color:#0ff; font-size:7pt;}
+table tr td a.verymuted		{	text-decoration:none;		color:#58e; font-size:7pt;}
+
+td.wordMark			{	font-family:arial; font-size: 14pt; font-weight:bold; font-style:italic;}
+
+a.noUnderline			{	text-decoration: none; }
+a.noUnderline:hover		{	text-decoration: underline; }
+
+div.redhead			{ color:#c00; font-weight:bold; padding-bottom:20px; }
+
+div.PopMenu hr		{ height:1px; margin:0px 10px; color:#ddb; border:1px solid #ddb;}
+
+table.stdTabTable	{  cursor:default; }
+td.stdtab			{ border:1px solid #31619c; font-weight:bold; background-color:#D5E3F4; border-bottom-width:0px; padding:3px 5px 4px 5px; vertical-align:middle}
+a.stdtabSB			{ text-decoration:none; border:1px solid #77a; color:Black; font-size:90%; font-weight:normal; font-style:italic; background-color:#eee; margin-left:10px; padding:0px 5px 1px 5px;}
+a.stdtabSB:hover	{ background-color:FFFFBB; }
+
+a#custThisButton	{ text-decoration:none; border:2px solid gray; color:#555; font-weight:bold; font-size:80%; background-color:#eee; padding:1px 4px; height:130%; margin-top:2px;}
+
+td#dsbSpacer
+		{
+		background-color: #f0f0f0;
+		border-right:	1px solid #888;
+		border-bottom:	1px solid #bbb;
+		border-top:		1px solid #888;
+		}
+
+td.dsbHead
+		{
+		font-family:arial;
+		font-size:80%;
+		font-weight:bold;
+		padding: 5px 5px 2px 5px;
+		}
+
+td#designSidebar
+		{
+		border-right:		1px solid #888888;
+		border-bottom:		1px solid #888888;
+		background-color: #f8f8f8;
+		}
+
+div#legalFooter
+	{
+	width:			"100%";
+	text-align:		right;
+	color:			#666;
+	font-family:	verdana;
+	font-size:		90%;
+	padding:		3px 20px 3px 20px;
+	}
+
+td#mainCell			/* borders need to be in the tag rather than in the style to be visible to javascript (GetBox) */
+	{
+	border-color:	#FFFBEF;
+	border-style:	solid;
+	padding-top:	15px;
+	}
+
+
+table#stripe1
+	{
+	background-color:	#3399CC;
+	padding:			0px;
+	}
+
+table#stripe1 td#stripe1right
+	{
+	background:			url('/i/blue_grid_right.gif') no-repeat right top;
+	}
+
+table#stripe1 a.white
+	{
+	color:				white;
+	text-decoration:	none;
+	font-weight:		bold;
+	}
+
+table#stripe1 a.white:hover
+	{
+	text-decoration:	underline;
+	}
+
+table#stripe1 span.white
+	{
+	color:				white;
+	padding:			0px 10px;
+	}
+
+
+table#stripe2
+	{
+	background-image:	url('/i/secondBarGradient.gif');
+	}
+
+table#stripe2 a.hlink
+	{
+	text-decoration:	none;
+	color:				black;
+	}
+
+table#stripe2 a.hlink:hover
+	{
+	text-decoration:	underline;
+	color:				blue;
+	}
+
+
+table#s2menus a
+	{
+	color:				#303030;
+	text-align:			center;
+	text-decoration:	none;
+	margin-right:		0;
+	padding:			.4em 1.0em .3em 1.0em;
+	border-right:		1px solid #c8c8c8;
+	display:			inline-block;
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+	}
+
+table#s2menus a:hover
+	{
+	background-color:	#E5E5E5;
+	color:				#000000;
+	}
+
+
+table#stripe3
+	{
+	background-image:	url('/i/secondBarGradient.gif');
+	border-bottom:		1px solid #e0e0e0;
+	height:				20px;
+	}
+
+table#stripe3	a
+	{
+	color:				#404040;
+	text-decoration:	none;
+	padding:			3px 6px;
+	display:			inline-block;
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+	}
+
+table#stripe3	a:hover
+	{
+	background-color:	#e8e8e8;
+	}
+
+
+
+table#introText
+	{
+	margin-bottom:	15;
+	}
+
+table#introText td
+	{
+	color:			#202020;
+ 	line-height:	1.4em;
+	}
+
+
+/* Begin Menu Styles */
+
+
+div.PopMenu
+	{
+	background-color:	#FFFFDC;
+	border-top:			1px solid #C1C1C1;
+	border-right:		1px solid #5E5E5E;
+	border-bottom:		1px solid #5E5E5E;
+	border-left:		1px solid #C1C1C1;
+	padding-bottom:		3px;
+	position:			absolute;
+	z-index:			10;
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+	}
+
+
+
+div.PopMenu a
+	{
+	font-family:		verdana;
+	color:				#000000;
+	background-color:	#FFFFDC;
+	text-decoration:	none;
+/*	background-image:	url(/i/menuBullet.gif); */
+/*	background-repeat:	no-repeat;	*/
+	padding:			.2em .5em .35em 18px;
+	display:			block;
+	text-align:			left;
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+  	}
+
+div.PopMenu a:hover
+	{
+/*	background-image:	url(/i/menuBulletOnBlue.gif); */
+	background-color:	#145FA2;
+	color:				#FFFFFF;
+	}
+
+div.PopMenu h4
+	{
+	color:				#111111;
+	font-family:		verdana;
+	font-weight:		bold;
+	font-size:			90%;
+	vertical-align:		top;
+	background-color:	#E7E7C5;
+	border-top:			1px solid #C1C1C1;
+	border-left:		1px solid #DFDFDF;
+	border-bottom:		1px solid #FFFFDC;
+	padding:			3px 2px 3px 5px;
+	margin:				0px 0px 7px 0px;
+	}
+
+
+
+
+div.PopMenu a.tinyBlue	
+	{
+	color:				#06b;
+	text-decoration:	none;
+	background-image:	none;
+	padding-left:		0;
+	}
+
+div.PopMenu a.tinyBlue:hover
+	{
+	color:				blue;
+	text-decoration:	underline;
+	background-image:	none;
+	background-color:	transparent;
+	}
+
+
+
+
+.MenuSpacer {
+	BACKGROUND-COLOR: #FFFFDC;
+	TEXT-DECORATION: none;
+}
+
+div.PopBox,
+div.minihelp
+	{
+	background-color:	#FFFFDC;
+	position:			absolute;
+	padding:			20px;
+	border:				1px solid black;
+	height:				auto;
+	width:				auto;
+	z-index:			2;
+	filter:				progid:DXImageTransform.Microsoft.shadow(Positive='true', enabled='true', direction='135');
+	box-sizing:			border-box;
+	-moz-box-sizing:	border-box;
+	}
+
+div.PopBox   td.closeBut,
+div.minihelp td.closeBut
+	{
+	text-align:			right;
+	padding-top:		20px;
+	}
+
+div.PopBox td.centerButs
+	{
+	padding-top:25px; font-size:80%; text-align:center;
+	}
+
+div.minihelp p
+	{
+	font-family:	verdana;
+	font-size:		70%;
+	}
+
+div.minihelp h4
+	{
+	font-family:	arial;
+	font-size:		100%;
+	}
+
+
+div#moreIntroBox
+	{
+	width:				500;
+	}
+
+
+/* End Menu Styles */
+
+.navBtn {
+	color: #303030;
+	text-align:center;
+	text-decoration: none;
+	height: 21;
+	margin-right:0;
+	padding-top:4;
+	padding-left:10;
+	padding-right:10;
+	border-right: 1px solid #c8c8c8;
+}
+
+.navBtn:hover {
+   background-color: #FFD4AF;
+   color: #212121;
+   text-decoration: none;
+   border-top: 1px solid #E97823;
+   border-right: 1px solid #E97823;
+   border-bottom: 1px solid #E97823;
+   border-left: 1px solid #E97823;
+}
+
+
+/* style for the standard quickbase include files */
+
+	a.iWantTo	{
+				text-decoration:	none;
+				color:				#202020;
+				background-color:	white;
+				border:				1px solid #c0c0c0;
+				padding:			.25em;
+				display:			block;
+				}				
+
+	a.iWantTo:hover
+				{
+				background-color:	#f4f4f4;
+				}
+
+	a.pdbInHeader
+				{
+				font-family:		verdana;
+				font-size:			120%;
+				font-weight:		bold;
+				text-decoration:	none;
+				color:				black;
+				}
+
+	a.pdbInHeader:hover
+				{
+				color:				#0000a0;
+				text-decoration:	underline;
+				}
+
+	span.pdbSuffixInHeader
+				{
+				font-family:		verdana;
+				font-size:			120%;
+				font-style:			italic;
+				font-weight:		bold;
+				color:				red;
+				}
+	td.cdbInHeader
+				{
+				font-family:		verdana;
+				font-size:			80%;
+				font-weight:		bold;
+				vertical-align:		middle;
+				}
+
+	input#srchtxt	{
+				border-style:		solid;
+				border-width:		1;
+				border-color:		#a0a0a0;
+				font-family:		verdana;
+				font-size:			100%;
+				height:				20;
+				}
+
+	td#divider1
+			{
+			font-size:			110%;
+			color:				#808080;
+			padding-left:		10px;
+			padding-right:		10px;
+			}
+
+	td#s4PageName,
+	td.pagename
+			{
+			font-family:		arial;
+			font-size:			100%;
+			color:				#0851A7;
+			font-weight:		bold;
+			vertical-align:		middle;
+			padding-top:		2;
+			}
+
+	a.primaryButton
+				{
+				display:			block;
+				color:				#404040;
+				background-color:	#f2f2f2;
+				text-decoration:	none;
+				padding:			.25em .6em;
+				border-top:			1px solid #FFFFFF;
+				border-right:		1px solid #BDBDBD;
+				border-bottom:		1px solid #BDBDBD;
+				border-left:		1px solid #FFFFFF;
+				width:				100%;
+				box-sizing:			border-box;
+				-moz-box-sizing:	border-box;
+				}
+
+	a.primaryButton:hover
+				{
+				background-color:	#d0d0d0;
+				}
+
+
+	/* a.stdButton is used by some quickbase users in pseudo-buttons they create embedded in HTML on forms */
+
+	table.searchResults a.stdButton,
+	a.stdButton
+				{
+				display:			block;
+				font-size:			90%;
+				padding:			.25em .6em;
+				background-color:	#e0e0f0;
+				color:				#202020;
+				font-family:		verdana;
+				border-top:			1px solid #f0f0f0;
+				border-left:		1px solid #f0f0f0;
+				border-right:		1px solid #b0b0b0;
+				border-bottom:		1px solid #b0b0b0;
+				width:				100%;
+				text-align:			center;
+				box-sizing:			border-box;
+				-moz-box-sizing:	border-box;
+				text-decoration:	none;
+				}
+
+	table.searchResults a.stdButton:hover,
+	a.stdButton:hover
+				{
+				color:				#202020;
+				background-color:	#d0d0f0;
+				}
+
+
+	table.searchResults a.stdLinkButton,
+	a.stdLinkButton
+				{
+				font-size:			90%;
+				font-weight:		bold;
+				font-family:		verdana;
+				text-decoration:	none;
+				padding:			3px 0px;
+				background-color:	#dde;
+				color:				#224;
+				text-align:			center;
+				}
+
+	table.searchResults a.stdLinkButton:hover,
+	a.stdLinkButton:hover
+				{
+				color:				#113;
+				background-color:	#bbd;
+				}
+
+
+
+	table.searchResults span.stdBut,
+	span.stdBut
+		{
+		padding:			3px 0px;
+		border:				2px outset #eef;
+		height:				120%;
+		}
+
+	input.stdButton
+				{
+				background-color:	#e0e0f0;
+				color:				#202020;
+				font-family:		verdana;
+				font-size:			90%;
+				border-top:			1px solid #f0f0f0;
+				border-left:		1px solid #f0f0f0;
+				border-right:		1px solid #b0b0b0;
+				border-bottom:		1px solid #b0b0b0;
+				}
+
+	input.stdGrayButton
+				{
+				background-color:	#f0f0f0;
+				color:				#202020;
+				font-family:		verdana;
+				font-size:			90%;
+				border-top:			1px solid #f0f0f0;
+				border-left:		1px solid #f0f0f0;
+				border-right:		1px solid #b0b0b0;
+				border-bottom:		1px solid #b0b0b0;
+				}
+
+	input.stdformtopbutton
+				{
+				background-color:	#21517c;
+				color:				#e0e0e0;
+				font-family:		verdana;
+				font-variant:		small-caps;
+				border-top:			1px solid #61949c;
+				border-left:		1px solid #61949c;
+				border-right:		1px solid #01316c;
+				border-bottom:		1px solid #01316c;
+				margin-top:			3px;
+				margin-bottom:		3px;
+				}
+
+	input.stdformbotbutton
+				{
+				background-color:	#f0f0f0;
+				color:				#404040;
+				font-family:		verdana;
+				font-variant:		small-caps;
+				border-top:			2px solid white;
+				border-left:		2px solid white;
+				border-right:		1px solid #808080;
+				border-bottom:		1px solid #a0a0a0;
+				margin-top:			3px;
+				margin-bottom:		3px;
+				}
+
+	input.stdformtopbutton:hover
+				{
+				background-color:	#555555;
+				color:				white;
+				}
+
+	table.redmsg
+				{
+				border:				1px solid #999;
+				background-color:	#FFFFDC;
+				}
+
+	table.redmsg td
+				{
+				font-family:		verdana;
+				font-size:			80%;
+				color:				#c00;
+				padding:			10;
+				}
+
+
+	div#confMsgBox
+				{
+				border:				1px solid black;
+				background-color:	#9f9;
+				text-align:			center;
+				font-family:		verdana;
+				font-size:			70%;
+				padding:			2px 10px;
+				}
+
+
+
+/*********************************************************************
+	some standard styles for box elements.
+	note that these can be overidden for specific table styles.
+
+
+*/
+	tr.std_title_bar		{		background-color:	#31619c;}
+	tr.grey_title_bar		{		background-color:	#a0a0a0;		}
+
+	div.std_title_bar,
+	td.std_title_bar		{		background-color:	#31619c;	padding: 4px 10px 4px 6px;		color: white; 	font-weight: bold; 	}
+			
+	table tr.WOGbar td		{ padding:4px 8px 4px 8px; color:white; background-color:#aaa; font-weight:bold; }
+	table tr.WOGbar td	a	{ font-family:verdana; font-size:80%; font-weight:bold; text-decoration:none; background-color:#888; color:white; border:1px solid #666; padding:0px 3px 1px 3px; }
+	table tr.WOGbar td	a:hover	{ background-color:#666;}
+
+
+	tr.hd td							/* column headings */
+		{
+		background-color:	#e8e8e8;
+		font-weight:		bold;
+		color:				#131313;
+		border-top:			1px solid #FFFFFF;
+		border-right:		1px solid #B6B6B6;
+		border-bottom:		1px solid #B6B6B6;
+		border-left:		1px solid #FFFFFF;
+		padding:			5px 3px 5px 3px;
+		cursor:				default;
+		}
+		 		 
+	tr.hd td.sort		{		padding: 0px;		}		/* padding will be in the link */
+
+	tr.hd a
+		{
+		text-decoration:	none;
+		color:				#131313;
+		padding:			5px 3px 5px 3px;
+		display:			block;
+		width:				100%;
+		box-sizing:			border-box;
+		-moz-box-sizing:	border-box;
+		} 
+
+	tr.hd a:hover				{ background-color:	#E1E1C2;		}
+	tr.hd table td.sortHead		{ padding: 0px; border: 0px; vertical-align: middle; }
+	tr.hd table td.sortIcon		{ padding: 0px 4px; border: 0px; vertical-align: middle; }
+	tr.ev						{		background-color:	#f2f2f2;		}
+	tr.od						{		background-color:	#ffffff;		}
+
+
+/*********************************************************************
+	the standard QuickBase box
+
+
+*/
+
+	table.std_box
+				{
+				background-color:	white;
+				border-bottom:		1px solid #B5B5B5;
+				}
+
+	table.std_box td.mid
+				{
+				border-right:		1px solid #B5B5B5;
+				border-left:		1px solid #B5B5B5;
+				padding:			10px;
+				}
+
+	table.std_box td.mid_flush
+				{
+				border-right:		1px solid #B5B5B5;
+				border-left:		1px solid #B5B5B5;
+				padding:			0px;
+				}
+
+	table.std_box td.bot
+				{
+				background-color:	#f0f0f0;
+				border-right:		1px solid #B5B5B5;
+				border-left:		1px solid #B5B5B5;
+				}
+
+
+/*********************************************************************
+	for Search Results tables
+
+
+*/
+	table.searchResults		{	background-color: #fff; border: 1px solid #999;		}
+	table.searchResults td	{	color: #111; padding: 3px 4px; vertical-align: top; border-right: 1px solid #d8d8d8; }
+
+	table.searchResults a						{	color:	#33b;	}
+	table.searchResults a:hover					{	color:	#00f;	}
+	table.searchResults tr.hd td				{	font-size: 65%; vertical-align:bottom;}
+	table.searchResults tr.hd td.sort			{	padding: 6px 4px; cursor:pointer;}
+	table.searchResults tr.hd td.hdLight		{	font-weight:normal; color:#666; background-color:#f4f4f4; font-size: 65%; }
+	table.searchResults tr.hd table td.sortHead	{	background-color:	transparent;	 }
+	table.searchResults tr.hd table td.sortIcon	{	background-color:	transparent;	 }
+	table.searchResults tr.but td				{	padding: 1px 6px; }
+	table.searchResults tr.but td a				{	font-size: 90%; }
+
+ 
+	table.searchResults tr.ss			{	background-color: #D5E3F4;		}
+	table.searchResults tr.ss td		{	border-top: 1px solid #888;	padding: 0;	}
+	table.searchResults tr.ss td.lb		{	font-size: .6em; font-weight: bold; border: 0; padding: 3; }
+
+	/** ta - average; tt - total; gta - grand average; gtt - grand total **/
+
+	table.searchResults tr.tt td		{	border-right: 0; border-top: 1px solid #bbb; }
+	table.searchResults tr.ta td		{	border-right: 0;	}
+	table.searchResults tr.gtt td		{	border-right: 0; border-top: 1px solid #bbb; background-color: #f2f2f2; }
+	table.searchResults tr.gta td		{	border-right: 0; background-color: #f2f2f2; }
+
+	table.searchResults tr.tt  td.t		{	border-right:	1px solid #d8d8d8;	}
+	table.searchResults tr.ta  td.t		{	border-right:	1px solid #d8d8d8;	}
+	table.searchResults tr.gtt td.t		{	border-right:	1px solid #d8d8d8;	}
+	table.searchResults tr.gta td.t		{	border-right:	1px solid #d8d8d8;	}
+
+	table.searchResults td.more			{	border-top:		1px solid #d8d8d8;	}
+	table.searchResults td.more	a		{	text-decoration:	none;	}
+	table.searchResults td.more	a:hover	{	text-decoration:	underline;	}
+
+	table.searchResults a.slk				{	color :	black;			text-decoration : none;}
+	table.searchResults a.slkBad			{	color :	red;			text-decoration : none;}
+
+	table.searchResults td.ic			{	width:1%;	}
+	table.searchResults td.icr			{	width:1%; text-align:right;	}
+	
+	tr.ge	td.icr			{	width:1%; text-align:right;	}
+
+
+/*	td.emb_toolbar						{ padding: 4px 10px 4px 6px; background-color: #285890;}*/
+	td.emb_toolbar						{ padding: 4px 10px 4px 6px; background-color: #285890;}
+	a.subfuncs							{ color:#bbd; text-decoration:none; font-size:80%; font-weight:normal; padding:0px 8px;}
+	a.subfuncs:hover					{ color:#6Ff; text-decoration:underline; }
+
+
+	td.searchDetails
+		{
+		font-family:		verdana;
+		font-size:			70%;
+		color:				white;
+		padding-right:		6px;
+		padding-top:		4px;
+		padding-bottom:		4px;
+		}
+
+	span#matchedSpan
+		{
+		color:				#cff;
+		}
+
+	td.searchWarning,
+	table.searchResults  td.searchWarning		{	font-size:70%;  padding:15px 20px; color:#222;}
+
+/*********************************************************************
+	table.std_list
+
+		Styles for a "standard" quickbase list of things.
+
+*/
+
+	table.std_box table.std_list
+				{
+				border:				0px solid #b0b0b0;
+				}
+
+	table.std_list
+				{
+				border-bottom:		1px solid #b0b0b0;
+				border-left:		1px solid #b0b0b0;
+				border-right:		1px solid #b0b0b0;
+				}
+
+
+	table.std_list tr.ev td
+				{
+				padding:			4px 5px 4px 5px;
+				background-color:	white;
+				} 
+
+	table.std_list tr.od td
+				{
+				padding:			4px 5px 4px 5px;
+				background-color:	#f4f4f4;
+				} 
+
+	table.std_list tr.m td
+				{
+				padding:			4px 5px 4px 5px;
+				background-color:	white;
+				border-bottom:		1px solid #d0d0d0;
+				border-right:		1px solid #f0f0f0;
+				} 
+
+	table.std_list tr.m td.lab
+				{
+				text-align:			right;
+				font-weight:		bold;
+				} 
+
+	table.std_list tr.c			/* use this class rather than m when the row color might change dynamically */
+				{
+				background-color:	white;
+				}
+
+	table.std_list tr.c td
+				{
+				padding:			4px 5px;
+				border-bottom:		1px solid #d0d0d0;
+				border-right:		1px solid #f0f0f0;
+				} 
+
+	table.std_list tr.warn td
+				{
+				padding:			15px 15px;
+				border-bottom:		1px solid #d0d0d0;
+				border-right:		1px solid #d0d0d0;
+				font-size:			80%;
+				} 
+
+	table.std_list tr.msg td
+				{
+				padding:			4px 5px;
+				background-color:	white;
+				border-bottom:		1px solid #d0d0d0;
+				border-right:		1px solid #f0f0f0;
+				} 
+
+	table.std_list table.internal td
+				{
+				padding:			3px 4px;
+				background-color:	white;
+				border:				0px;
+				} 
+
+/*********************************************************************
+		New Styles added by Charles
+
+*/
+
+	#PositionMarker {
+		POSITION: absolute
+	}
+	
+	.NavGrayBar {
+		background-image: url(/i/nav_graybar.gif);
+		height: 26px;
+	}
+	
+	.NavShadow {
+		background-image: url(/i/nav_shadow.gif);
+	}
+	
+	.OrangeText {
+		color: #F4790D;
+	}
+	
+	.navBtn2_gray {
+		font-family: Verdana, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #F4790D;
+		text-decoration: none;
+		padding: 2px;
+		height: 20px;
+		border: 1px solid #CDCDCD;	
+	}
+	
+
+.BoxBlue {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #3A6CA4;
+	line-height: 19px;
+	vertical-align: top;
+	padding-left: 6px;
+	text-align: center;
+}
+.BoxGray {
+		border: 1px solid #D7D7D7;
+}
+.BoxYellow {
+		background-color: #FFFFE3;
+		border: 1px solid #E7E7AA;
+		padding: 10px 15px;
+}
+.BoxBrown {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #D5C69B;
+	line-height: 19px;
+	vertical-align: top;
+	padding-left: 6px;
+	text-align: center;
+}
+	.BoxBrownBrd {
+			border: 1px solid #F0E8D0;
+			background-color: #FEFAED;
+			line-height: 18px;
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 70%;
+			padding: 8px 10px;
+			}
+
+	tr.ev2	{
+			background-color:	#f2f2f2;
+			}
+			
+	tr.od2	{
+			background-color:	#ffffff;
+			}			
+
+	.subgroup1 {
+			background-color: #E6E6E6;
+			border-top: 1px solid #818181;
+			font-family: verdana;
+			font-size: 60%;
+			font-weight: bold;
+			color: #272727;
+			line-height: 20px;
+	}
+	
+	
+	
+	
+/*********************************************************************
+	generic styles  - Modified by Charles 
+
+
+*/
+	.v2_65 { font-family : verdana; font-size : 65%; color: #3D3D3D; line-height: 150%;}
+	.v2_70 { font-family : verdana; font-size : 70%; color: #3D3D3D; line-height: 170%;}
+	.v2_75 { font-family : verdana; font-size : 75%; color: #3D3D3D; line-height: 170%;}
+	.v2_80 { font-family : verdana; font-size : 80%; color: #3D3D3D; line-height: 170%;}
+	.v2_85 { font-family : verdana; font-size : 85%; color: #3D3D3D; line-height: 170%;}
+	.v2_90 { font-family : verdana; font-size : 90%; color: #3D3D3D; line-height: 170%;}
+	.v2_100 { font-family : verdana; font-size : 100%; color: #3D3D3D; line-height: 170%;}
+	.v2_110 { font-family : verdana; font-size : 110%; color: #3D3D3D; line-height: 170%;} 
+	.v2_120 { font-family : verdana; font-size : 120%; color: #3D3D3D; line-height: 170%;}
+	.v2_130 { font-family : verdana; font-size : 130%; color: #3D3D3D; line-height: 170%;}
+ 	
+	.v65bold	{	font-family : verdana;	font-size : 65%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v70bold	{	font-family : verdana;	font-size : 70%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v75bold	{	font-family : verdana;	font-size : 75%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v80bold	{	font-family : verdana;	font-size : 80%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v85bold	{	font-family : verdana;	font-size : 85%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v90bold	{	font-family : verdana;	font-size : 90%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v100bold	{	font-family : verdana;	font-size : 100%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v110bold	{	font-family : verdana;	font-size : 110%; color: #3D3D3D; line-height: 150%; font-weight: bold;}	
+	.v120bold	{	font-family : verdana;	font-size : 120%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	.v130bold	{	font-family : verdana;	font-size : 130%; color: #3D3D3D; line-height: 150%; font-weight: bold;}
+	
+	.v65Link	{	font-family : verdana;	font-size : 65%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v70Link	{	font-family : verdana;	font-size : 70%; color: #0851A7; line-height: 150%; text-decoration: none;}   
+	.v75Link	{	font-family : verdana;	font-size : 75%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v80Link	{	font-family : verdana;	font-size : 80%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v85Link	{	font-family : verdana;	font-size : 85%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v90Link	{	font-family : verdana;	font-size : 90%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v100Link	{	font-family : verdana;	font-size : 100%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v110Link	{	font-family : verdana;	font-size : 110%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	.v120Link	{	font-family : verdana;	font-size : 120%; color: #0851A7; line-height: 150%; text-decoration: none;}
+	
+	.v65Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v70Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v75Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v80Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v85Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v90Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v100Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v110Link:hover	{ color: #F26522; text-decoration: underline;}
+	.v120Link:hover	{ color: #F26522; text-decoration: underline;}	
+
+	.a90	{	font-family : arial;	font-size : 90%; font-weight: bold;}
+	.a100	{	font-family : arial;	font-size : 100%; font-weight: bold;}
+	.a110	{	font-family : arial;	font-size : 110%; font-weight: bold;}
+	.a120	{	font-family : arial;	font-size : 120%; font-weight: bold;}
+	.a130	{	font-family : arial;	font-size : 130%; font-weight: bold;}
+	
+/*********************************************************************
+	styles  - Modified by Charles 
+
+*/
+	
+	.grayhdr {
+			font-family: Verdana;
+			font-size: 70%;
+			font-weight: bold;
+			color: #FFFFFF;
+			background-color: #969696;
+			padding-left: 6px;
+	}
+
+	/***  This button style needs to be fixed size  ***/
+
+	.navBtn2 {
+			font-family: Verdana, Arial, Helvetica, sans-serif;
+			font-size: 11px;
+			color: #F4790D;
+			text-decoration: none;
+			padding: 2px;
+			height: 20px;
+			border: 1px solid #F7892F;
+	}
+	
+
+
+table#dsbar a			{ display:block; width:100%; padding:1px 5px 1px 9px; text-decoration:none; color:#0000aa;}
+table#dsbar a:hover		{ text-decoration:underline; background-color:#d0d0d0;}
+.dsbarSH				{ font-family:arial; font-size:70%; font-weight:bold; color:#000088; padding: 7px 5px 0px 5px;}

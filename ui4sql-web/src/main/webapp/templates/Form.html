@@ -1,0 +1,36 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.active_flag.checked == false ) {
+		document.Form1.active_flag.value = 'N';
+		document.Form1.active_flag.checked = true;
+	}
+	return true;}
+
+
+
+</SCRIPT>
+<TABLE  >
+<tr class='bg0'><td ALIGN=LEFT>Form Manager</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></tr>
+
+<tr class='bg2'><TD colspan=2>Be very carefull about your changes. You can crash the system.</TD></TR>
+
+<tr class='bg2'><TD width='100'>Name:</TD><TD width='400'><KBD ID='form_nm'></KBD></TD></TR>
+<tr class='bg2'><TD>Type</td><td><KBD ID='data_type_cd'></KBD></td></tr>	
+<tr class='bg2'><TD>Plugin Name</td><td><KBD ID='plugin_nm'></KBD></td></tr>	
+<tr class='bg2'><TD>Table</td><td><KBD ID='table_nm'></KBD></td></tr>	
+<tr class='bg2'><TD>Key</td><td><KBD ID='key_nm'></KBD></td></tr>	
+<tr class='bg2'><TD>Enabled?</TD><TD><KBD ID='active_flag'></KBD></TD></TR>
+
+<tr class='bg0'></tr>
+<tr class='bg1'><td colspan=2>Audit</td></tr>
+<TR CLASS='bg2'><TD>Added By:</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>Updated By:</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+</table>
+		

@@ -1,0 +1,119 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a name for the estimate.');
+		return false;
+	}
+
+	if (isFloat(document.Form1.q1_amt.value) == false ) {
+		alert("Please set January to a number.");
+		return false;
+	}
+	
+	if (isFloat(document.Form1.q2_amt.value) == false ) {
+		alert("Please set February to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q3_amt.value) == false ) {
+		alert("Please set March to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q4_amt.value) == false ) {
+		alert("Please set April to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q5_amt.value) == false ) {
+		alert("Please set May to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q6_amt.value) == false ) {
+		alert("Please set June to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q7_amt.value) == false ) {
+		alert("Please set July to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q8_amt.value) == false ) {
+		alert("Please set August to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q9_amt.value) == false ) {
+		alert("Please set September to a number.");
+		return false;
+	}
+	if (isFloat(document.Form1.q10_amt.value) == false ) {
+		alert("Please set October to a number.");
+		return false;
+	}	
+	if (isFloat(document.Form1.q11_amt.value) == false ) {
+		alert("Please set November to a number.");
+		return false;
+	}	
+	if (isFloat(document.Form1.q12_amt.value) == false ) {
+		alert("Please set December to a number.");
+		return false;
+	}	
+		
+	return true;
+}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=13><TABLE ><TR><TD ALIGN=LEFT>Funding / Staffing Ramp</td><TD ALIGN=RIGHT><DIV ID='buttons'></DIV></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width=150>Estimate Name</TD><TD width=450 colspan=12 ><DIV ID='title_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Reference Id.</TD><TD colspan=12 ><DIV ID='reference_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Estimate Type</TD><TD colspan=12><DIV ID='type_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Department</TD><TD colspan=12><DIV ID='dept_id'></DIV></TD></TR>
+
+
+<tr class="bg1"><td colspan=13>Detail</td></tr>
+
+<TR class="bg2"><TD>Quantity Type</TD><TD colspan=12><DIV ID='qty_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Year</TD><TD colspan=12><DIV ID='year_no'></DIV></TD></TR>
+
+<tr class="bg2"><td>Month</td>
+<td>Jan</td>
+<td>Feb</td>
+<td>Mar</td>
+<td>Apr</td>
+<td>May</td>
+<td>Jun</td>
+<td>Jul</td>
+<td>Aug</td>
+<td>Sep</td>
+<td>Oct</td>
+<td>Nov</td>
+<td>Dec</td>
+</tr>
+
+<TR class="bg2"><TD>Estimates</TD>
+<TD><DIV ID='q1_amt'></DIV></TD>
+<TD><DIV ID='q2_amt'></DIV></TD>
+<TD><DIV ID='q3_amt'></DIV></TD>
+<TD><DIV ID='q4_amt'></DIV></TD>
+<TD><DIV ID='q5_amt'></DIV></TD>
+<TD><DIV ID='q6_amt'></DIV></TD>
+<TD><DIV ID='q7_amt'></DIV></TD>
+<TD><DIV ID='q8_amt'></DIV></TD>
+<TD><DIV ID='q9_amt'></DIV></TD>
+<TD><DIV ID='q10_amt'></DIV></TD>
+<TD><DIV ID='q11_amt'></DIV></TD>
+<TD><DIV ID='q12_amt'></DIV></TD>
+</TR>
+
+<TR class="bg2"><TD >Notes</TD><TD colspan=13><DIV ID='notes_blob'></DIV></TD></TR>
+
+<tr class="bg1"><td colspan=13>Audit</td></tr>
+
+<TR class="bg2"><TD >Added By</TD><TD colspan=12><DIV ID='added_by'></DIV></TD></TR>
+<TR class="bg2"><TD >Updated By</TD><TD colspan=12><DIV ID='updated_by'></DIV></TD></TR>
+<TR CLASS="bg2"><TD >Submitted By</TD><TD colspan=12><DIV ID='submitted_by'></DIV></TD></TR>
+<TR class="bg2"><TD >Approved By</TD><TD colspan=12><DIV ID='approved_by'></DIV></TD></TR>
+</table>

@@ -1,0 +1,50 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (isInteger(document.Form1.order_set_no.value) == false ) {
+		alert("Order Set # must be valid # or 0.");
+		return false;
+		}
+		
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Order Set</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR CLASS='bg2'><TD WIDTH='150'>Order Set #</TD><TD WIDTH='650'><KBD ID='order_set_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='650'><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=yellow colspan=2>Order Set Section</td></tr>
+<TR class="BG2"><TD>Initial Release Date</TD><TD colspan=5><KBD ID='release_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Limited Release</TD><TD><KBD ID='limited_rlse_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Released In Prod</TD><TD><KBD ID='prod_flag'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Protocols</TD><TD WIDTH='650'><KBD ID='protocols_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Core Measures</TD><TD WIDTH='650'><KBD ID='core_measures_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Annual Review Date</TD><TD WIDTH='650'><KBD ID='year_review_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Next Review Date</TD><TD WIDTH='650'><KBD ID='next_review_date'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=yellow colspan=2>Domains</td></tr>
+<TR class="BG2"><TD>Domain 1</TD><TD colspan=5><KBD ID='os_domain_1_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 2</TD><TD colspan=5><KBD ID='os_domain_2_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 3</TD><TD colspan=5><KBD ID='os_domain_3_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 4</TD><TD colspan=5><KBD ID='os_domain_4_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 5</TD><TD colspan=5><KBD ID='os_domain_5_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 6</TD><TD colspan=5><KBD ID='os_domain_6_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 7</TD><TD colspan=5><KBD ID='os_domain_7_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Domain 8</TD><TD colspan=5><KBD ID='os_domain_8_cd'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=yellow colspan=2>Info</td></tr>
+<TR class="BG2"><TD>SUIT</TD><TD colspan=5><KBD ID='suite_cd'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>

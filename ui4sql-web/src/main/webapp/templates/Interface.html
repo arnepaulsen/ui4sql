@@ -1,0 +1,70 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+		if (isInteger(document.Form1.volume_no.value) == false ) {
+		alert("Please enter a valid volume.");
+		return false;
+	}
+	
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Interface Information</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width=150>Name</TD><TD width=450><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Reference Id</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Ancillary</TD><TD><KBD ID='other_application_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Suite</TD><TD><KBD ID='suite_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Owner Contact</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>Ancillary Contact</TD><TD><KBD ID='contact_info'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Patient Critical</TD><TD><KBD ID='critical_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Last Chg Id.</TD><TD><KBD ID='version_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Last Project</TD><TD><KBD ID='project_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Status Notes</TD><TD><KBD ID='version_blob'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>General</td></tr>
+<TR class="bg2"><TD>Description</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Service Level</TD><TD><KBD ID='sla_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD><KBD ID='notes_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Special Procedures</TD><TD><KBD ID='procedure_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Technical</td></tr>
+<TR class="bg2"><TD>Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>		
+<TR class="bg2"><TD>Direction</TD><TD><KBD ID='direction_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Frequency</TD><TD><KBD ID='freq_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Ancillary Group</TD><TD><KBD ID='group_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Statistics</td></tr>
+<TR class="bg2"><TD>Volume (000's)</TD><TD><KBD ID='volume_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Every</TD><TD><KBD ID='volume_freq_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Messaging</td></tr>
+<TR class="bg2"><TD>Transfer Method</TD><TD><KBD ID='transfer_meth_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>P2P</TD><TD><KBD ID='p2p_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Uses I-EVE</TD><TD><KBD ID='ieve_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Uses MQ</TD><TD><KBD ID='mq_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Local Queue</TD><TD><KBD ID='local_queue_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Ancillary Queue</TD><TD><KBD ID='ancillary_queue_nm'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

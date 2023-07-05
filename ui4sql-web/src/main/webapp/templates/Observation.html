@@ -1,0 +1,43 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Observation</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR class="bg2"><TD width="150">Title</TD><TD width="450"><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS="BG2"><TD >Reference</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="bg2"><TD >Revision</TD><TD ><KBD ID='version_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR CLASS="BG2"><TD>Observation Date</TD><TD><KBD ID='observation_date'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Observation</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Notes</TD><TD><KBD ID='notes_blob'></KBD></TD></TR>	
+
+
+<tr class="bg1"><td colspan=2>Log</td></tr>
+<TR class="bg2"><TD >Last Project Impact</TD><TD><KBD ID='project_id'></KBD></TD></TR>
+<TR class="bg2"><TD >Change Description</TD><TD><KBD ID='change_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

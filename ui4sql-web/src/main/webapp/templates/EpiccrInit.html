@@ -1,0 +1,126 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a short name.');
+		return false;
+	}
+	
+	if (document.Form1.target_date.value.length > 0) {	
+		var dt1 ;
+		dt1 = document.Form1.target_date.value
+		if (isDate(dt1)==false){ alert('Target Date is invalid.'); return false}
+		}	
+
+	if (document.Form1.test1_date.value.length > 0) {	
+		var dt2 ;
+		dt2 = document.Form1.test1_date.value
+		if (isDate(dt2)==false){ alert('System Test Start Date is invalid.'); return false}
+		}	
+
+	if (document.Form1.expected_date.value.length > 0) {	
+		var dt3 ;
+		dt3 = document.Form1.expected_date.value
+		if (isDate(dt3)==false){ alert('Desired Code Drop Date is invalid.'); return false}
+		}	
+
+	if (document.Form1.estimated_date.value.length > 0) {	
+		var dt4 ;
+		dt4 = document.Form1.estimated_date.value
+		if (isDate(dt4)==false){ alert('Estimated Delivery Date is invalid.'); return false}
+		}	
+	
+	if (document.Form1.vendor_accept_date.value.length > 0) {	
+		var dt5 ;
+		dt5 = document.Form1.vendor_accept_date.value
+		if (isDate(dt5)==false){ alert('Vendor Approval Date is invalid.'); return false}
+		}	
+
+
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+
+<tr class="bg2"><td colspan=4><KBD ID='msg'></KBD></td></tr>
+<tr class="bg0"><TD COLSPAN=4><TABLE ><TR><TD ALIGN=LEFT>Vendor Change Request</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="BG2"><TD WIDTH=150 ></TD><TD></TD><TD>Emergency CR (Yes/No)</TD><TD><KBD ID='emergency_cd'></KBD></TD></TR>
+<TR class="BG2"><TD WIDTH=150 ></TD><TD></TD> <TD >Vendor CR No<br></TD><TD><KBD ID='cr_no'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>General Information</td> </tr>
+<TR class="BG2"><TD>Requestor</TD><TD><KBD ID='requestor_uid'></KBD></TD>				<TD>Requester's <br>&nbsp;Team Lead</TD><TD><KBD ID='leader_uid'></KBD></TD></TR>	
+<TR class="BG2"><TD>Requestor Email</TD><TD><KBD ID='requestor_email_nm'></KBD></TD>	<TD>Requester's <br>&nbsp;Team Lead Email</TD><TD><KBD ID='leader_email_nm'></KBD></TD> </TR>	
+<TR class="BG2"><TD>Requestor Phone</TD><TD><KBD ID='requestor_phone_nm'></KBD></TD>	<TD>Requester's <br>&nbsp;Team Lead Phone</TD><TD><KBD ID='requestor_phone_nm'></KBD></TD></TR>	
+
+<TR class="BG2"><TD>Requesting Region</TD><TD COLSPAN=3><KBD ID='region_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Requesting Team</TD><TD COLSPAN=3><KBD ID='team_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Funded By</TD><TD COLSPAN=3><KBD ID='funding_region_cd'></KBD></TD></TR>
+
+<TR class="BG2"><TD>Vendor Owner Name</TD><TD><KBD ID='epic_uid'></KBD></TD>    	<TD>Implementation Contact</TD><TD><KBD ID='implementor_uid'></KBD></TD></TR>
+<TR class="BG2"><TD>Vendor Owner Email</TD><TD><KBD ID='epic_email_nm'></KBD></TD>	<TD>Implementation Contact Email</TD><TD><KBD ID='implementor_email_nm'></KBD></TD></TR>	
+<TR class="BG2"><TD>Vendor Owner Phone</TD><TD><KBD ID='epic_phone_nm'></KBD></TD>	<TD>Implementation Contact Phone</TD><TD><KBD ID='implementor_phone_nm'></KBD></TD></TR>	
+
+<TR class="BG2"><TD>Vendor</TD><TD><KBD ID='vendor_cd'></KBD></TD>					<TD>Implementation Contact Region</TD><TD><KBD ID='implementor_reg_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD>				<TD>Dependency or <br>Relationships<br>to other CR's</TD><TD><KBD ID='dependency_tx'></KBD></TD></TR>	
+
+
+<tr class="bg1"><td colspan=4>Change Request Details</td></tr>
+<TR class="BG2"><TD>AE LOG/SWQ</TD><TD COLSPAN=3><KBD ID='swq_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Short Name</TD><TD COLSPAN=3><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Description /<br>Detailed Specification</TD><TD width=550 COLSPAN=3><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Benefit of Change</TD><TD COLSPAN=3 width=550 ><KBD ID='benefits_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Alternatives</TD><TD COLSPAN=3 width=550 ><KBD ID='alternatives_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Impact/Risk <br>of Not Making<br>Change</TD><TD COLSPAN=3><KBD ID='risks_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Nature of Change</TD><TD><KBD ID='type_cd'></KBD></TD><TD>Target Go-Live Date</TD><TD><KBD ID='target_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Severity</TD><TD><KBD ID='severity_cd'></KBD></TD><TD>System Test Start</TD><TD><KBD ID='test1_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Desired Release</TD><TD><KBD ID='release_nm'></KBD></TD><TD>Desired Code Drop Date</TD><TD><KBD ID='expected_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Permanent or Interim</TD><TD><KBD ID='permanent_cd'></KBD></TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+
+<tr class="bg1"><td colspan=4>Regions/Teams/Impacts</td></tr>
+<TR class="BG2"><TD>Other Impacted<br>Regions/Teams</TD><TD COLSPAN=3><KBD ID='other_region_nm'></KBD></TD></TR>	
+<TR class="BG2"><TD>Description of <br>Other Region Impacts</TD><TD COLSPAN=3><KBD ID='regn_impact_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Cross-Region<br>Analysis To <br>Confirm Impacts</TD><TD COLSPAN=3><KBD ID='regn_analysis_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Primary Application</TD><TD ><KBD ID='application_id'></KBD></TD><TD>Secondary Products</TD><TD COLSPAN=3><KBD ID='sec_products_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Customer Use</TD><TD COLSPAN=3><KBD ID='epic_use_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Change Request <Br>Detailed Comments</TD><TD COLSPAN=3><KBD ID='comments_blob'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=4>Vendor Only Change Section</td></tr>
+<TR class="BG2"><TD>Clinical Products</TD><TD COLSPAN=3><KBD ID='clinical_dev_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Billing/Access/Scheduling/Claims (Mark Lipsky)</TD><TD COLSPAN=3><KBD ID='rev_dev_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Foundations/Clarity/EDI/Other (Tim Escher)</TD><TD COLSPAN=3><KBD ID='member_dev_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Within scope<br>for EEG Development</TD><TD COLSPAN=3><KBD ID='eeg_scope_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Recommendations/Comments</TD><TD COLSPAN=3><KBD ID='epic_recommendation_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Comments</TD><TD COLSPAN=3><KBD ID='epic_comment_blob'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=4>Other Vendor Change Section</td></tr>
+<TR class="BG2"><TD>Affected Vendor</TD><TD><KBD ID='vendor_cd'></KBD></TD><TD>Change Order #</TD><TD><KBD ID='chg_order_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Product Area</TD><TD><KBD ID='product_id'></KBD></TD><TD>Development Rate</TD><TD><KBD ID='rate_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Estimate Type</TD><TD><KBD ID='est_type_cd'></KBD></TD><TD>Development Hours</TD><TD><KBD ID='hours_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Estimate Target Release</TD><TD><KBD ID='release_id'></KBD></TD><TD>Total Cost</TD><TD><KBD ID='estimate_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Estimate Delivery Date</TD><TD><KBD ID='estimated_date'></KBD></TD><TD>Vendor Approved By</TD><TD><KBD ID='vendor_accept_uid'></KBD></TD></TR>	
+<TR class="BG2"><TD>Vendor Pre-Approval Complete</TD><TD><KBD ID='vendor_approval_cd'></KBD></TD><TD>Vendor Approved Date</TD><TD><KBD ID='vendor_accept_date'></KBD></TD></TR>	
+<TR class="BG2"><TD>Vendor Comments</TD><TD COLSPAN=3><KBD ID='vendor_comment_blob'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=4>Vendor (i.e. EEG, IIS) Comments</td></tr>
+<TR class="BG2"><TD>Decision</TD><TD COLSPAN=3><KBD ID='eeg_decision_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Comments</TD><TD COLSPAN=3><KBD ID='eeg_comments_blob'></KBD></TD></TR>	
+
+<TR class="bg1"><td colspan=4>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD >Added By</TD><TD COLSPAN=3><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD >Updated By</TD><TD  COLSPAN=3><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD ><KBD ID='submitted_tag'></KBD></TD><TD COLSPAN=3><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD ><KBD ID='reviewed_tag'></KBD></TD><TD COLSPAN=3><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+<TR><TD><input type=hidden name=status_cd value=DRAFT> </TD></TR>
+
+</table>
+		
+
+		
+		

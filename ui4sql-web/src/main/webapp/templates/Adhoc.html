@@ -1,0 +1,91 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	
+	
+	var dt1 ;
+	dt1 = document.Form1.wits_date.value
+	if (document.Form1.wits_date.value.length > 0) {
+	if (isDate(dt1)==false){alert('WITS2 Date is invalid.');return false}
+	}
+	
+	var dt2;
+	dt2 = document.Form1.wit3_date.value
+	if (document.Form1.wit3_date.value.length > 0) {
+	if (isDate(dt2)==false){alert('WITS3 Date is invalid.');return false}
+	}
+	
+	var dt3;
+	dt3 = document.Form1.install_date.value
+	if (document.Form1.install_date.value.length > 0) {
+	if (isDate(dt3)==false){alert('Install/Live Date is invalid.');return false}
+	}
+	
+	var dat4;
+	dt4 = document.Form1.psup_date.value
+	if (document.Form1.psup_date.value.length > 0) {
+	if (isDate(dt4)==false){alert('PSUP Date is invalid.');return false}
+	}
+	
+	var dat5;
+	dt5 = document.Form1.stgn_date.value
+	if (document.Form1.stgn_date.value.length > 0) {
+	if (isDate(dt5)==false){alert('STGN Date is invalid.');return false}
+	}
+		
+	var dat6;
+	dt6 = document.Form1.ncf_cab_date.value
+	if (document.Form1.ncf_cab_date.value.length > 0) {
+	if (isDate(dt6)==false){alert('NCF-CAB Date is invalid.');return false}
+	}
+	
+	var dat7;
+	dt7 = document.Form1.rip_cab_date.value
+	if (document.Form1.rip_cab_date.value.length > 0) {
+	if (isDate(dt7)==false){alert('RIP-CAB Date is invalid.');return false}
+	}
+	
+	
+
+	
+	return true}
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Ad-hoc Request</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>Auth Code</TD><TD width='450'><KBD ID='ra_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Product</TD><TD ><KBD ID='product_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Title</TD><TD width='450'><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD width=650><KBD ID='description_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>File Name</TD><TD><KBD ID='file_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Overall Status</TD><TD width='450'><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Status Info</TD><TD width='450'><KBD ID='status_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner</TD><TD><KBD ID='assigned_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>Outage Required?</TD><TD><KBD ID='outage_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>Configurable?</TD><TD><KBD ID='configurable_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>List Color</TD><TD><KBD ID='color_cd'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Status</td></tr>
+<TR CLASS='bg2'><TD width='200'>PSUPS Install Date</TD><TD><KBD ID='psup_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>WITS2 Install Date</TD><TD><KBD ID='wits_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>WITS3 Install Date</TD><TD><KBD ID='wit3_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>STGN Install Date</TD><TD><KBD ID='stgn_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Production Date</TD><TD><KBD ID='install_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>RIP CAB Review Date</TD><TD><KBD ID='rip_cab_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>NCF CAB Review	 Date</TD><TD><KBD ID='ncf_cab_date'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Additional</td></tr>
+<TR CLASS='bg2'><TD width='200'>Comments</TD><TD><KBD ID='release_comments_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+</table>
+
+
+
+

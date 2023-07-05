@@ -1,0 +1,33 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Fact</td><TD ALIGN=RIGHT><DIV ID='buttons'></DIV></TD></TR></TABLE></tr>
+
+<TR class="bg2"><TD width="150">Title</TD><TD width="450"><DIV ID='title_nm'></DIV></TD></TR>
+<TR CLASS="BG2"><TD >Keywords</TD><TD><DIV ID='reference_nm'></DIV></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR CLASS="BG2"><TD >Type</TD><TD><DIV ID='type_cd'></DIV></TD></TR>
+<TR CLASS="BG2"><TD>Text</TD><TD><DIV ID='desc_blob'></DIV></TD></TR>
+<TR CLASS="BG2"><TD>Notes</TD><TD><DIV ID='notes_blob'></DIV></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Audit</td></tr>
+<TR CLASS="bg2"><TD>Added By:</TD><TD><DIV ID='added_by'></DIV></TD></TR>
+<TR CLASS="bg2"><TD>Updated By:</TD><TD><DIV ID='updated_by'></DIV></TD></TR>
+</table>

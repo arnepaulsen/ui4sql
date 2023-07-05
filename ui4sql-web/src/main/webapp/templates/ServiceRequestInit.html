@@ -1,0 +1,92 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+
+
+	var dt3 ;
+	dt3 = document.Form1.remedy_start_dt.value
+	if (isDate(dt3)==false){alert('Start Date is invalid.'); return false}
+		
+		
+	var dt4 ;
+	dt4 = document.Form1.remedy_end_dt.value
+	if (isDate(dt4)==false){alert('End Date is invalid.'); return false}
+	
+	var dt5 ;
+	dt5 = document.Form1.install_date.value
+	if (isDate(dt5)==false){alert('Install Date is invalid.'); return false}
+		
+		
+	return true
+}
+		
+
+</SCRIPT>
+<TABLE  >
+
+
+<TR class='bg1'><TD colspan=2>Message2</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Service Request Initiate</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>Title</TD><TD width='650'><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Suite</TD><TD ><KBD ID='suite_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Application</TD><TD ><KBD ID='application_id'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Type/Item</TD><TD><KBD ID='remedy_item_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Patient Safety</TD><TD ><KBD ID='safety_cd'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Requester</td></tr>
+<TR CLASS='bg2'><TD width='200'>Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Prefix</TD><TD><KBD ID='prefix'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Tie Line</TD><TD><KBD ID='tieline'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Floor</TD><TD><KBD ID='floor'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Detail</td></tr>
+<TR CLASS='bg2'><TD width='200'>Impact</TD><TD><KBD ID='impact_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Urgency</TD><TD><KBD ID='urgency_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Regulatory</TD><TD><KBD ID='regulatory_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Emergency</TD><TD><KBD ID='emergency_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Expedited</TD><TD><KBD ID='expedited_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Hotlist</TD><TD><KBD ID='hotlist_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Release Related</TD><TD><KBD ID='release_related_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Outage Required</TD><TD><KBD ID='outage_cd'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Implementation</td></tr>
+<TR CLASS='bg2'><TD width='200'>Plan Start</TD><TD><KBD ID='remedy_start_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Plan End</TD><TD><KBD ID='remedy_end_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Target Install / Go-Live</TD><TD><KBD ID='install_date'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Documentation</td></tr>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD width='650'><KBD ID='description_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Business Need</TD><TD width='650'><KBD ID='bsns_need_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Work Log</TD><TD width='650'><KBD ID='worklog_blob'></KBD></TD></TR> 
+<TR CLASS='bg2'><TD width='200'>Implementation Plan</TD><TD width='650'><KBD ID='implementation_blob'></KBD></TD></TR> 
+<TR CLASS='bg2'><TD width='200'>Test Plan</TD><TD width='650'><KBD ID='test_blob'></KBD></TD></TR> 
+<TR CLASS='bg2'><TD width='200'>Backout Plan</TD><TD width='650'><KBD ID='backout_blob'></KBD></TD></TR> 
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+<tr><td><input type=hidden name=fcab_review_cd value=P></td></tr>
+<tr><td><input type=hidden name=suite_review_cd value=P></td></tr>
+
+</table>
+
+
+
+

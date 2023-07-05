@@ -1,0 +1,168 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+ KEEP IN SYNC WITH IncidentLimited.html
+	todo: better solution that 2nd template  
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (isInteger(document.Form1.incident_no.value) == false ) {
+		alert("Please set Incident# to a valid number");
+		return false;
+	}	
+	
+	if (document.Form1.rfc_no.value.length > 0) {
+		if (isInteger(document.Form1.rfc_no.value) == false ) {
+			alert("RFC # is invalid.");
+			return false;
+		}	
+	}
+	
+	var stat ;
+	stat = document.Form1.ncal_stat_cd.value;
+	
+	if (stat == 'C') {
+		if (document.Form1.closed_date.value.length < 2)  { 
+	 		alert('Must have closed date when status is closed.'); 
+	 		return false;
+		}
+	}
+	
+	
+	if (document.Form1.prev_rel_flag.checked == false ) {
+		document.Form1.prev_rel_flag.value = 'N';
+		document.Form1.prev_rel_flag.checked = true;
+	}	
+	
+	if (document.Form1.spr07_rel_flag.checked == false ) {
+		document.Form1.spr07_rel_flag.value = 'N';
+		document.Form1.spr07_rel_flag.checked = true;
+	}	
+	if (document.Form1.spr08_rel_flag.checked == false ) {
+		document.Form1.spr08_rel_flag.value = 'N';
+		document.Form1.spr08_rel_flag.checked = true;
+	}	
+		
+	var dt1;
+	dt1 = document.Form1.cab_date.value
+	if (document.Form1.cab_date.value.length > 0) {
+	if (isDate(dt1)==false){	alert('CAB Date is invalid.');return false}
+	}
+	
+	var dt2;
+	dt2 = document.Form1.incident_date.value
+	if (document.Form1.incident_date.value.length > 0) {
+	if (isDate(dt2)==false){	alert('Incident Date is invalid.');return false}
+	}
+
+
+	var dt4;
+	dt4 = document.Form1.kpkg_date.value
+	if (document.Form1.kpkg_date.value.length > 0) {
+	if (isDate(dt4)==false){	alert('Install Date is invalid.');return false}
+	}
+	
+	var dt5;
+	dt5 = document.Form1.closed_date.value
+	if (document.Form1.closed_date.value.length > 0) {
+	if (isDate(dt5)==false){	alert('Closed Date is invalid.');return false}
+	}
+
+	
+	if (document.Form1.files_tx.value.length > 254) {
+		alert('Ad-Hoc files is too long.')
+		return false
+	}
+
+	if (document.Form1.next_step_tx.value.length > 998) {
+		alert('Next Step is too long.')
+		return false
+	}	
+	
+	if (document.Form1.part_status_tx.value.length > 1998) {
+		alert('PART Status is too long.')
+		return false
+	}
+	
+	
+	return true}
+	
+function worklog_toggle() {
+
+	if (document.Form1.Action.value == 'Post' ) {
+		return;
+	}
+	visi('worklog1');
+	visi('worklog2');		
+}
+
+
+</SCRIPT>
+<TABLE  >
+
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Patient Safety Issue</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width="150">PR #</TD><TD width="450"><KBD ID='incident_no'></KBD></TD></TR>
+<TR class="bg2"><TD >Brief Description</TD><TD><KBD ID='title_nm'></KBD></TD></TR>	
+<TR class="bg2"><TD >Next Step</TD><TD><KBD ID='next_step_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD >Next Step History</TD><TD><KBD ID='next_step_hist_blob'></KBD></TD></TR>	
+<TR class="bg2"><TD >Part Status</TD><TD><KBD ID='part_status_tx'></KBD></TD></TR>	
+<TR CLASS='bg2'><TD >NCAL Status</TD><TD><KBD ID='ncal_stat_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD >NCAL Id'd Date</TD><TD><KBD ID='incident_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD >NCAL Closed Date</TD><TD><KBD ID='closed_date'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD width='650'><KBD ID='description_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Work-Around Status</TD><TD><KBD ID='work_around_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Work-Around</TD><TD width="500"><KBD ID='workaround_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner Suite</TD><TD><KBD ID='suite_cd'></KBD>&nbsp;&nbsp;<b>Other Suites:</b>&nbsp;&nbsp;<KBD ID='suites_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Versions Affected</TD><TD width="500">PREV:&nbsp;&nbsp;&nbsp;<KBD ID='prev_rel_flag'></KBD>&nbsp;&nbsp;Spring 07:&nbsp;&nbsp;<KBD ID='spr07_rel_flag'></KBD>&nbsp;&nbsp;Spring 08:&nbsp;&nbsp;<KBD ID='spr08_rel_flag'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor Rep</TD><TD><KBD ID='epic_contact_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Comments</TD><TD width="500"><KBD ID='notes_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Mitigation</TD><TD width="500"><KBD ID='mitigation_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Remediation</TD><TD width="500"><KBD ID='cleanup_blob'></KBD></TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Fix</td></tr>
+<TR CLASS='bg2'><TD width='200'>K-Packkage</TD><TD><KBD ID='kpkg_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>ETS Status</TD><TD><KBD ID='test_status_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Expected Install Date</TD><TD><KBD ID='kpkg_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Adhoc #</TD><TD><KBD ID='adhoc_tx'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Adhoc Comments:&nbsp;&nbsp;</b><KBD ID='adhoc_comments_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Files Received</TD><TD width="500"><KBD ID='files_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>CAB Date</TD><TD><KBD ID='cab_date'></KBD>&nbsp;&nbsp;&nbsp;RFC:<KBD ID='rfc_no'></KBD> </TD></TR>
+
+<tr class='bg1'><td colspan=2>Risk</td></tr>
+<TR class="bg2"><TD>Severity</TD><TD><KBD ID='severity_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Likelihood</TD><TD><KBD ID='likelihood_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Breadth</TD><TD><KBD ID='breadth_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Rank</TD><TD><KBD ID='rank_cd'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Additional Info</td></tr>
+<TR class="bg2"><TD>Impact</TD><TD><KBD ID='impact_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Justification</TD><TD><KBD ID='justification_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Fixed By</TD><TD><KBD ID='assigned_by_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>Short Status</TD><TD><KBD ID='status_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>Initial Call Duration</TD><TD><KBD ID='call_duration_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>Initial Email Activities</TD><TD><KBD ID='email_activity_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Work-Around Status</TD><TD><KBD ID='workaround_status_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>NCAL Impact</TD><TD><KBD ID='ncal_impact_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Root Cause</TD><TD><KBD ID='cause_blob'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>List Page</td></tr>
+<TR CLASS='bg2'><TD >Report Group</TD><TD><KBD ID='grp_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD >Color Code</TD><TD><KBD ID='color_cd'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+<tr><td><KBD ID='remedyno'></KBD></td></tr>
+
+</table>

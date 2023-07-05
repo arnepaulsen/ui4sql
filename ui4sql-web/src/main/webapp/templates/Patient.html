@@ -1,0 +1,48 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	var dt ;
+	dt = document.Form1.admitted_date.value
+	if (isDate(dt)==false){	alert('Admit date is invalid.');dt.focus;return false}
+
+
+	var dt2 ;
+	dt2 = document.Form1.backout_date.value
+	if (document.Form1.backout_date.value.length > 0 ) {
+		if (isDate(dt2)==false){alert('Backout date is invalid.');dt.focus;return false}
+	}
+
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Validation Patient</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD >Admit Date</TD><TD><KBD ID='admitted_date'></KBD></TD></TR>
+<TR class="bg2"><TD width="250">Location</TD><TD width="450"><KBD ID='location_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>MRN</TD><TD><KBD ID='mrn_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>Patient Name</TD><TD><KBD ID='patient_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>HAR</TD><TD><KBD ID='har_tx'></KBD></TD></TR>	
+<TR class="bg2"><TD>Remedy SR#</TD><TD><KBD ID='sr_no'></KBD></TD></TR>
+<tr class="bg1"><td colspan=2>Info</td></tr>
+<TR class="bg2"><TD>Scenario For Need</TD><TD><KBD ID='need_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Length of Admit Time</TD><TD><KBD ID='admit_tm_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Status</TD><TD width="50"><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Requester</TD><TD width="100"><KBD ID='requestor_uid'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Admitting Person</TD><TD width="500"><KBD ID='admit_person_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Backout Date Confirmed</TD><TD width="500" ><KBD ID='backout_date'></KBD></TD></TR>
+<TR class="bg2"><TD>Backout Verifed By</TD><TD width="500"><KBD ID='backout_verified_tx'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+
+</table>

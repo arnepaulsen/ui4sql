@@ -1,0 +1,68 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	
+	
+	
+			
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Single Work Queue</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+<TR CLASS='bg2'><TD width='200'>Track #</TD><TD width='450'><KBD ID='track_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Title</TD><TD width='450'><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Track Type</TD><TD ><KBD ID='track_type_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Region</TD><TD ><KBD ID='region_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Product</TD><TD ><KBD ID='product_cd'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Status</td></tr>
+<TR CLASS='bg2'><TD width='200'>Status</TD><TD ><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Severity</TD><TD ><KBD ID='severity_cd'></KBD></TD></TR>
+
+
+<tr class='bg1'><td colspan=2>Contacts</td></tr>
+<TR CLASS='bg2'><TD width='200'>Application Contact</TD><TD><KBD ID='appl_contact_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Originator</TD><TD><KBD ID='originator_nm'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Tracking</td></tr>
+<TR CLASS='bg2'><TD width='200'>Charge Order</TD><TD><KBD ID='charge_order_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>DLG #</TD><TD><KBD ID='dlg_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Release Type</TD><TD><KBD ID='rel_type_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Server Pkg</TD><TD><KBD ID='server_pkg_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Client Pkg</TD><TD><KBD ID='client_pkg_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Related RN</TD><TD ><KBD ID='related_rn_tx'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Delivery</td></tr>
+<TR CLASS='bg2'><TD width='200'>Est. Drop Date</TD><TD ><KBD ID='est_drop_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Act. Drop Date</TD><TD ><KBD ID='act_drop_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>AdHoc No</TD><TD ><KBD ID='adhoc_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Standard Release</TD><TD ><KBD ID='std_rlse_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Retro Release</TD><TD ><KBD ID='retro_rlse_tx'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Documentation</td></tr>
+<TR CLASS='bg2'><TD width='200'>Notes</TD><TD ><KBD ID='notes_tx'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
+

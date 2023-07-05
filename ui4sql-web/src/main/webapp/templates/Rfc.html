@@ -1,0 +1,331 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<!--  
+//	Rfc.html - RFC's initiated by AC's attached to a suite.
+//		RfcNcfCab.html is second step in workflow/review process. 
+//		   
+//	Change log:  
+//	8/17/09 Remove submitted by / approved-by tags  
+//	6/10/10 Moved Internal Review section below External Review
+//	6/11/10 Move the 'ac comments' into the additional info section
+//	7/09/10 Change literal on the 'Non-Routine'  
+
+// TAG: UI4SQL2.0 - remove 'msg' until fixed.
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	var action = document.Form1.Action.value
+	var oldstatus = document.Form1.oldstatus.value
+	var suite_review_status = '';
+		
+	//review dates // 
+
+	
+	dt4 = document.Form1.suite_review_date.value;
+	dt1 = document.Form1.review_date.value;
+		
+	hidStCd = document.Form1.hiddenstatuscd.value; 
+	hidFcabCd = document.Form1.hiddenfcabstatuscd.value;
+		
+	if (( hidStCd &&  hidStCd == 'RC'   && isDate(dt4)==false ) || ( hidFcabCd &&  hidFcabCd == 'Y' && document.Form1.fcab_review_cd.value == 'S'  && isDate(dt1)==false)) {	
+		alert('Internal review date is missing or wrong format.'); 
+		return false;
+	}
+	
+		
+	var dt3 ;
+	dt3 = document.Form1.review_date.value;
+	
+	if (document.Form1.rtn_maint_cd.value == 'Y' || document.Form1.asm_impact_cd.value == 'Y' || document.Form1.x_suite_cd.value == 'Y'   ) {
+		if (isDate(dt3)==false){
+			alert('NCF-CAB Review Date is required when Non-KPHC Impact, Cross-Suite Impact, or Non-Routine Maintenance.'); return false
+		}
+	}
+
+	
+	if (document.Form1.rfc_no.value.length < 5|| isInteger(document.Form1.rfc_no.value) == false ) {
+		alert("Please enter a valid RFC number.");
+		return false;
+	}
+	if (document.Form1.type_cd.value == '0'  ) {
+		alert('Please enter a Change Type.'); return false
+	}
+
+	if (document.Form1.type_cd.value == 'Other'  &&  document.Form1.chg_type_comment_tx.value.length == 0 ) {
+		alert('Please enter a comment for Change Type.'); return false
+	}		
+
+	//trigger   & trigger # (problem_nm) // 
+	
+	
+	if (document.Form1.addmode.value == "Y" ) {
+		if (document.Form1.trigger_cd.value == '0'  ) {
+			alert('Please enter a Trigger choice.'); 
+			return false
+		}
+	}
+
+	
+	if (document.Form1.reviewer.value == 'Y') {
+		suite_review_status = document.Form1.suite_review_cd.value
+	}
+	else {
+		suite_review_status = document.Form1.oldstatus.value
+	}	
+
+	if (suite_review_status != 'X') {
+		if (document.Form1.problem_nm.value.length ==  0) {
+			alert('Need a Trigger #.') ;
+			return false
+		}	
+	}
+
+
+	//build tracker  # and product cd // 
+
+	
+	if (hidStCd && hidStCd == 'RC' && isInteger(document.Form1.build_no.value) == false ) {
+		document.Form1.build_no.value = '0';
+	}
+
+	if (hidStCd == 'RC' && document.Form1.build_track_suite_cd.value == '0'  ) {
+		alert('Please enter a Product choice.'); return false
+	}
+
+
+	//impacts section // 
+
+	if (document.Form1.rtn_maint_cd.value == '0'  ) {
+		alert('Please enter Non-Routine choice.'); return false
+	}
+	
+	if (document.Form1.asm_impact_cd.value == '0'  ) {
+		alert('Please enter Non-KPHC Impact choice.'); return false
+	}
+	
+	if (document.Form1.asm_impact_cd.value == 'Y'  &&  document.Form1.legacy_comment_tx.value.length == 0 ) {
+		alert('Please enter a comment for NonNon-KPHC Impact.'); return false
+	}
+
+	if (document.Form1.x_suite_cd.value == '0'  ) {
+		alert('Please enter Cross-Suite choice.'); return false
+	}
+	
+	if (document.Form1.x_suite_cd.value == 'Y'  &&  document.Form1.cross_suite_comment_tx.value.length == 0 ) {
+		alert('Please enter a comment for Cross-Suite impact.'); return false
+	}
+
+	//testing section // 
+	
+	if (document.Form1.test_method_cd.value == '0'  ) {
+		alert('Please enter Test Group choice.'); return false
+	}
+
+	if (document.Form1.test_method_cd.value == 'OTH'  &&  document.Form1.test_grp_comment_tx.value.length == 0 ) {
+		alert('Please enter a comment when Test Group is "Other".'); return false
+	}
+
+	if (document.Form1.tested_cd.value == '0'  ) {
+		alert('Please enter Test Status choice.'); return false
+	}
+
+	var tester = document.Form1.tested_nm.value
+	
+	
+	if (suite_review_status != 'X') {
+		if (tester.length == 0) {
+			alert('Please enter the tester name.') 
+			return false
+		}
+	}
+	
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.test_approve_tx.value.length == 0  ) {
+			alert('Please enter Test RFC/SR#'); return false
+		}	
+	}
+	
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.boa_test_aprv_nm.value.length == 0  ) {
+			alert('Please enter Test Results Approver.'); return false
+		}	
+	}		
+	
+
+	//Implementation section // 
+
+	if (document.Form1.notify_cd.value == '0' ) {
+		alert('Please enter a User Notification method.'); return false
+	}
+	
+	
+	if (document.Form1.notify_cd.value == 'OT'  &&  document.Form1.user_notify_tx.value.length == 0 ) {
+		alert('Please enter a comment User Notification.'); return false
+	}
+
+	// if review_date.value.length has value then it goes to NCF_CAB 	
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.install_hours_tx.value.length == 0  ) {
+			alert('Please enter Change Duration.'); return false
+		}	
+	}		
+	
+
+	if (document.Form1.release_cd.value == '0'  ) {
+		alert('Please enter a Release choice.'); return false
+	}	
+
+	if (document.Form1.release_cd.value == 'OC'  &&  document.Form1.release_tx.value.length == 0 ) {
+		alert('Please enter a Off-cycle comment.'); return false
+	}	
+
+
+
+	//Additional Info // 
+	
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.safety_cd.value == '0'  ) {
+			alert('Please enter Patient Safety choice.'); return false
+		}
+	}		
+
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.safety_cd.value == 'Y'  &&  document.Form1.pat_safety_comment_tx.value.length == 0 ) {
+			alert('Please enter a comment for Patient Safety.'); return false
+		}
+	}		
+
+	//External Reviews  // 
+
+	if (document.Form1.review_date.value.length > 0){
+		if (document.Form1.boa_change_aprv_nm.value.length == 0  ) {
+			alert('Please enter BAO Delegate Approving Change.'); return false
+		}	
+	}		
+
+	//Internal Reviews section // 
+
+	var dt5 ;
+	
+	if (document.Form1.reviewer.value == 'Y' ) {
+		if (document.Form1.suite_review_cd.value == 'A' ) {
+			dt5 = document.Form1.suite_decision_date.value
+			if (isDate(dt5)==false){
+				alert('Decision Date is required when Internal CAB Status is approved.'); return false
+			}
+		}
+	}
+	
+	
+	return true}
+	
+		
+function worklog_toggle() {
+
+	if (document.Form1.Action.value == 'Post' ) {
+		return;
+	}
+	visi('worklog1');
+	visi('worklog2');		
+}
+
+
+function popup() {
+window.open('http://<KBD ID="host"></KBD>/<KBD ID="tomcat_name"></KBD>/Router?Target=Popup','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+}
+
+function helppopup() {
+	window.open('http://<KBD ID="host""></KBD>/<KBD ID="tomcat_name"></KBD>/RFCHelp.html','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+	}
+
+
+</SCRIPT>
+<TABLE  >
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;</font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>SUITE CAB</td>
+	<td>&nbsp;<a href="javascript:helppopup()">Help</a></td> <TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>InternalCAB Review Date</TD><TD><table><tr><td width=150><KBD ID='suite_review_date'></KBD></td><td>(mm/dd/yyyy)</td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>CAB Review Date</TD><TD><table><tr><td width=150><KBD ID='review_date'></KBD></td><td>(mm/dd/yyyy)&nbsp;Required if not routine maintenance.</td></tr></table></TD></TR>
+
+<tr class='bg1'><td colspan=2>Detail</td></tr>
+<TR CLASS='bg2'><TD width='200'>Suite</TD><TD><KBD ID='suite_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>RFC #</TD><TD><TABLE><TR><TD width=150><KBD ID='rfc_no'></KBD></TD><TD><KBD ID='cablink'></KBD></TD></TR></TABLE></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Change Type</TD><TD><table><tr><td width=90><KBD ID='type_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='chg_type_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Group</TD><TD><KBD ID='remedy_grp_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD width='650'><KBD ID='description_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Business Need</TD><TD width='650'><KBD ID='bsns_need_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Remedy Info (As of: <KBD ID='remedy_asof_date'></KBD>)&nbsp;<a href="javascript:popup()">Show attributes.</a></td></tr>
+<TR CLASS='bg2'><TD width='200'>Priority/Urgency</TD><TD><KBD ID='urgency_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Release Specialist</TD><TD><KBD ID='remedy_verifier_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned Start</TD><TD><KBD ID='remedy_start_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned End</TD><TD><KBD ID='remedy_end_dt'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Build Tracker</td></tr>
+<TR CLASS='bg2'><TD width='200'>Trigger</TD><TD><KBD ID='trigger_cd'></KBD>&nbsp;&nbsp;#&nbsp;&nbsp;<KBD ID='problem_nm'></KBD></TD></TR>
+<TR class="BG2"><TD width='200'>Build Tracker #</TD><TD><table><tr><td width=300><KBD ID='build_no'></KBD>&nbsp;Product:&nbsp;<KBD ID='build_track_suite_cd'></KBD></td><td><KBD ID='buildlink'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Build Status</TD><TD><KBD ID='buildstat'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Impacts</td></tr>
+<TR CLASS='bg2'><TD width='200'>Non-Routine (as per NCF-CAB)</TD><TD><table><tr><td width=90><KBD ID='rtn_maint_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='non_rtn_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Non-KPHC Impact</TD><TD><table><tr><td width=90><KBD ID='asm_impact_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='legacy_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Cross Suite</TD><TD><table><tr><td width=90><KBD ID='x_suite_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='cross_suite_comment_tx'></KBD></td></tr></table></TD></TR>
+
+<tr class='bg1'><td colspan=2>Testing</td></tr>
+<TR CLASS='bg2'><TD width='200'>Testing Group</TD><TD><KBD ID='test_method_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comment:&nbsp;&nbsp;<KBD ID='test_grp_comment_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test Status</TD><TD><KBD ID='tested_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comments (NCF):&nbsp;&nbsp;<KBD ID='tst_status_ncf_cmnt_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Tester</TD><TD><KBD ID='tested_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test RFC/SR#</TD><TD><KBD ID='test_approve_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test Results Approver<br>&nbsp;&nbsp;(lead or higher)</TD><TD><KBD ID='boa_test_aprv_nm'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Implementation</td></tr>
+<TR CLASS='bg2'><TD width='200'>User Notify Method</TD><TD><table><tr><td width=100><KBD ID='notify_cd'></KBD></td><td>Other:&nbsp;&nbsp;<KBD ID='user_notify_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Change Duration</TD><TD><KBD ID='install_hours_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Release</TD><TD><KBD ID='release_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comment:&nbsp;&nbsp;<KBD ID='release_tx'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2>Additional Info</td></tr>
+<TR CLASS='bg2'><TD width='200'>Ad-Hoc/Other Dependencies</TD><TD width='650'><KBD ID='adhoc_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Patient Safety/PART</TD><TD><table><tr><td width=90><KBD ID='safety_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='pat_safety_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Outage Required (Remedy)</TD><TD width='650'><KBD ID='outage_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>AC Comments</TD><TD width='650'><KBD ID='ac_comment_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>External Reviews and Approvals</td></tr>
+<TR CLASS='bg2'><TD width='200'>BAO Delegate/ Approve Change</TD><TD><KBD ID='boa_change_aprv_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Technical Sign-Off</TD><TD><table><tr><td width=100><KBD ID='interface_sign_off_cd'></KBD></td><td>Follow-up:&nbsp;&nbsp;<KBD ID='interface_sign_off_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Security Sign-Off</TD><TD><table><tr><td width=100><KBD ID='security_sign_off_cd'></KBD></td><td>Follow-up:&nbsp;&nbsp;<KBD ID='security_sign_off_tx'></KBD></td></tr></table></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2>Internal Reviews and Approvals</td></tr>
+<TR CLASS='bg2'><TD>Review Status</TD><TD><KBD ID='suite_review_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>Decision Date</TD><TD><KBD ID='suite_decision_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD>Comments</TD><TD><KBD ID='comment_blob'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2>NCF CAB Review</td></tr>
+<TR CLASS='bg2'><TD width='200'>RFC Compliant</TD><TD><table><tr><td width=90><KBD ID='compliant_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='rfc_compliant_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>NCF-CAB Review Status</TD><TD><table><tr><td width=90><KBD ID='fcab_review_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='status_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD>NCF Comments</TD><TD><KBD ID='resolution_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<tr><td><KBD ID='reviewer'></KBD></td></tr>
+<tr><td><KBD ID='oldstatus'></KBD></td></tr>
+<tr><td><KBD ID='testor'></KBD></td></tr>
+<tr><td><KBD ID='EditTestStatus'></KBD></td></tr>
+<tr><td><KBD ID='addmode'></KBD></td></tr>
+<tr><td><KBD ID='hiddenstatuscd'></KBD></td></tr>
+<tr><td><KBD ID='hiddenfcabstatuscd'></KBD></td></tr>
+<tr><td><KBD ID='remedyno'></KBD></td></tr>
+
+</table>

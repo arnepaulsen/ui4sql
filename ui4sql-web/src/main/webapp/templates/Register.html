@@ -1,0 +1,100 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.handle.value.length == 0 ) {
+		alert('Please enter an NUID.');
+		return false;		
+	}
+	
+	var lNuid ;
+	lNuid  = document.Form1.handle.value
+	
+	if (isNUID(lNuid) == false )  {
+		alert('Invalid NUID, please correct.');
+		return false;
+	} 
+
+	if (document.Form1.user_suite_cd.value == '0' ) {
+		alert('Please enter a Suite.');
+		return false;
+	}
+	
+	if (document.Form1.user_suite_cd.value == 'RC' && document.Form1.default_prod_cd.value == '0') {
+		alert('Please enter a Product Code.');
+		return false;
+	}
+	
+	return true;	
+}
+	
+	
+function isNUID(nuid) {
+
+	if (nuid.length < 7) {
+		alert('NUID is to short.');
+		return false;
+	}
+	
+	pos1 = nuid.charCodeAt(0);
+	
+	if ( (pos1 > 96 && pos1 < 123) || (pos1 > 64 && pos1 < 91))  {
+	
+	}
+	else {
+		alert('NUID should start with a letter');
+		return false;
+	}	
+	
+	numpart = nuid.substring(1,7)
+	
+	if (isInteger(numpart)) {
+		return true;
+	}
+	else {
+		alert('Invalid NUID - must start with letter followed by six digits.');
+		return false;;
+	}
+
+	return true;
+}
+
+	
+
+
+</SCRIPT>
+<TABLE  >
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Self-Register</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class='bg2'><TD WIDTH=150>KP NUID:</TD><TD width=450><KBD ID='handle'></KBD></TD></TR>
+<tr class='bg2'><TD>First Name</td><td><KBD ID='first_name'></KBD></td></tr>	
+<tr class='bg2'><TD>Last Name</TD><TD><KBD ID='last_name'></KBD></TD></TR>
+<tr class='bg2'><TD>E-Mail</TD><TD><KBD ID='email_address'></KBD></TD></TR>
+<tr class='bg2'><TD>Password</TD><TD><KBD ID='password_nm'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Preferences</TD></TR>
+<tr class='bg2'><TD>Suite</TD><TD><KBD ID='user_suite_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Product (Rev Cap Only)</TD><TD><KBD ID='default_prod_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Screen Style</TD><TD><KBD ID='style_nm'></KBD></TD></TR>
+<TR class='bg2'><TD>Home Page</TD><TD><KBD ID='home_page_nm'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+
+
+
+</table>
+		

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  UI4SQL V1.0 (https://ui4sql.net)
+  Copyright 2022 PaulsenITSolutions 
+  Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="wf01" class="forms.BeanFieldString">
+		<constructor-arg value="loss_amt" type="java.lang.String" />
+		<constructor-arg value="0" type="java.lang.String" />
+		<constructor-arg value="4"  type="java.lang.Integer" />		
+		<constructor-arg value="4"  type="java.lang.Integer" />
+	</bean>
+	
+
+
+	<bean id="wf02" class="forms.BeanFieldSelect">
+		<constructor-arg value="assign_to_uid" />
+		<constructor-arg value="0" type="java.lang.Integer" />
+		<constructor-arg value="userHT" />
+	</bean>
+
+	<bean id="wf03" class="forms.BeanFieldString">
+		<constructor-arg value="reference_nm" type="java.lang.String" />
+		<constructor-arg value="default" type="java.lang.String" />
+		<constructor-arg value="64"  type="java.lang.Integer" />		
+		<constructor-arg value="64"  type="java.lang.Integer" />
+	</bean>
+
+	<bean id="wf04" class="forms.BeanFieldString">
+		<constructor-arg value="title_nm" type="java.lang.String" />
+		<constructor-arg value="default" type="java.lang.String" />
+		<constructor-arg value="64"  type="java.lang.Integer" />		
+		<constructor-arg value="64"  type="java.lang.Integer" />
+	</bean>
+	
+		
+	<bean id="wf05" class="forms.BeanFieldDisplay">
+		<constructor-arg value="expected_loss" type="java.lang.String" />
+	</bean>
+	
+
+	<bean id="wf06" class="forms.BeanFieldString">
+		<constructor-arg value="probability_pct" type="java.lang.String" />
+		<constructor-arg value="" type="java.lang.String" />
+		<constructor-arg value="64"  type="java.lang.Integer" />		
+		<constructor-arg value="64"  type="java.lang.Integer" />
+	</bean>
+	
+	<bean id="wf07" class="forms.BeanFieldString">
+		<constructor-arg value="exposure_amt" type="java.lang.String" />
+		<constructor-arg value="" type="java.lang.String" />
+		<constructor-arg value="64"  type="java.lang.Integer" />		
+		<constructor-arg value="64"  type="java.lang.Integer" />
+	</bean>
+	
+
+
+	<bean id="wf08" class="forms.BeanFieldText">
+		<constructor-arg value="consequence_blob" type="java.lang.String" />
+		<constructor-arg value="3"  type="java.lang.Integer" />		
+		<constructor-arg value="80"  type="java.lang.Integer" />
+		<constructor-arg value="" type="java.lang.String" />
+	</bean>
+	
+
+	<bean id="wf09" class="forms.BeanFieldText">
+		<constructor-arg value="mitigation_blob" type="java.lang.String" />
+		<constructor-arg value="3"  type="java.lang.Integer" />		
+		<constructor-arg value="80"  type="java.lang.Integer" />
+		<constructor-arg value="" type="java.lang.String" />
+	</bean>
+
+
+	<bean id="wf10" class="forms.BeanFieldText">
+		<constructor-arg value="contingency_blob" type="java.lang.String" />
+		<constructor-arg value="3"  type="java.lang.Integer" />		
+		<constructor-arg value="80"  type="java.lang.Integer" />
+		<constructor-arg value="" type="java.lang.String" />
+	</bean>
+	
+
+	<bean id="wf11" class="forms.BeanFieldText">
+		<constructor-arg value="desc_blob" type="java.lang.String" />
+		<constructor-arg value="3"  type="java.lang.Integer" />		
+		<constructor-arg value="80"  type="java.lang.Integer" />
+		<constructor-arg value="" type="java.lang.String" />
+	</bean>
+
+
+
+	<bean id="wf12" class="forms.BeanFieldSelect">
+		<constructor-arg value="state_cd" />
+		<constructor-arg value="OPN" type="java.lang.String" />
+		<constructor-arg value="STATUS" type="java.lang.String" />
+	</bean>
+
+	<bean id="wf13" class="forms.BeanFieldSelect">
+		<constructor-arg value="type_cd" />
+		<constructor-arg value="SL" type="java.lang.String" />
+		<constructor-arg value="EXPOSURETYPES" type="java.lang.String" />
+	</bean>
+	
+	<bean id="wf14" class="forms.BeanFieldDisplay">
+		<constructor-arg value="added_by" />
+		<constructor-arg value="added_by" />
+	</bean>
+
+	<bean id="wf15" class="forms.BeanFieldDisplay">
+		<constructor-arg value="updated_by" />
+		<constructor-arg value="updated_by" />
+	</bean>
+	
+	
+
+
+	<bean id="beanList" class="forms.BeanList">
+
+		<property name="webFields"  >
+		 	<list>
+				<ref bean="wf01" />
+				<ref bean="wf02" />
+				<ref bean="wf03" />
+				<ref bean="wf04" />
+				<ref bean="wf05" />
+				<ref bean="wf06" />
+				<ref bean="wf07" />
+				<ref bean="wf08" />
+				<ref bean="wf09" />
+				<ref bean="wf10" />
+				<ref bean="wf11" />
+				<ref bean="wf12" />
+				<ref bean="wf13" />
+				<ref bean="wf14" />
+				<ref bean="wf15" />
+							
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Exposure" class="plugins.AbsApplicationPlugin"
+		p:tableName="texposure" p:keyName="exposure_id"
+		p:listViewName="vexposure_list" p:selectViewName="vexposure"
+		p:showAuditSubmitApprove="false"
+		p:hasDetailForm="true" p:detailTarget="Control"
+		p:targetTitle="Exposures (Example using an XML Bean File)" p:detailTargetLabel="Controls"
+		p:listHeaders="Reference, Title, Type, Amount (000s),
+				Chance (%), Expected Loss, Status"
+		p:beanList-ref="beanList" />
+
+</beans>

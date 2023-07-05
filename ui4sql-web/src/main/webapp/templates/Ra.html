@@ -1,0 +1,75 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+
+	return true;
+	
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Epic RA</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD WIDTH='150'>RA # </TD><TD WIDTH='450'><KBD ID='reference_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Title (raTitle)</TD><TD WIDTH='450'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Product (raProduct)</TD><TD><KBD ID='product_nm'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Document</TD></TR>
+<TR class="bg2"><TD>T-Drive File Name</TD><TD><KBD ID='doc_link_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Current Status	</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Issue Date</TD><TD><KBD ID='issue_date'></KBD></TD></TR>
+<TR class="bg2"><TD>Faxed</TD><TD><KBD ID='faxed_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Memo</TD><TD><KBD ID='memo_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Ownership</TD></TR>
+<TR class="bg2"><TD>Owner (raKPowner)</TD><TD><KBD ID='owner_nuid_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor TS (raDesignate)</TD><TD><KBD ID='author_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>SLG Num (raSLGnum)</TD><TD width=600><KBD ID='slg_num_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Region</TD><TD width=600><KBD ID='region_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Type</TD></TR>
+<TR class="bg2"><TD>Issue Type </TD><TD><KBD ID='issue_type_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Fix Type </TD><TD><KBD ID='fix_type_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Environment </TD><TD><KBD ID='env_cd'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>RFC's</TD></TR>
+<TR class="bg2"><TD>RFC #1 </TD><TD><table><tr><td width=100><KBD ID='rfc1_no'></KBD></td><td>Desc:&nbsp;<KBD ID='rfc1_desc_blob'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100><KBD ID='rfc1_link'></KBD></td><td width=150>Start:&nbsp;<KBD ID='rfc1_start_dt'></KBD></td><td width=50>End:&nbsp;<KBD ID='rfc1_end_dt'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100></td><td width=150>Status:&nbsp;<KBD ID='rfc1_status'></KBD></td><td width=200>Requester:&nbsp;<KBD ID='rfc1_owner'></KBD></td><td width=200>Owner:&nbsp;<KBD ID='rfc1_requester'></KBD></td></tr></table></TD></TR>
+
+<TR class="bg2"><TD>RFC #2 </TD><TD><table><tr><td width=100><KBD ID='rfc2_no'></KBD></td><td>Desc:&nbsp;<KBD ID='rfc2_desc_blob'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100><KBD ID='rfc2_link'></KBD></td><td width=150>Start:&nbsp;<KBD ID='rfc2_start_dt'></KBD></td><td width=50>End:&nbsp;<KBD ID='rfc2_end_dt'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100></td><td width=150>Status:&nbsp;<KBD ID='rfc2_status'></KBD></td><td width=200>Requester:&nbsp;<KBD ID='rfc2_owner'></KBD></td><td width=200>Owner:&nbsp;<KBD ID='rfc2_requester'></KBD></td></tr></table></TD></TR>
+
+<TR class="bg2"><TD>RFC #3 </TD><TD><table><tr><td width=100><KBD ID='rfc3_no'></KBD></td><td>Desc:&nbsp;<KBD ID='rfc3_desc_blob'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100><KBD ID='rfc3_link'></KBD></td><td width=150>Start:&nbsp;<KBD ID='rfc3_start_dt'></KBD></td><td width=50>End:&nbsp;<KBD ID='rfc3_end_dt'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD> </TD><TD><table><tr><td width=100></td><td width=150>Status:&nbsp;<KBD ID='rfc3_status'></KBD></td><td width=200>Requester:&nbsp;<KBD ID='rfc3_owner'></KBD></td><td width=200>Owner:&nbsp;<KBD ID='rfc3_requester'></KBD></td></tr></table></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Detail</TD></TR>
+<TR class="bg2"><TD>Code Approver</TD><TD><KBD ID='reviewer_nuid_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor Code</TD><TD width=600><KBD ID='epic_code_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>
+
+
+
+		
+
+		
+		

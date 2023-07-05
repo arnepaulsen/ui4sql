@@ -1,0 +1,98 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	return true;
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>BQF - Impact Analysis</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+
+
+<TR class="bg0"><TD colspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='bqflink'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>SR Identification/Summary Information</TD></TR>
+
+<TR class="bg2"><TD>National AC Name</TD><TD><KBD ID='natl_ac_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>RFC #</TD><TD><KBD ID='rfc_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Requesting Region</TD><TD><KBD ID='regions_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='250'>Title of <br>Service Request</TD><TD WIDTH='550'><KBD ID='title_nm'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>Summary Analysis</TD></TR>
+<TR class="bg2"><TD>Change Type</TD><TD width=550><KBD ID='type_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Impact Level</TD><TD><KBD ID='impact_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Source of Change</TD><TD><KBD ID='source_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Level of Effort</TD><TD><KBD ID='loe_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>National AC Recommends</TD><TD><KBD ID='recommend_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Recommendation</TD><TD><KBD ID='recommend_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>CB CB Approval Status</TD></TR>
+<TR class="bg2"><TD>CB CB Decision</TD><TD><KBD ID='cb_decision_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Comments on Decision</TD><TD><KBD ID='cb_decision_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Decision Date</TD><TD><KBD ID='	'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Products / Areas Impacted and Description of Impact</TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='prod_1_impact_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp; Impact description.</TD><TD><KBD ID='prod_1_impact_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='prod_2_impact_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp; Impact description.</TD><TD><KBD ID='prod_2_impact_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='prod_3_impact_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;  Impact description.</TD><TD><KBD ID='prod_3_impact_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='prod_4_impact_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;  Impact description.</TD><TD><KBD ID='prod_4_impact_blob'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Regional Response</TD></TR>
+<TR class="bg0"><TD colspan=2>*Select Region's response in drop down box, then enter the regional SME name.  If response is "Disagree", explanation is required</TD></TR>
+<TR class="bg2"><TD>California</TD><TD><table><tr><td width=100><KBD ID='colorado_resp_cd'></KBD></td><td><KBD ID='colorado_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='colorado_resp_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Georgia</TD><TD><table><tr><td width=100><KBD ID='georgia_resp_cd'></KBD></td><td><KBD ID='georgia_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='georgia_resp_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Hawaii</TD><TD><table><tr><td width=100><KBD ID='hawaii_resp_cd'></KBD></td><td><KBD ID='hawaii_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='hawaii_resp_tx'></KBD></TD></TR>
+
+
+<TR class="bg2"><TD>Mid-Atlantic</TD><TD><table><tr><td width=100><KBD ID='ma_resp_cd'></KBD></td><td><KBD ID='ma_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='ma_resp_tx'></KBD></TD></TR>
+
+
+<TR class="bg2"><TD>N.California</TD><TD><table><tr><td width=100><KBD ID='ncal_resp_cd'></KBD></td><td><KBD ID='ncal_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='ncal_resp_tx'></KBD></TD></TR>
+
+
+<TR class="bg2"><TD>Northwest</TD><TD><table><tr><td width=100><KBD ID='nw_resp_cd'></KBD></td><td><KBD ID='nw_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='nw_resp_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>S.California</TD><TD><table><tr><td width=100><KBD ID='scal_resp_cd'></KBD></td><td><KBD ID='scal_assesor_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='scal_resp_tx'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>National SME's Response</TD></TR>
+<TR class="bg2"><TD>Impact Area/Level/Representative</TD><TD><table><tr><td width=100><KBD ID='sme_1_type_cd'></KBD></td><td width=100><KBD ID='sme_1_impact_cd'></KBD></td><td ><KBD ID='sme_1_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='sme_1_impact_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Impact Area/Level/Representative</TD><TD><table><tr><td width=100><KBD ID='sme_2_type_cd'></KBD></td><td width=100><KBD ID='sme_2_impact_cd'></KBD></td><td ><KBD ID='sme_2_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='sme_2_impact_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Impact Area/Level/Representative</TD><TD><table><tr><td width=100><KBD ID='sme_3_type_cd'></KBD></td><td width=100><KBD ID='sme_3_impact_cd'></KBD></td><td ><KBD ID='sme_3_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='sme_3_impact_tx'></KBD></TD></TR>
+
+<TR class="bg2"><TD>Impact Area/Level/Representative</TD><TD><table><tr><td width=100><KBD ID='sme_4_type_cd'></KBD></td><td width=100><KBD ID='sme_4_impact_cd'></KBD></td><td ><KBD ID='sme_4_nm'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>&nbsp;&nbsp;Explanation</TD><TD><KBD ID='sme_4_impact_tx'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

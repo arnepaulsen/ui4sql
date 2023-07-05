@@ -1,0 +1,171 @@
+<html lang="en">
+<HEAD>
+<TITLE>JavaScript - Display and Visibility</TITLE>
+
+<link rel="up" href="contents.html">
+
+
+
+</HEAD>
+
+<BODY>
+
+<SCRIPT >
+
+function visi(nr)
+{
+	if (document.layers)
+	{
+		vista = (document.layers[nr].visibility == 'hide') ? 'show' : 'hide'
+		document.layers[nr].visibility = vista;
+	}
+	else if (document.all)
+	{
+		vista = (document.all[nr].style.visibility == 'hidden') ? 'visible'	: 'hidden';
+		document.all[nr].style.visibility = vista;
+	}
+	else if (document.getElementById)
+	{
+		vista = (document.getElementById(nr).style.visibility == 'hidden') ? 'visible' : 'hidden';
+		document.getElementById(nr).style.visibility = vista;
+
+	}
+}
+
+function blocking(nr)
+{
+	if (document.layers)
+	{
+		current = (document.layers[nr].display == 'none') ? 'block' : 'none';
+		document.layers[nr].display = current;
+	}
+	else if (document.all)
+	{
+		current = (document.all[nr].style.display == 'none') ? 'block' : 'none';
+		document.all[nr].style.display = current;
+	}
+	else if (document.getElementById)
+	{
+		vista = (document.getElementById(nr).style.display == 'none') ? 'block' : 'none';
+		document.getElementById(nr).style.display = vista;
+	}
+}
+// 
+</SCRIPT>
+
+
+<H2>Display and Visibility</H2>
+
+<div id="header"></div>
+
+<DIV CLASS="floater">
+<p>It does not completely work in <B>Netscape 4</B>, <B>Opera</B> and
+<B>Omniweb</B> because those browsers don't support the changing of display.</p>
+<p>The changing of display works in <B>iCab</B>, but not the changing of visibility.</p>
+
+<p><B>Opera 5</B> made the invisibility style ('visible' or 'hidden')
+<em>upper case</em>, so that reading it out may cause confusion. Bug solved in Opera 6 (5b5 on Mac). The
+script does no longer take it into account.</p>
+</DIV>
+
+<P CLASS="intro">This is a test page to clarify the difference between display and invisibility.
+Below you can experiment with invisibility and blocking.
+<SCRIPT >
+
+if (document.layers)
+{
+	document.write('Unfortunately Netscape 4 does not support display changes, so that bit won\'t work for you.');
+}
+else if (!document.getElementById && !document.all)
+{
+	document.write('Unfortunately your browser does not support DHTML, so clicking the links is useless.');
+}
+// 
+</SCRIPT>
+</P>
+
+<P>For an example of a script using only invisibility, see the
+<A HREF="dhtmlnavi.html">Navigation: layers</A> script, for an example of a script
+using only display, see the
+
+<A HREF="display.html">Navigation: display</A> script.</P>
+
+
+<OL>
+<LI>Paragraph 1:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('number1'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('number1'); return false;">Toggle display block/none</A>
+	</UL>
+
+<LI>Paragraph 2:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('number2'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('number2'); return false;">Toggle display block/none</A>
+	</UL>
+<LI>Paragraph 3:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('number3'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('number3'); return false;">Toggle display block/none</A>
+
+	</UL>
+
+
+<LI>Div 1:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('divtable'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('divtable'); return false;">Toggle display block/none</A>
+	</UL>
+	
+<LI>Table 1:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('table1'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('table1'); return false;">Toggle display block/none</A>
+	</UL>
+	
+	<LI>Table Row 1:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('tr1'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('tr1'); return false;">Toggle display block/none</A>
+	</UL>
+	
+	
+	<LI>Table Row 2:
+	<UL>
+	<LI><A CLASS="page" HREF="#" onClick="visi('tr2'); return false">Toggle visible/invisible</A>
+	<LI><A CLASS="page" HREF="#" onClick="blocking('tr2'); return false;">Toggle display block/none</A>
+	</UL>
+	
+	
+	
+	
+</OL>
+
+
+<P CLASS="para" ID="number1">This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1.
+This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1. This is paragraph 1.
+This is paragraph 1.</P>
+
+<P CLASS="para" ID="number2">This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2.
+This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2. This is paragraph 2.
+This is paragraph 2.</P>
+
+<P CLASS="para" ID="number3">This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3.
+This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3. This is paragraph 3.
+This is paragraph 3.</P>
+
+<div id=divtable>
+<Table id=table1 >
+<tr id=tr1><td id=td1>this is row 1 table</td></tr>
+<tr id=tr2><td id=td2>this is row 2 table</td></tr>
+</Table>
+</div>
+
+
+<div id="footer"><a href="/home.html">Home</a> <a href="/sitemap.html">Sitemap</a>
+
+</div>
+
+
+</BODY>
+</HTML>

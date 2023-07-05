@@ -1,0 +1,47 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a name for the estimate.');
+		return false;
+	}
+
+	if (isFloat(document.Form1.effort_amt.value) == false ) {
+		alert("Please set Effort Quantity to a number.");
+		return false;
+	}
+	
+	if (isFloat(document.Form1.review_amt.value) == false ) {
+		alert("Please set Review Quantity to a number.");
+		return false;
+	}
+	
+		
+	return true;
+}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Project Estimate</td><TD ALIGN=RIGHT><DIV ID='buttons'></DIV></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width=150>Estimate Name</TD><TD width=450  ><DIV ID='title_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Reference Id.</TD><TD  ><DIV ID='reference_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Phase</TD><TD ><DIV ID='type_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Department</TD><TD ><DIV ID='dept_id'></DIV></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Quantity Type</TD><TD><DIV ID='qty_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Effort Size</TD><TD><DIV ID='effort_amt'></DIV></TD></TR>
+<TR class="bg2"><TD>Review Effort</TD><TD><DIV ID='review_amt'></DIV></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD><DIV ID='notes_blob'></DIV></TD></TR>
+
+<tr class="bg1"><td colspan=2>Audit</td></tr>
+<TR class="bg2"><TD >Added By</TD><TD ><DIV ID='added_by'></DIV></TD></TR>
+<TR class="bg2"><TD >Updated By</TD><TD ><DIV ID='updated_by'></DIV></TD></TR>
+<TR CLASS="bg2"><TD >Submitted By</TD><TD ><DIV ID='submitted_by'></DIV></TD></TR>
+<TR class="bg2"><TD >Approved By</TD><TD ><DIV ID='approved_by'></DIV></TD></TR>
+</table>

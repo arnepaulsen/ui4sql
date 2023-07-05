@@ -1,0 +1,60 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+		
+			
+	return true}
+	
+
+
+</SCRIPT>
+<TABLE  >
+
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Inpatient Domain - Service / Change Request Form</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>Title</TD><TD width='650'><KBD ID='title_nm'></KBD></TD></TR>
+
+<TR CLASS='bg2'><TD width='200'>Domain Group</TD><TD><KBD ID='domain_grp_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Facility</TD><TD><KBD ID='facility_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Domain Leader</TD><TD ><KBD ID='domain_lead_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Request Owner</TD><TD ><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Issue Related To </TD><TD ><KBD ID='ip_type_cd'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>If the request is for the following, please provide:</td></tr>
+<TR CLASS='bg2'><TD width='200'>Flowsheets </TD><TD ><KBD ID='ip_flowsheet_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Documentation / Notes </TD><TD ><KBD ID='ip_doc_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Navigator</TD><TD ><KBD ID='ip_nav_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>MAR </TD><TD ><KBD ID='ip_mar_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Order Set </TD><TD ><KBD ID='ip_order_set_blob'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Other</td></tr>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD ><KBD ID='desc_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Benefit</TD><TD ><KBD ID='bsns_need_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Impact/Risk of No Change</TD><TD ><KBD ID='impact_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Desired Alternative<br>Operational Solution/Workaround:</TD><TD ><KBD ID='alternative_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
+

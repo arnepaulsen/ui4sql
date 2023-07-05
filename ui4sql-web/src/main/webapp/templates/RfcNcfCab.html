@@ -1,0 +1,118 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<!--  
+	Rfc.html - RFC's initiated by AC's attached to a suite.
+		RfcNcfCab.html is second step in workflow/review process. 
+		   
+	Change log:  
+	7/09/10 Change literal on the 'Non-Routine'  
+
+-->
+
+
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (isInteger(document.Form1.rfc_no.value) == false ) {
+		alert("Please set RFC to a number");
+		return false;
+	}
+	
+	var dt ;
+	dt = document.Form1.review_date.value
+	if (isDate(dt)==false){	alert('Review Date is invalid.'); return false}
+
+
+	if (document.Form1.fcab_decision_date.value.lenght > 0 ) {
+			
+		dt = document.Form1.fcab_decision_date.value 
+		if (isDate(dt)==false){	alert('Approval Date is invalid.'); return false}
+	}
+	
+	return true}
+	
+function popup() {
+	window.open('http://<KBD ID="host"></KBD>/<KBD ID="tomcat_name"></KBD>/Router?Target=Popup','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+	}
+
+function helppopup() {
+	window.open('http://<KBD ID="host"></KBD>/<KBD ID="tomcat_name"></KBD>/RFCHelp.html','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+	}
+
+
+
+</SCRIPT>
+<TABLE  >
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Change Approval Review</td>
+<td>&nbsp;<a href="javascript:helppopup()">Help</a></td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>Change Approval Date</TD><TD><KBD ID='review_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Suite</TD><TD ><KBD ID='suite_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Change Type</TD><TD><table><tr><td width=90><KBD ID='type_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='chg_type_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Trigger</TD><TD><KBD ID='trigger_cd'></KBD>&nbsp;&nbsp;#&nbsp;&nbsp;<KBD ID='problem_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>RFC#</TD><TD><TABLE><TR><TD WIDTH=150><KBD ID='rfc_no'></KBD></td><td><KBD ID='cablink'></KBD></TD></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Description</TD><TD width='650'><KBD ID='description_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Implementation (Remedy As Of: <KBD ID='remedy_asof_date'></KBD>)&nbsp;<a href="javascript:popup()">Show attributes.</a></td></tr>
+<TR CLASS='bg2'><TD width='200'>Release</TD><TD><KBD ID='release_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comment:&nbsp;&nbsp;<KBD ID='release_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned Start</TD><TD><KBD ID='remedy_start_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned End</TD><TD><KBD ID='remedy_end_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Outage Required (Remedy)</TD><TD width='650'><KBD ID='outage_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Release Specialist</TD><TD><KBD ID='remedy_verifier_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Change Duration</TD><TD><KBD ID='install_hours_tx'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Impacts</td></tr>
+<TR CLASS='bg2'><TD width='200'>Non-Routine (as per NCF-CAB)</TD><TD><table><tr><td width=90><KBD ID='rtn_maint_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='non_rtn_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Non-KPHC Impact</TD><TD><table><tr><td width=90><KBD ID='asm_impact_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='legacy_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Cross Suite</TD><TD><table><tr><td width=90><KBD ID='x_suite_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='cross_suite_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Ad-Hoc/Other Dependencies</TD><TD width='650'><KBD ID='adhoc_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Patient Safety/PART</TD><TD><table><tr><td width=90><KBD ID='safety_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='pat_safety_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>User Notify Method</TD><TD><table><tr><td width=90><KBD ID='notify_cd'></KBD></td><td>Other:&nbsp;&nbsp;<KBD ID='user_notify_tx'></KBD></td></tr></table></TD></TR>
+
+<tr class='bg1'><td colspan=2>Testing</td></tr>
+<TR CLASS='bg2'><TD width='200'>Testing Group</TD><TD><KBD ID='test_method_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comment:&nbsp;&nbsp;<KBD ID='test_grp_comment_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test Status</TD><TD><KBD ID='tested_cd'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;Comments (NCF):&nbsp;&nbsp;<KBD ID='tst_status_ncf_cmnt_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Tester</TD><TD><KBD ID='tested_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test RFC/SR#</TD><TD><KBD ID='test_approve_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Test Results Approver</TD><TD><KBD ID='boa_test_aprv_nm'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Reviews</td></tr>
+<TR CLASS='bg2'><TD width='200'>Technical Sign-Off</TD><TD><table><tr><td width=90><KBD ID='interface_sign_off_cd'></KBD></td><td>Follow-up:&nbsp;&nbsp;<KBD ID='interface_sign_off_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Security Sign-Off</TD><TD><table><tr><td width=90><KBD ID='security_sign_off_cd'></KBD></td><td>Follow-up:&nbsp;&nbsp;<KBD ID='security_sign_off_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>BAO Delegate / Approve Change</TD><TD><KBD ID='boa_change_aprv_nm'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2>NCF CAB Info</td></tr>
+<TR CLASS='bg2'><TD width='200'>NCF-CAB Review Status</TD><TD><table><tr><td width=90><KBD ID='fcab_review_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='status_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>RFC Compliant</TD><TD><table><tr><td width=90><KBD ID='compliant_cd'></KBD></td><td>Comment:&nbsp;&nbsp;<KBD ID='rfc_compliant_comment_tx'></KBD></td></tr></table></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Final Status</TD><TD><KBD ID='final_review_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Approval Date</TD><TD><KBD ID='fcab_decision_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Offline</TD><TD><KBD ID='on_offline_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Caution Color</TD><TD><KBD ID='color_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Call Order</TD><TD><KBD ID='call_seq_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>NCF Comments</TD><TD><KBD ID='resolution_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Other</td></tr>
+<TR CLASS='bg2'><TD width='200'>AC Comments</TD><TD width='650'><KBD ID='ac_comment_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Group</TD><TD><KBD ID='remedy_grp_tx'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+<tr><td><KBD ID='remedyno'></KBD></td></tr>
+</table>
+
+
+
+

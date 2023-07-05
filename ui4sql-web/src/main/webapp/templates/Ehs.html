@@ -1,0 +1,50 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Error Handling System (EHS) </td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class="bg1"><td colspan=2>EHS Info</td></tr>
+<TR class="bg2"><TD>Date</TD><TD><TABLE><TR><TD><KBD ID='error_date'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>Interface</TD><TD><KBD ID='interface_id'></KBD></TD></TR>	
+<TR class="bg2"><TD>IB Interface Name</TD><TD><KBD ID='interface_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Instance</TD><TD><KBD ID='instance_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>MRN</TD><TD width="500"><KBD ID='mrn_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Error File</TD><TD><KBD ID='error_file_nm'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>MQ</td></tr>
+<TR class="bg2"><TD>Broker</TD><TD><KBD ID='broker_nm'></KBD></TD></TR>	
+<TR class="bg2"><TD>Queue</TD><TD width="500"><KBD ID='queue_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>ReSubmit Queue</TD><TD><KBD ID='resubmit_queue_nm'></KBD></TD></TR>	
+<TR class="bg2"><TD>MQ Error Text</TD><TD width="500"><KBD ID='error_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Bridges A/C</TD><TD><KBD ID='assigned_uid'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+
+<TR class="bg2"><TD>Problem</TD><TD width="500" ><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Impact</TD><TD width="500"><KBD ID='impact_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Root Cause</TD><TD width="500"><KBD ID='cause_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Resolution</td></tr>
+<TR class="bg2"><TD>How Resolved</TD><TD width="500"><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Follow-up</TD><TD width="500"><KBD ID='followup_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD width="500"><KBD ID='notes_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

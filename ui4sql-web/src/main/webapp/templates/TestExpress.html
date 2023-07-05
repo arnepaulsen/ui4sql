@@ -1,0 +1,73 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	return true}
+	
+function popup() {
+window.open('http://<KBD ID="host"></KBD>/<KBD ID="tomcat_name"></KBD>/Router?Target=Popup','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1');
+}
+
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Express Test Plan</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='product_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Go-Live RFC/SR</TD><TD><KBD ID='cab_sr_no'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='srlink'></KBD></TD></TR>
+<TR class="bg2"><TD>CAB Date</TD><TD><KBD ID='cab_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='450'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Test Plan Prepared By</TD><TD><KBD ID='assigned_uid'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Planning</td></tr>
+<TR CLASS="BG2"><TD>Start Date</TD><TD ><KBD ID='test_start_date'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>End Date</TD><TD ><KBD ID='test_end_date'></KBD></TD></TR>
+<TR class="bg2"><TD>Plan Sign Date</TD><TD colspan=2><KBD ID='plan_sign_date'></KBD>&nbsp;Status:&nbsp;<KBD ID='plan_sign_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Case Sign Date</TD><TD colspan=2><KBD ID='case_sign_date'></KBD>&nbsp;Status:&nbsp;<KBD ID='case_sign_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR CLASS="BG2"><TD>Overall Progress</TD><TD><KBD ID='progress_cd'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Test Status</TD><TD><KBD ID='test_stat_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Status Summary</TD><TD><KBD ID='status_summary_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Test Overview</td></tr>
+<TR class="bg2"><TD>Change Description</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Test Objective</TD><TD><KBD ID='problem_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Test Steps</TD><TD><KBD ID='plan_exec_blob'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Test Results</TD><TD><KBD ID='plan_end_engage_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Approvals</td></tr>
+<TR class="bg2"><TD>Test Lead Accepted By</TD><TD><KBD ID='test_lead_uid'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Approved Date</TD><TD ><KBD ID='summary_sign_date'></KBD></TD></TR>
+<TR class="bg2"><TD>RFC Submitter Approval</TD><TD><KBD ID='manager_uid'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Remedy Info (As of: <KBD ID='remedy_asof_date'></KBD>)&nbsp;<a href="javascript:popup()">Show attributes.</a></td></tr>
+<TR CLASS='bg2'><TD width='200'>Priority/Urgency</TD><TD><KBD ID='urgency_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Status</TD><TD><KBD ID='remedy_status'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned End/Install Date</TD><TD><KBD ID='fmt_remedy_end_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requested Complete Date</TD><TD><KBD ID='fmt_remedy_requested_completion_dt'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+				
+
+		
+
+		
+		

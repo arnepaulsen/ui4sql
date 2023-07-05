@@ -1,0 +1,177 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.sponsored_dt_flag.checked == false ) {
+		document.Form1.sponsored_dt_flag.value = 'N';
+		document.Form1.sponsored_dt_flag.checked = true;
+	}	
+	if (document.Form1.release_dt_flag.checked == false ) {
+		document.Form1.release_dt_flag.value = 'N';
+		document.Form1.release_dt_flag.checked = true;
+	}
+	if (document.Form1.cr_assign_dt_flag.checked == false ) {
+		document.Form1.cr_assign_dt_flag.value = 'N';
+		document.Form1.cr_assign_dt_flag.checked = true;
+	}	
+	if (document.Form1.revised_dt_flag.checked == false ) {
+		document.Form1.revised_dt_flag.value = 'N';
+		document.Form1.revised_dt_flag.checked = true;
+	}	
+	if (document.Form1.golive_dt_flag.checked == false ) {
+		document.Form1.golive_dt_flag.value = 'N';
+		document.Form1.golive_dt_flag.checked = true;
+	}	
+	if (document.Form1.estimated_dt_flag.checked == false ) {
+		document.Form1.estimated_dt_flag.value = 'N';
+		document.Form1.estimated_dt_flag.checked = true;
+	}	
+	if (document.Form1.epic_prov_est_dt_flag.checked == false ) {
+		document.Form1.epic_prov_est_dt_flag.value = 'N';
+		document.Form1.epic_prov_est_dt_flag.checked = true;
+	}	
+		
+	if (document.Form1.test2_dt_flag.checked == false ) {
+		document.Form1.test2_dt_flag.value = 'N';
+		document.Form1.test2_dt_flag.checked = true;
+	}	
+	if (document.Form1.epic_preapproval_dt_flag.checked == false ) {
+		document.Form1.epic_preapproval_dt_flag.value = 'N';
+		document.Form1.epic_preapproval_dt_flag.checked = true;
+	}
+	if (document.Form1.ncal1_approval_dt_flag.checked == false ) {
+		document.Form1.ncal1_approval_dt_flag.value = 'N';
+		document.Form1.ncal1_approval_dt_flag.checked = true;
+	}
+	if (document.Form1.ncal2_approval_dt_flag.checked == false ) {
+		document.Form1.ncal2_approval_dt_flag.value = 'N';
+		document.Form1.ncal2_approval_dt_flag.checked = true;
+	}
+	if (document.Form1.ecb1_approval_dt_flag.checked == false ) {
+		document.Form1.ecb1_approval_dt_flag.value = 'N';
+		document.Form1.ecb1_approval_dt_flag.checked = true;
+	}
+	if (document.Form1.ecb2_approval_dt_flag.checked == false ) {
+		document.Form1.ecb2_approval_dt_flag.value = 'N';
+		document.Form1.ecb2_approval_dt_flag.checked = true;
+	}
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+
+
+<tr class="bg2"><td colspan=4><KBD ID='msg'></KBD></td></tr>
+<tr class="bg0"><TD COLSPAN=4><TABLE ><TR><TD ALIGN=LEFT>Change Request</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="BG2"><TD>Change Request #</TD><TD COLSPAN=3><KBD ID='cr_no'></KBD></TD></TR>
+<TR class="BG2"><TD WIDTH=150 >Short Name</TD><TD COLSPAN=3><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Emergency CR</TD><TD COLSPAN=3><KBD ID='emergency_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Region</TD><TD COLSPAN=3><KBD ID='region_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Severity</TD><TD COLSPAN=3><KBD ID='severity_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Nature of Change</TD><TD COLSPAN=3><KBD ID='type_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Status</td></tr>
+<TR class="BG2"><TD>Status</TD><TD COLSPAN=3><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Delay Code</TD><TD COLSPAN=3><KBD ID='delay_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Patient Safety</TD><TD COLSPAN=3><KBD ID='patient_safety_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Release Package</TD><TD COLSPAN=3><KBD ID='release_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Standard/Custom</TD><TD COLSPAN=3><KBD ID='std_custom_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Progress Notes</TD><TD COLSPAN=3><KBD ID='progress_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Progress Dates</td></tr>
+<TR class="BG2"><TD>Requested</TD><TD><KBD ID='requested_date'></KBD></TD> <TD>Required For Test</TD><TD><KBD ID='test1_date'></KBD></TD></TR>	
+<TR class="BG2"><TD>Suite Required For Production</TD><TD><KBD ID='required_date'></KBD></TD> <TD>Delivered</TD><TD><KBD ID='delivery_date'></KBD></TD></TR>	
+<TR class="BG2"><TD>Rev Capture CAB</TD><TD><KBD ID='rcc_date'></KBD></TD> <TD>&nbsp;</TD><td></td></TR>	
+
+<tr class="bg1"><td colspan=4>Approval Dates</td></tr>
+<TR class="BG2"><TD>1.Sponsor Approved</TD><TD><KBD ID='sponsored_date'></KBD>&nbsp;&nbsp;<KBD ID='sponsored_dt_flag'></KBD></TD> <TD>2.Natl CR Assigned</TD><TD><KBD ID='cr_assign_date'></KBD>&nbsp;&nbsp;<KBD ID='cr_assign_dt_flag'></KBD></TD></TR>	
+<TR class="BG2"><TD>3.Epic Pre-Approve</TD><TD><KBD ID='epic_preapproval_date'></KBD>&nbsp;&nbsp;<KBD ID='epic_preapproval_dt_flag'></KBD></TD> <TD>4.N.Cal Approval #1</TD><TD><KBD ID='ncal1_approval_date'></KBD>&nbsp;&nbsp;<KBD ID='ncal1_approval_dt_flag'></KBD></TD></TR>	
+<TR class="BG2"><TD>5.ECB Approval #1</TD><TD><KBD ID='ecb1_approval_date'></KBD>&nbsp;&nbsp;<KBD ID='ecb1_approval_dt_flag'></KBD></TD> <TD>6.Epic Prov. Est.</TD><TD><KBD ID='epic_prov_est_date'></KBD>&nbsp;&nbsp;<KBD ID='epic_prov_est_dt_flag'></KBD></TD></TR>	
+<TR class="BG2"><TD>7.N.Cal Approval #2</TD><TD><KBD ID='ncal2_approval_date'></KBD>&nbsp;&nbsp;<KBD ID='ncal2_approval_dt_flag'></KBD></TD> <TD>8.ECB Approval #2</TD><TD><KBD ID='ecb2_approval_date'></KBD>&nbsp;&nbsp;<KBD ID='ecb2_approval_dt_flag'></KBD></TD></TR>	
+<TR class="BG2"><TD>9.Code To Natl</TD><TD><KBD ID='release_date'></KBD>&nbsp;&nbsp;<KBD ID='release_dt_flag'></KBD></TD><TD>10.Code In Test</TD><TD><KBD ID='test2_date'></KBD>&nbsp;&nbsp;<KBD ID='test2_dt_flag'></KBD></TD> </TR>	
+<TR class="BG2"><TD>11.Est. Production</TD><TD><KBD ID='estimated_date'></KBD>&nbsp;&nbsp;<KBD ID='estimated_dt_flag'></KBD></TD><TD>12.Revised</TD><TD><KBD ID='revised_date'></KBD>&nbsp;&nbsp;<KBD ID='revised_dt_flag'></KBD></TD> </TR>	
+<TR class="BG2"><TD>14.Go-Live</TD><TD><KBD ID='golive_date'></KBD>&nbsp;&nbsp;<KBD ID='golive_dt_flag'></KBD></TD> <TD>&nbsp;</TD><TD></TD></TR>	
+
+<tr class="bg1"><td colspan=4>Requestor</td></tr>
+<TR class="BG2"><TD>Primary Requestor</TD><TD width=150><KBD ID='requestor_uid'></KBD></TD> <TD ></TD><TD ></TD></TR>	
+<TR class="BG2"><TD>Requestor Email</TD><TD><KBD ID='requestor_email_nm'></KBD></TD> <TD>Requesting Region</TD><TD><KBD ID='region_nm'></KBD></TD></TR>	
+<TR class="BG2"><TD>Requestor Phone</TD><TD><KBD ID='requestor_phone_nm'></KBD></TD> <TD>Requesting Team</TD><TD><KBD ID='team_nm'></KBD></TD></TR>	
+<TR class="BG2"><TD>Other Requestors</TD><TD COLSPAN=3><KBD ID='requestor_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Team</td></tr>
+<TR class="BG2"> <TD>Team Lead</TD><TD><KBD ID='leader_uid'></KBD></TD><TD></TD><TD></TD></TR>	
+<TR class="BG2"> <TD>Team Lead Email</TD><TD><KBD ID='leader_email_nm'></KBD></TD><TD></TD><TD></TD></TR>	
+<TR class="BG2"> <TD>Team Lead Phone</TD><TD><KBD ID='leader_phone_nm'></KBD></TD><TD></TD><TD></TD> </TR>	
+
+<tr class="bg1"><td colspan=4>Implementation AC</td></tr>
+<TR class="BG2"><TD>Implementation Contact</TD><TD><KBD ID='implementor_uid'></KBD></TD><TD>Implementation Contact Region(s)</TD><TD><KBD ID='implementor_reg_tx'></KBD></TD> </TR>	
+<TR class="BG2"><TD>Implementation Contact Email</TD><TD><KBD ID='implementor_email_nm'></KBD></TD><TD>Implementation Contact Team</TD><TD><KBD ID='implementor_team_tx'></KBD></TD> </TR>	
+<TR class="BG2"><TD>Implementation Contact Phone</TD><TD><KBD ID='implementor_phone_nm'></KBD></TD><td></td><td></td></TR>	
+
+<tr class="bg1"><td colspan=4>Vendor</td></tr>
+<TR class="BG2"><TD>Owner</TD><TD><KBD ID='epic_uid'></KBD></TD> <TD></TD><TD></TD></TR>	
+<TR class="BG2"><TD>Owner Email</TD><TD><KBD ID='epic_email_nm'></KBD></TD><TD></TD><TD></TD></TR>	
+<TR class="BG2"><TD>Owner Phone</TD><TD><KBD ID='epic_phone_nm'></KBD></TD><TD></TD> <TD></TD></TR>	
+<TR class="BG2"><TD>Estimate</TD><TD COLSPAN=3><KBD ID='estimate_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Remedy</td></tr>
+<TR class="BG2"><TD>SR #</TD><TD COLSPAN=3><KBD ID='sr_no'></KBD></TD></TR>
+<TR class="BG2"><TD>PR #</TD><TD COLSPAN=3><KBD ID='pr_no'></KBD></TD></TR>
+<TR class="BG2"><TD>RFC #</TD><TD COLSPAN=3><KBD ID='rfc_no'></KBD></TD></TR>
+<TR class="BG2"><TD>Test RFC #</TD><TD COLSPAN=3><KBD ID='rfc_test_no'></KBD></TD></TR>
+<TR class="BG2"><TD>Prod RFC #</TD><TD COLSPAN=3><KBD ID='rfc_prod_no'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Details</td></tr>
+<TR class="BG2"><TD>Description /<br>Detailed Specification</TD><TD width=550 COLSPAN=3><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Benefit of Change</TD><TD COLSPAN=3 width=550 ><KBD ID='benefits_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Alternatives</TD><TD COLSPAN=3 width=550 ><KBD ID='alternatives_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Impact/Risk <br>of Not Making<br>Change</TD><TD COLSPAN=3><KBD ID='risks_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Desired Release</TD><TD COLSPAN=3><KBD ID='release_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=4>Regions/Teams/Impacts</td></tr>
+<TR class="BG2"><TD>Other Impacted<br>Regions/Teams</TD><TD COLSPAN=3><KBD ID='other_region_nm'></KBD></TD></TR>	
+<TR class="BG2"><TD>Description of <br>Other Region Impacts</TD><TD COLSPAN=3><KBD ID='regn_impact_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Cross-Region<br>Analysis To <br>Confirm Impacts</TD><TD COLSPAN=3><KBD ID='regn_analysis_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>CO</TD><TD COLSPAN=3><KBD ID='co_tx'></KBD></TD></TR>	
+
+<TR class="BG2"><TD>Primary Application</TD><TD COLSPAN=3><KBD ID='application_id'></KBD></TD></TR>	
+<TR class="BG2"><TD>Secondary Products</TD><TD COLSPAN=3><KBD ID='sec_products_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Customer Use</TD><TD COLSPAN=3><KBD ID='epic_use_blob'></KBD></TD></TR>	
+	
+
+<tr class="bg1"><td colspan=4>Pre-Approvals</td></tr>
+<TR class="BG2"><TD>Clinical Products</TD><TD COLSPAN=3><KBD ID='clinical_team_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Billing/Access/Scheduling/Claims (Mark Lipsky)</TD><TD COLSPAN=3><KBD ID='billing_team_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Foundations/Clarity/EDI/Other (Tim Escher)</TD><TD COLSPAN=3><KBD ID='foundation_team_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Within scope<br>for EEG Development</TD><TD COLSPAN=3><KBD ID='eeg_scope_cd'></KBD></TD></TR>	
+
+<TR class="BG2"><TD>Vendor Recommendation</TD><TD COLSPAN=3><KBD ID='epic_recommendation_blob'></KBD></TD></TR>	
+<TR class="BG2"><TD>Vendor Comments</TD><TD COLSPAN=3><KBD ID='epic_comment_blob'></KBD></TD></TR>	
+
+
+<tr class="bg1"><td colspan=4>Our Extension Group(EEG) Comments</td></tr>
+<TR class="BG2"><TD>EEG Decision</TD><TD COLSPAN=3><KBD ID='eeg_decision_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>EEG Comments</TD><TD COLSPAN=3><KBD ID='eeg_comments_blob'></KBD></TD></TR>	
+
+
+<TR class="bg1"><td colspan=4>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD >Added By</TD><TD COLSPAN=3><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD >Updated By</TD><TD  COLSPAN=3><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD ><KBD ID='submitted_tag'></KBD></TD><TD COLSPAN=3><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD ><KBD ID='reviewed_tag'></KBD></TD><TD COLSPAN=3><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+		
+
+		
+		

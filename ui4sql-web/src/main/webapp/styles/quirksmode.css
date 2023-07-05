@@ -1,0 +1,353 @@
+/**
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+ */
+@import url("notfornn4.css");
+@import url("tables.css");
+
+html,body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 13px verdana,helvetica,arial,sans-serif;
+	padding: 20px 7%;
+	background-color: #DEE7F7;
+	color: #333333;
+	max-width: 700px;
+}
+
+td {
+	font: 13px verdana,helvetica,arial,sans-serif;
+	line-height: 140%;
+}
+
+th,td {
+	vertical-align: top;
+}
+
+/* Blocks - general */
+
+h2,h3,h4,h5 {
+	color: #527BBD;
+	font-weight: 600;
+	font-size: 200%;
+}
+
+h2 {
+	border-bottom: 1px solid #000000;
+	margin: 0 -20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 75px;
+	line-height: 100%;
+}
+
+h3 {
+	font-size: 140%;
+	line-height: 90%;
+	border-bottom: 1px solid #527BBD;
+	margin-top: 50px;
+}
+
+h4 {
+	font-size: 120%;
+}
+
+h5 {
+	font-size: 90%;
+}
+
+hr {
+	color: #000000;
+	background-color: #000000;
+}
+
+pre {
+	color: #732264;
+	margin-left: 5%;
+	border-left: 1px solid #732264;
+	padding: 15px;
+	line-height: 110%;
+	width: 90%; /* causes bug in IE 5.0 Windows */
+	scrollbar-face-color: #527BBD;
+	scrollbar-arrow-color: #DEE7F7;
+	scrollbar-track-color: #DEE7F7;
+}
+
+blockquote {
+	border-left: 1px solid #333333;
+	padding-left: 10px;
+}
+
+/* IE5 Mac hack \*/
+
+pre {
+	overflow: auto;
+	overflow-y: hidden;
+}
+
+/* End IE5 Mac hack */
+
+ul,ol,li {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol {
+	margin-left: 25px;
+}
+
+.spacing li {
+	margin-bottom: 15px;
+}
+
+.spacing li li, .spacing li:last-child {
+	margin-bottom: 0;
+}
+
+hr {
+	margin-top: 100px;
+}
+
+input,select,textarea {
+	background-color: #EBF1FA;
+	color: #222222;
+}
+
+input[type=submit], 
+input[type=reset], 
+input[type=button],
+button {
+	background-color: #B2B9C6;
+	color: #000000;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+	background-color: #ffffff;
+}
+
+/* BLOCKS - SPECIAL CASES */
+
+.smaller {
+	font-size: 85%;
+}
+
+.larger {
+	font-size: 120%;
+}
+
+p.intro {
+	color: #326400;
+}
+
+p.intro * {
+	color: inherit;
+}
+
+p.intro:first-letter {
+	font-size: 200%;
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-right: 5px;
+}
+
+p.intro + * {
+	clear: left;
+}
+
+div#header {
+	text-align: right;
+	font-size: 80%;
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+.accent {
+	border: 1px solid #000000;
+	padding: 10px;
+}
+
+div.accent {
+	margin: 20px 0;
+}
+
+pre.wrong {
+	color: #333333;
+	border-left: 3px solid #D02E31;
+}
+
+div.floater {
+	width: 40%;
+	margin: 0;
+	margin-left: 10px;
+	padding: 10px;
+	border: 1px solid #B0BDEC;
+	background-color: #D5DFF5;
+	font-size: 90%;
+	clear: right;
+}
+
+div.floater h3 {
+	margin: 5px -10px;
+	padding-left: 10px;
+}
+
+div.floater h4 {
+	margin: 0;
+	margin-bottom: 10px;
+}
+
+div.floater p {
+	margin: 5px 0;
+}
+
+div.floater b {
+	font-weight: 300;
+}
+
+ul.browserfacts {
+	font-size: 80%;
+}
+
+li.lastimportant {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333333;
+	margin-bottom: 10px;
+}
+
+p.hr {
+	background-color: #A82538;
+}
+
+
+/* FOOTER */
+
+div#footer {
+	background-image: url(pix/ppk_onder.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	margin: 10px -20px;
+	padding-bottom: 30px;
+	padding-top: 20px;
+	padding-left: 20px;
+	border-top: 1px solid #000000;
+	line-height: normal;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	clear: both;
+	text-align: center;
+}
+
+div#footer a {
+	padding: 3px 5px;
+	text-decoration: none;
+}
+
+div#footer a:hover {
+	border-bottom: 3px solid #527BBD;
+	padding-bottom: 0;
+}
+
+p#validation {
+	text-align: left;
+	color: #B0B8C0;
+	width: 300px;
+}
+
+/* INLINE ELEMENTS EXCEPT LINKS */
+
+code {
+	color: #000000;
+	background-color: #DADEE4;
+}
+
+div.floater code, a code {
+	background-color: transparent;
+}
+
+p.dateline {
+	text-align: right;
+	font-size: 80%;
+	margin-top: 50px;
+	margin-bottom: 0;
+	color: #858B94;
+	border-top: 1px solid;
+}
+
+h3 + p.dateline {
+	border-top: none;
+	margin-top: 20px;
+}
+
+p.dateline + h4 {
+	margin-top: 0;
+}
+
+input.paypal {
+	background-color: transparent;
+	width: 150px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+img.screenshot {
+	margin-left: 10px;
+	border: 1px solid #000000;
+}
+
+img.screenshot:hover {
+	border-color: #696969;
+}
+
+
+/* LINKS 
+
+	IE Windows note: FIRST :visited, THEN :hover, or it won't work
+
+*/
+
+a:visited {
+	color: #7C9BCE;
+}
+
+a,a:hover {
+	color: #527BBD;
+}
+
+
+a.external:visited {
+	color: #C25CAB;
+}
+
+a.external,a.external:visited:hover {
+	color: #AF0078;
+}
+
+a.page:visited {
+	color: #777B81;
+}
+
+a.page,a.page:visited:hover {
+	color: #333333;
+}
+
+a.outoforder {
+	color: #cc0000;
+	text-decoration: line-through;
+}
+
+p.intro a:visited {
+	color: #779863;
+}
+
+p.intro a,p.intro a:visited:hover {
+	color: #326400;
+}
+

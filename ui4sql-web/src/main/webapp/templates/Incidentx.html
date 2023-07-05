@@ -1,0 +1,86 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (isInteger(document.Form1.incident_no.value) == false ) {
+		alert("Please set Incident# to a valid number");
+		return false;
+	}
+	
+	return true}
+	
+function worklog_toggle() {
+
+	if (document.Form1.Action.value == 'Post' ) {
+		return;
+	}
+	visi('worklog1');
+	visi('worklog2');		
+}
+
+
+</SCRIPT>
+<TABLE  >
+
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Incident / Problem Report</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width="150">Incident #</TD><TD width="450"><KBD ID='incident_no'></KBD></TD></TR>
+<TR class="bg2"><TD >Title</TD><TD><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Interface</TD><TD><KBD ID='interface_id'></KBD></TD></TR>	
+<TR class="bg2"><TD>Instance</TD><TD><KBD ID='instance_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Patient Safety</TD><TD><KBD ID='patient_safety_flag'></KBD></TD></TR>
+<TR class="bg2"><TD>Event Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Summary</td></tr>
+<TR CLASS='bg2'><TD width='200'>Description (Remedy)</TD><TD width='650'><KBD ID='description_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>ETA Info</TD><TD width="500"><KBD ID='eta_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Remedy Info</td></tr>
+<TR CLASS='bg2'><TD width='200'>As of</TD><TD><KBD ID='remedy_asof_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Submitter</TD><TD><KBD ID='submitter_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Closurue Code</TD><TD><KBD ID='closure_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Open Date/Time</TD><TD><KBD ID='start_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Category</TD><TD><KBD ID='remedy_cat_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Type</TD><TD><KBD ID='remedy_type_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Item</TD><TD><KBD ID='remedy_item_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Group</TD><TD><KBD ID='remedy_grp_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Impact</TD><TD><KBD ID='impact_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Urgency</TD><TD><KBD ID='urgency_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Escalated</TD><TD><KBD ID='escalated_cd'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Impact</TD><TD width="500"><KBD ID='notes_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Communication</TD><TD width="500"><KBD ID='communication_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Work-Around</TD><TD width="500"><KBD ID='mitigation_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Resolution</td></tr>
+<TR class="bg2"><TD>Actual Hours</TD><TD><KBD ID='act_hours_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>How Resolved</TD><TD width="500"><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Root Cause</TD><TD width="500"><KBD ID='cause_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Follow-up</TD><TD width="500"><KBD ID='followup_blob'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Remedy Worklog&nbsp;&nbsp;&nbsp;<a id=blah href=# onClick="worklog_toggle();return false;">Show / Hide</a></td></tr>
+<TR id='worklog1' CLASS='bg2'><TD width='200'>Append</TD><TD><KBD ID='worklog'></KBD></TD></TR>
+<TR id='worklog2' CLASS='aud2'><TD width='200'>Current</TD><TD><KBD ID='worklog_blob'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

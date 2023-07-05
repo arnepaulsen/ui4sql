@@ -1,0 +1,170 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.handle.value.length == 0 ) {
+		alert('Please enter a user handle.');
+		return false;
+	}
+	
+	var lNuid ;
+	lNuid  = document.Form1.handle.value
+	
+	if (isNUID(lNuid) == false ) {
+		return false;
+	}
+	
+	if (document.Form1.user_suite_cd.value == 'RC' && document.Form1.default_prod_cd.value == '0') {
+		alert('Please enter a Product Code.');
+		return false;
+	}
+	
+
+	if (document.Form1.superUser.value == 'Y') {
+	
+		if (document.Form1.grantable_flag.checked == false ) {
+			document.Form1.grantable_flag.value = 'N';
+			document.Form1.grantable_flag.checked = true;
+		}
+	
+		if (document.Form1.administrator_flag.checked == false ) {
+			document.Form1.administrator_flag.value = 'N';
+			document.Form1.administrator_flag.checked = true;
+		}
+	}
+
+	
+	if (document.Form1.sox_role_flag.checked == false ) {
+		document.Form1.sox_role_flag.value = 'N';
+		document.Form1.sox_role_flag.checked = true;
+	}
+	
+	if (document.Form1.active_flag.checked == false ) {
+		document.Form1.active_flag.value = 'N';
+		document.Form1.active_flag.checked = true;
+	}
+	if (document.Form1.leader_flag.checked == false ) {
+		document.Form1.leader_flag.value = 'N';
+		document.Form1.leader_flag.checked = true;
+	}
+	
+	if (document.Form1.executive_flag.checked == false ) {
+		document.Form1.executive_flag.value = 'N';
+		document.Form1.executive_flag.checked = true;
+	}
+	
+	if (document.Form1.testor_flag.checked == false ) {
+		document.Form1.testor_flag.value = 'N';
+		document.Form1.testor_flag.checked = true;
+	}
+
+	if (document.Form1.reviewer_flag.checked == false ) {
+		document.Form1.reviewer_flag.value = 'N';
+		document.Form1.reviewer_flag.checked = true;
+	}
+	
+	if (document.Form1.chg_aprv_flag.checked == false ) {
+		document.Form1.chg_aprv_flag.value = 'N';
+		document.Form1.chg_aprv_flag.checked = true;
+	}
+	
+	if (document.Form1.ip_leader_flag.checked == false ) {
+		document.Form1.ip_leader_flag.value = 'N';
+		document.Form1.ip_leader_flag.checked = true;
+	}
+	
+	
+	
+	return true
+}
+
+function isNUID(nuid) {
+
+	if (nuid.length < 7) {
+		alert('NUID is to short.');
+		return false;
+	}
+	
+	pos1 = nuid.charCodeAt(0);
+	
+	if ( (pos1 > 96 && pos1 < 123) || (pos1 > 64 && pos1 < 91))  {
+	
+	}
+	else {
+		alert('NUID should start with a letter');
+		return false;
+	}	
+	
+	numpart = nuid.substring(1,7)
+	
+	if (isInteger(numpart)) {
+		return true;
+	}
+	else {
+		alert('Invalid NUID - must start with letter followed by six digits.');
+		return false;;
+	}
+	
+
+	return true;
+}
+
+
+</SCRIPT>
+<TABLE  >
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>User Information</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class='bg2'><TD WIDTH=150>User Id:</TD><TD width=450><KBD ID='handle'></KBD></TD></TR>
+<tr class='bg2'><TD>First Name</td><td><KBD ID='first_name'></KBD></td></tr>	
+<tr class='bg2'><TD>MI</TD><TD><KBD ID='mi_nm'></KBD></TD></TR>
+<tr class='bg2'><TD>Last Name</TD><TD><KBD ID='last_name'></KBD></TD></TR>
+<tr class='bg2'><TD>Active</TD><TD><KBD ID='active_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>E-Mail</TD><TD><KBD ID='email_address'></KBD></TD></TR>
+<tr class='bg2'><TD>Floor</TD><TD><KBD ID='floor_tx'></KBD></TD></TR>
+<tr class='bg2'><TD>Contact Phone</TD><TD><KBD ID='phone_tx'></KBD></TD></TR>
+<tr class='bg2'><TD>Tie Line</TD><TD><KBD ID='tie_line_tx'></KBD></TD></TR>
+<tr class='bg2'><TD>Password</TD><TD><KBD ID='password_nm'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Privliges</TD></TR>
+<tr class='bg2'><TD>Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>
+<tr class='bg2'><TD>Executive</TD>	<TD><KBD ID='executive_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Testor</TD>	<TD><KBD ID='testor_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Administrator</TD>	<TD><KBD ID='administrator_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Grantable</TD>	<TD><KBD ID='grantable_flag'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Roles</TD></TR>
+<tr class='bg2'><TD>Change Approver</TD><TD><KBD ID='chg_aprv_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Reviewer</TD><TD><KBD ID='reviewer_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Team Leader</TD><TD><KBD ID='leader_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Patient Safety</TD><TD><KBD ID='pat_sfty_cd'></KBD></TD></TR>
+<tr class='bg2'><TD>SR Tracker Level</TD><TD><KBD ID='sr_tracker_level_cd'></KBD></TD></TR>
+<tr class='bg2'><TD>InPatient Issue Triage</TD><TD><KBD ID='ip_issue_triage_cd'></KBD></TD></TR>
+<tr class='bg2'><TD>InPatient Leader</TD><TD><KBD ID='ip_leader_flag'></KBD></TD></TR>
+<tr class='bg2'><TD>Sox Remediator</TD><TD><KBD ID='sox_role_flag'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Login Defaults</TD></TR>
+<TR class='bg2'><TD>Home Page</TD><TD><KBD ID='home_page_nm'></KBD></TD></TR>
+<tr class='bg2'><TD>Suite</TD><TD><KBD ID='user_suite_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Product</TD><TD><KBD ID='default_prod_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Project</TD><TD><KBD ID='default_project_id'></KBD></TD></TR>
+<TR class='bg2'><TD>Application</TD><TD><KBD ID='default_appl_id'></KBD></TD></TR>
+<TR class='bg2'><TD>Screen Style</TD><TD><KBD ID='style_nm'></KBD></TD></TR>
+
+<tr><td><KBD ID='superUser'></KBD></td></tr>
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+		

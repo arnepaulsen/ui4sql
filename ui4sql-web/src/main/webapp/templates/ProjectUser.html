@@ -1,0 +1,28 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+	return true
+ }
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Project Resources</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR  CLASS="bg2"><TD width="100">User</TD><TD width="400"><KBD ID='user_id'></KBD></TD></TR>
+<TR  CLASS="bg2"><TD>Email</td><td><KBD ID='email_tx'></KBD></td></tr>	
+<TR  CLASS="bg2"><TD>Phone</td><td><KBD ID='phone_tx'></KBD></td></tr>	
+
+<TR class="bg1"><td colspan=2>Participation Info</TD></TR>
+<TR  CLASS="bg2"><TD>System Role</td><td><KBD ID='role_cd'></KBD></td></tr>	
+<TR  CLASS="bg2"><TD>Role Summary</td><td><KBD ID='summary_tx'></KBD></td></tr>	
+<TR  CLASS="bg2"><TD>Role Description</td><td><KBD ID='role_blob'></KBD></td></tr>	
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+</table>

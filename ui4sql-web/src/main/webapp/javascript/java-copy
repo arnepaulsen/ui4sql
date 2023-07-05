@@ -1,0 +1,7 @@
+#~/usr/bin/bash
+FILES='*.js'
+for i in $FILES
+do
+ echo $i
+ sed -i "1s;^;/**\n * UI4SQL V1.0 (https://ui4sql.net)\n * Copyright 2022 PaulsenITSolutions \n * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) \n */\n;" $i
+done

@@ -1,0 +1,96 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+
+	var dt ;
+	dt = document.Form1.target_close_dt.value
+	if (isDate(dt)==false){	alert('Target Date is invalid.');dt.focus;return false}
+	
+	
+	var app ;
+	app = document.Form1.owner_uid.value
+	if (app == '0'){	alert('Please select the A/C.'); return false}
+
+	var interface ;
+	interface = document.Form1.interface_id.value
+	if (interface == '0'){	alert('Please select an interface.'); return false}
+	
+	
+	return true;
+	
+	}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Work Effort</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD WIDTH='250'>Id</TD><TD WIDTH='450'><KBD ID='workid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='250'>Title</TD><TD WIDTH='450'><KBD ID='title_nm'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Status	</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Last Action</TD><TD width=600><KBD ID='status_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Target Complete</TD><TD><KBD ID='target_close_dt'></KBD></TD></TR>
+<TR class="bg2"><TD>Patient Safety</TD><TD><KBD ID='patient_safety_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Review with Vendor</TD><TD><KBD ID='review_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Scope</TD></TR>
+<TR class="bg2"><TD>Severity</TD><TD><KBD ID='severity_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Work Around</TD><TD><KBD ID='workaround_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Regulatory</TD><TD><KBD ID='regulatory_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>MRN Count</TD><TD><KBD ID='mrn_count_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Est. Fix Hours</TD><TD><KBD ID='est_hrs_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Users Impact #</TD><TD><KBD ID='user_impact_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Problem Frequency</TD><TD><KBD ID='frequency_tx'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>Interfaces</TD></TR>
+<TR class="bg2"><TD>Source</TD><TD><KBD ID='development_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Suite</TD><TD width=600><KBD ID='suite_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Interface</TD><TD><KBD ID='interface_id'></KBD></TD></TR>
+
+
+<TR class="bg0"><TD colspan=2>Ownership</TD></TR>
+<TR class="bg2"><TD>Technical A/C</TD><TD ><KBD ID='owner_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>Business A/C</TD><TD><KBD ID='owner_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor Resource</TD><TD><KBD ID='epic_contact_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Tracking Systems</TD></TR>
+<TR class="bg2"><TD>PR #</TD><TD><KBD ID='incident_no'></KBD></TD></TR>
+<TR class="bg2"><TD>RFC/SR #</TD><TD><KBD ID='rfc_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Defect #</TD><TD><KBD ID='defect_no'></KBD></TD></TR>
+<TR class="bg2"><TD>RA #</TD><TD><KBD ID='ra_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor CR #</TD><TD><KBD ID='cr_no'></KBD></TD></TR>
+<TR class="bg2"><TD>Vendor Ad-Hoc #</TD><TD><KBD ID='adhoc_no'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Detail</TD></TR>
+<TR class="bg2"><TD>Description / Problem</TD><TD width=600><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Business Impact / Scope</TD><TD width=600><KBD ID='scope_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Root Cause</TD><TD width=600><KBD ID='cause_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Remediation</TD><TD width=600><KBD ID='remediation_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Solution Alternatives</TD><TD width=600><KBD ID='alternative_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Issues</TD><TD width=600><KBD ID='issues_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Remaining Tasks</TD><TD width=600><KBD ID='tasks_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD width=600><KBD ID='notes_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Status History</TD><TD width=600><KBD ID='history_blob'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+	

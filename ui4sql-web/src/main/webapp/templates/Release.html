@@ -1,0 +1,74 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	var dt ;
+	dt = document.Form1.test_start_date.value
+	if (isDate(dt)==false){	alert('Test Date is invalid.');dt.focus;return false}
+	
+	dt = document.Form1.last_review_date.value
+	if (isDate(dt)==false){	alert('Last Review Date is invalid.');dt.focus;return false}
+	
+	dt = document.Form1.install_date.value
+	if (isDate(dt)==false){	alert('Install Date is invalid.');dt.focus;return false}
+		
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Release</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="BG2"><TD>Reference Id</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="BG2"><TD WIDTH=150>Title</TD><TD width=450><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="BG2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Note</TD><TD><KBD ID='status_tx'></KBD></TD></TR>	
+<TR class="BG2"><TD>Release Manager</TD><TD><KBD ID='manager_uid'></KBD></TD></TR>	
+
+
+<tr class="bg1"><td colspan=2>Planning</td></tr>
+<TR class="BG2"><TD>Code Receive</TD><TD><KBD ID='code_receipt_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Release Note Review Start</TD><TD><KBD ID='release_note_rv_start_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Release Note Review End</TD><TD><KBD ID='release_note_rv_end_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Test Env. Install</TD><TD><KBD ID='test_install_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Test Start</TD><TD><KBD ID='test_start_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Test End</TD><TD><KBD ID='test_end_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Business Days</TD><TD><KBD ID='bsns_days_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Last CAB Review</TD><TD><KBD ID='last_review_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Code Freeze Start</TD><TD><KBD ID='test_frz_start_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Code Freeze End</TD><TD><KBD ID='test_frz_end_date'></KBD></TD></TR>
+<TR class="BG2"><TD>Install</TD><TD><KBD ID='install_date'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Type</td></tr>
+<TR class="BG2"><TD>Test Environment</TD><TD><KBD ID='test_env_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Release Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>	
+<TR class="BG2"><TD>Outage Hours</TD><TD><KBD ID='outage_hours_no'></KBD></TD></TR>	
+	
+<tr class="bg1"><td colspan=2>Overview</td></tr>
+<TR class="BG2"><TD>Description</TD><TD><KBD ID='blob_desc'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Disposition</td></tr>	
+<TR class="BG2"><TD>Install Problems</TD><TD><KBD ID='blob_install_problems'></KBD></TD></TR>	
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+		
+
+		
+		

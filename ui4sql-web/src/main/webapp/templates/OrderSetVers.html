@@ -1,0 +1,89 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	var dt1;
+	dt1 = document.Form1.rx_review_date.value
+	if (document.Form1.rx_review_date.value.length > 0) {
+	if (isDate(dt1)==false){alert('Pharmacy Review Date is invalid.');return false}
+	}
+	
+	var dt2;
+	dt2 = document.Form1.rx_done_date.value
+	if (document.Form1.rx_done_date.value.length > 0) {
+	if (isDate(dt2)==false){alert('Pharmacy Done Date is invalid.');return false}
+	}
+	
+	var dt3;
+	dt3 = document.Form1.clinic_con_rv_date.value
+	if (document.Form1.clinic_con_rv_date.value.length > 0) {
+	if (isDate(dt3)==false){alert('Clinical Content Review Date is invalid.');return false}
+	}
+
+
+	var dt4;
+	dt4 = document.Form1.clinic_con_done_date.value
+	if (document.Form1.clinic_con_done_date.value.length > 0) {
+	if (isDate(dt4)==false){alert('Clinical Content Done Date is invalid.');return false}
+	}
+
+	
+	var dt5;
+	dt5 = document.Form1.docushare_post_date.value
+	if (document.Form1.docushare_post_date.value.length > 0) {
+	if (isDate(dt5)==false){alert('Docushare Date is invalid.');return false}
+	}
+
+	var dt6;
+	dt6 = document.Form1.cl_post_date.value
+	if (document.Form1.cl_post_date.value.length > 0) {
+	if (isDate(dt6)==false){alert('CL Posting date is invalid.');return false}
+	}
+
+	
+	return true}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Order Set Paper Version</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="BG2"><TD>Order Set</TD><TD><KBD ID='os_title_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Order Set #</TD><TD><KBD ID='os_reference_nm'></KBD></TD></TR>
+<TR class="BG2"><TD>Paper Version</TD><TD><KBD ID='paper_version_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='650'><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=lightgreen colspan=2>Paper Section</td></tr>
+<TR class="BG2"><TD>Prioritized for Paper</TD><TD><KBD ID='paper_priority_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Screen Shots Available</TD><TD><KBD ID='screen_shot_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Screen Shots Location</TD><TD><KBD ID='screen_shot_loc_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Clinical Content Review</TD><TD><KBD ID='clinic_con_rv_tx'></KBD></TD></TR>
+<TR class="BG2"><TD>Clinical Content Review Date</TD><TD><table><tr><td width=200>Submitted:&nbsp;<KBD ID='clinic_con_rv_date'></KBD></td><td>Done:<KBD ID='clinic_con_done_date'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Pharmacy Review By</TD><TD><KBD ID='rx_reviewer_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Pharmacy Review Date</TD><TD><table><tr><td width=200>Submitted:&nbsp;<KBD ID='rx_review_date'></KBD></td><td>Done:&nbsp;<KBD ID='rx_done_date'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Docushare Posting Date</TD><TD><KBD ID='docushare_post_date'></KBD></TD></TR>
+<TR class="BG2"><TD>CL Posting Date</TD><TD><KBD ID='cl_post_date'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Notes</TD><TD WIDTH='650'><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=lightgreen colspan=2>SR Info</td></tr>
+<TR class="BG2"><TD>Screen Shot Date</TD><TD><KBD ID='tracker_screen_shot_loc'></KBD></TD></TR>
+
+<tr class="bg1" ><td bgcolor=lightgreen colspan=2>Ownership</td></tr>
+<TR CLASS='bg2'><TD WIDTH='150'>CL Domain</TD><TD WIDTH='650'><KBD ID='cl_domain_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>CL SubDomain</TD><TD WIDTH='650'><KBD ID='cl_sub_domain_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Created By</TD><TD WIDTH='650'><KBD ID='created_by_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD WIDTH='150'>Owner</TD><TD WIDTH='650'><KBD ID='owner_tx'></KBD></TD></TR>
+
+
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

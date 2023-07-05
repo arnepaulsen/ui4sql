@@ -1,0 +1,61 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.confirmed_flag.checked == false ) {
+		document.Form1.confirmed_flag.value = 'N';
+		document.Form1.confirmed_flag.checked = true;
+	}
+	
+	return true;
+	
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Objective</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='450'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Reference Id.</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Type</TD><TD><KBD ID='measure_cd'></KBD></TD></TR>		
+
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Detail</TD></TR>
+
+<TR class="bg2"><TD>Description</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Target Realize Date</TD><TD><KBD ID='realize_dt'></KBD></TD></TR>	
+<TR class="bg2"><TD>Stakeholder</TD><TD><KBD ID='stakeholder_resp_id'></KBD></TD></TR>	
+<TR class="bg2"><TD>Success<br>Criteria</TD><TD><KBD ID='success_blob'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Result</TD></TR>
+<TR class="bg2"><TD>Confirmed</TD><TD><KBD ID='confirmed_flag'></KBD></TD></TR>	
+<TR class="bg2"><TD>Verifed Date</TD><TD><KBD ID='verified_dt'></KBD></TD></TR>	
+<TR class="bg2"><TD>Verifed By</TD><TD><KBD ID='verified_by_id'></KBD></TD></TR>	
+<TR class="bg2"><TD>Outcome</TD><TD><KBD ID='result_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
+		
+
+		
+		

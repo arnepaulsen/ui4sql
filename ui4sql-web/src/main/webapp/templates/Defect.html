@@ -1,0 +1,52 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	if (isInteger(document.Form1.defect_id.value) == false ) {
+		alert("Please set Defect# to a valid number");
+		return false;
+	}
+	
+	return true;
+}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Test Defect</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD>Defect #</TD><TD ><KBD ID='defect_id'></KBD></TD></TR>
+<TR class="bg2"><TD width="150">Title</TD><TD width="500"><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Application</TD><TD ><KBD ID='application_id'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Status Note</TD><TD><KBD ID='status_tx'></KBD></TD></TR>		
+<TR class="bg2"><TD>Current Owner</TD><TD><KBD ID='assigned_uid'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+<TR class="bg2"><TD>Test Case</TD><TD><KBD ID='testcase_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Description</TD><TD width="500"><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes</TD><TD width="500"><KBD ID='notes_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Resolution</td></tr>
+<TR class="bg2"><TD>Root Cause</TD><TD width="500"><KBD ID='root_cause_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>How Resolved</TD><TD width="500"><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Resolved By</TD><TD width="500"><KBD ID='closed_uid'></KBD></TD></TR>	
+<TR class="bg2"><TD>Resolved Date</TD><TD width="500"><KBD ID='closed_date'></KBD></TD></TR>	
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

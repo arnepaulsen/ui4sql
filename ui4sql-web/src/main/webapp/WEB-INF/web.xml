@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<module-name>ui4sql</module-name>
+
+	<description>UI 4 SQL - Web Application Builder</description>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>Login.html</welcome-file>
+	</welcome-file-list>
+
+
+	<context-param>
+		<param-name>System-Message</param-name>
+		<param-value>You can update your Preferences from the link at top right after logging in.</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>DB-Product</param-name>
+		<param-value>MySQL</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB-URL</param-name>
+		<param-value>jdbc:mariadb://192.168.1.4:3306/pmo</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB-Userid</param-name>
+		<param-value>pmo</param-value>
+	</context-param>
+	<context-param>
+		<param-name>DB-Password</param-name>
+		<param-value>getajob!</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>Application-Version</param-name>
+		<param-value>2.0</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>Log-Level</param-name>
+		<param-value>DEBUG</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>HTTP-Offset</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>tomcat-name</param-name>
+		<param-value>ui4sql</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>REMEDY-USERID</param-name>
+		<param-value>wspmoc</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>REMEDY-PASSWORD</param-name>
+		<param-value>remedy-pw</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>REMEDY-URL</param-name>
+		<param-value>http://arnepaulsenjr.com:9086/arsys/services/ARService?server=remedy.arnepaulsenjr.com</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>EXCEL-PATH</param-name>
+		<param-value>192.168.1.140:8082/ui4sql/reports/</param-value>
+	</context-param>
+
+
+	<context-param>
+		<param-name>Templates-path</param-name>
+		<param-value>https://ui4sql.net/ui4sql/templates/</param-value>
+	</context-param>
+	
+
+	<servlet>
+		<servlet-name>Router</servlet-name>
+		<servlet-class>router.Router</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ProjectUploader</servlet-name>
+		<servlet-class>router.ProjectUploader</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Utility</servlet-name>
+		<servlet-class>router.Utility</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SessionDump</servlet-name>
+		<servlet-class>router.SessionDump</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PostInfoRequest</servlet-name>
+		<servlet-class>router.PostInfoRequest</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>StarTeamUpload</servlet-name>
+		<servlet-class>router.StarTeamUpload</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>StarTeamDownload</servlet-name>
+		<servlet-class>router.StarTeamDownload</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Router</servlet-name>
+		<url-pattern>/Router</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ProjectUploader</servlet-name>
+		<url-pattern>/ProjectUploader</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Utility</servlet-name>
+		<url-pattern>/Utility</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SessionDump</servlet-name>
+		<url-pattern>/SessionDump</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>PostInfoRequest</servlet-name>
+		<url-pattern>/PostInfoRequest</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>StarTeamUpload</servlet-name>
+		<url-pattern>/StarTeamUpload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>StarTeamDownload</servlet-name>
+		<url-pattern>/StarTeamDownload</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+
+
+</web-app>

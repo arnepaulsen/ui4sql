@@ -1,0 +1,83 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.ip_uat_flag.checked == false ) {
+		document.Form1.ip_uat_flag.value = 'N';
+		document.Form1.ip_uat_flag.checked = true;
+	}
+	
+	if (document.Form1.ecp_reqr_flag.checked == false ) {
+		document.Form1.ecp_reqr_flag.value = 'N';
+		document.Form1.ecp_reqr_flag.checked = true;
+	}
+	
+	return true;
+}
+
+function popup() {
+window.open("http://<KBD ID='host'></KBD>/<KBD ID='tomcat_name'></KBD>/Router?Target=Popup','Remedy','width=800, height=400, menubar=0, toolbar=0, scrollbars=1, resizable=1");
+}
+
+
+
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>NCAL BIO Test Request</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD>Test Id / SR #</TD><TD ><KBD ID='sr_no'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='planlink'></KBD>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='srlink'></KBD></TD></TR>
+<TR class="bg2"><TD>Title</TD><TD><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Purpose</TD><TD width=450><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Test Requirements Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>	
+<TR class="bg2"><TD>Requestor</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Planning</td></tr>
+<TR class="bg2"><TD>Go-Live RFC/SR</TD><TD><KBD ID='cab_sr_no'></KBD></TD></TR>	
+<TR class="bg2"><TD>Environment Readiness Date</TD><TD><KBD ID='test_start_date'></KBD></TD></TR>
+<TR CLASS="BG2"><TD>Target End Date</TD><TD ><KBD ID='test_end_date'></KBD></TD></TR>
+<TR class="bg2"><TD>CAB Date</TD><TD><KBD ID='cab_dt'></KBD></TD></TR>	
+<TR class="bg2"><TD>Install Date</TD><TD><KBD ID='install_dt'></KBD></TD></TR>	
+
+<tr class="bg1"><td colspan=2>Scope and Data Requirements</td></tr>
+<TR class="bg2"><TD>Provider/User/Template</TD><TD><KBD ID='template_nm'></KBD></TD></TR>	
+<TR class="bg2"><TD>MRN/Benefits</TD><TD><KBD ID='benefits_blob'></KBD></TD></TR>	
+<TR class="bg2"><TD>Ancillary/Legacy <br>System Dependency</TD><TD><KBD ID='anc_list_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Impacted Vendor Products</TD><TD><KBD ID='epic_products_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Test Environments? <br>Facility? Department?</TD><TD><KBD ID='test_env_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>WF/Use Cases <br>Test Scenarios</TD><TD width=450><KBD ID='execution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Data Matrix</TD><TD width=450><KBD ID='test_data_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Regrssion Requirements</TD><TD width=450><KBD ID='data_regr_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Other Requirements</TD><TD width=450><KBD ID='other_reqr_blob'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Additional Remedy Questions</td></tr>
+<TR class="bg2"><TD>BAOD</TD><TD width=450><KBD ID='baod_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>Project Manager</TD><TD><KBD ID='manager_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>AC/Build Manager</TD><TD><KBD ID='builder_uid'></KBD></TD></TR>
+<TR class="bg2"><TD>IP UAT Required</TD><TD><KBD ID='ip_uat_flag'></KBD></TD></TR>
+<TR class="bg2"><TD>Capacity Planning, <br>Performance Analysis Required?</TD><TD><KBD ID='ecp_reqr_flag'></KBD></TD></TR>
+
+<tr class='bg1'><td colspan=2>Remedy Info (As of: <KBD ID='remedy_asof_date'></KBD>)&nbsp;<a href="javascript:popup()">Show attributes.</a></td></tr>
+<TR CLASS='bg2'><TD width='200'>Priority/Urgency</TD><TD><KBD ID='remedy_urgency'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Status</TD><TD><KBD ID='remedy_status'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requester</TD><TD><KBD ID='requester_uid'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Planned End/Install Date</TD><TD><KBD ID='fmt_remedy_end_dt'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Requested Complete Date</TD><TD><KBD ID='fmt_remedy_requested_completion_dt'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

@@ -1,0 +1,67 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.accepted_flag.checked == false ) {
+		document.Form1.accepted_flag.value = 'N';
+		document.Form1.accepted_flag.checked = true;
+	}
+	return true;
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Proposal / Concept Initiation</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD WIDTH='250'>Title</TD><TD WIDTH='550'><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Reference Id</TD><TD><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Product</TD><TD><KBD ID='product_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Version</TD><TD><KBD ID='version_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Requestor</TD><TD><KBD ID='requestor_uid'></KBD></TD></TR>	
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Priority</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Note</TD><TD><KBD ID='status_tx'></KBD></TD></TR>
+<TR class="bg2"><TD>Owner</TD><TD><KBD ID='owner_uid'></KBD></TD></TR>	
+
+<TR class="bg0"><TD colspan=2>Attributes</TD></TR>
+<TR class="bg2"><TD>Reason</TD><TD><KBD ID='reason_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Est. Project Type</TD><TD><KBD ID='size_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Budgeted Request</TD><TD><KBD ID='budgeted_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Required Date</TD><TD><KBD ID='required_dt'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Overview</TD></TR>
+<TR class="bg2"><TD width=250>Business Opportunity</TD><TD width=550><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Functional Areas, Organizations and Sites Affected</TD><TD width=550><KBD ID='areas_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Business Inforation and Data Requirements</TD><TD width=550><KBD ID='data_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Business Function and Process Requirements</TD><TD width=550><KBD ID='process_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Goals and Objectives</TD><TD width=550><KBD ID='goals_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Current Support Infrastructure</TD><TD width=550><KBD ID='current_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>General Solution</TD><TD width=550><KBD ID='solution_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Cost/Benefit Overview</TD><TD width=550><KBD ID='costs_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Business Impacts</TD><TD width=550><KBD ID='impacts_blob'></KBD></TD></TR>
+<TR class="bg2"><TD width=250>Alternatives</TD><TD width=550><KBD ID='alternative_blob'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Outcome</TD></TR>
+<TR class="bg2"><TD>Accepted</TD><TD><KBD ID='accepted_flag'></KBD></TD></TR>	
+<TR class="bg2"><TD>Accepted Date</TD><TD><KBD ID='accept_dt'></KBD></TD></TR>	
+<TR class="bg2"><TD>Qualifications</TD><TD><KBD ID='qualify_blob'></KBD></TD></TR>
+<TR class="bg2"><TD>Rejection Notes (if any)</TD><TD><KBD ID='rejection_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

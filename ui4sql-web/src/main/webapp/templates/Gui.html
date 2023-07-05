@@ -1,0 +1,43 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	return true;
+}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>User Interface</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width="150">Title:</TD><TD width="450"><KBD ID='title_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Reference Id:</TD><TD ><KBD ID='reference_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Status</td></tr>
+<TR class="bg2"><TD>Version</TD><TD><KBD ID='version_nm'></KBD></TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="bg2"><TD>Proect</TD><TD><KBD ID='project_id'></KBD></TD></TR>
+<TR class="bg2"><TD>Changes</TD><TD><KBD ID='version_blob'></KBD></TD></TR>
+<tr class="bg1"><td colspan=2>Detail</td></tr>
+	
+<TR class="bg2"><TD>Description</TD><TD><KBD ID='blob_description'></KBD></TD></TR>
+<TR class="bg2"><TD>Triggers:</TD><TD><KBD ID='blob_trigger'></KBD></TD></TR>
+<TR class="bg2"><TD>Purpose:</TD><TD><KBD ID='blob_purpose'></KBD></TD></TR>
+<TR class="bg2"><TD>Edits:</TD><TD><KBD ID='blob_edits'></KBD></TD></TR>
+<TR class="bg2"><TD>Rules:</TD><TD><KBD ID='blob_rules'></KBD></TD></TR>
+<TR class="bg2"><TD>Notes:</TD><TD><KBD ID='blob_notes'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

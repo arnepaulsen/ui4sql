@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  UI4SQL V1.0 (https://ui4sql.net)
+  Copyright 2022 PaulsenITSolutions 
+  Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="wf01" class="forms.BeanFieldString" p:name="patient_nm"
+		p:maxWidth="64" p:width="32" p:defaultValue="" />
+		
+	<bean id="wf02" class="forms.BeanFieldString" p:name="requestor_nm"
+		p:maxWidth="64" p:width="32" p:defaultValue="" />
+
+	<bean id="wf03" class="forms.BeanFieldString" p:name="location_tx"
+		p:maxWidth="50" p:width="50" p:defaultValue="" />
+		
+	<bean id="wf04" class="forms.BeanFieldString" p:name="mrn_tx"
+		p:maxWidth="12" p:width="12"  p:defaultValue="" />
+
+		
+	<bean id="wf05" class="forms.BeanFieldString" p:name="har_tx"
+		p:maxWidth="12" p:width="12" p:defaultValue="" />
+
+	<bean id="wf06" class="forms.BeanFieldString"
+		p:name="need_tx" p:maxWidth="255" p:width="64" p:defaultValue="" />
+
+	<bean id="wf08" class="forms.BeanFieldString" p:name="admit_person_tx"
+		p:maxWidth="32" p:width="32" p:defaultValue="" />
+
+	<bean id="wf09" class="forms.BeanFieldString" p:name="backout_verified_tx"
+		p:maxWidth="32" p:width="32" p:defaultValue="" />
+		
+	<bean id="wf10" class="forms.BeanFieldString" p:name="admitted_date"
+		p:maxWidth="10" p:width="10" p:defaultValue=""/>
+		
+	<bean id="wf11" class="forms.BeanFieldString" p:name="sr_no"
+		p:maxWidth="10" p:width="10" p:defaultValue="" />	
+		
+	<bean id="wf12" class="forms.BeanFieldString" p:name="admit_tm_tx"
+		p:maxWidth="16" p:width="16" p:defaultValue="" />	
+	
+	<bean id="wf13" class="forms.BeanFieldString" p:name="backout_date"
+		p:maxWidth="12" p:width="12" p:defaultValue=""/>
+		
+	<bean id="wf14" class="forms.BeanFieldSelect">
+		<constructor-arg value="status_cd" />
+		<constructor-arg value="OPN" type="java.lang.String" />
+		<constructor-arg value="STATUS" type="java.lang.String" />
+	</bean>
+	
+	<bean id="wf15" class="forms.BeanFieldSelect">
+		<constructor-arg value="requestor_uid" />
+		<constructor-arg value="0" type="java.lang.Integer" />
+		<constructor-arg value="userHT" />
+	</bean>
+	
+	<bean id="wf16" class="forms.BeanFieldDisplay">
+		<constructor-arg value="added_by" />
+		<constructor-arg value="added_by" />
+	</bean>
+
+	<bean id="wf17" class="forms.BeanFieldDisplay">
+		<constructor-arg value="updated_by" />
+		<constructor-arg value="updated_by" />
+	</bean>
+
+			
+		
+	<bean id="beanList" class="forms.BeanList">
+
+		<property name="list"  >
+		 	<list>
+				<ref bean="wf01" />
+				<ref bean="wf02" />
+				<ref bean="wf03" />
+				<ref bean="wf04" />
+				<ref bean="wf05" />
+				<ref bean="wf06" />
+				<ref bean="wf08" />
+				<ref bean="wf09" />
+				<ref bean="wf10" />
+				<ref bean="wf11" />
+				<ref bean="wf12" />
+				<ref bean="wf13" />
+				<ref bean="wf14" />
+				<ref bean="wf15" />
+				<ref bean="wf16" />
+				<ref bean="wf17" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="Patient" class="plugins.AbsDivisionPlugin"
+		p:tableName="tpatient" p:keyName="patient_id"
+		p:targetTitle="Patient Validation"
+		p:excelOk="true"
+		p:excelTemplate="Patient_Validator.xls"
+		p:excelStartRow="1"
+		p:excelMaxColumns="12"
+		p:excelView="vExcelPatient"
+		p:listViewName="vpatient_list" p:selectViewName="vpatient"
+		p:showAuditSubmitApprove="false"
+		p:hasDetailForm="false" 
+			p:listHeaders="Admitted Date, Location, MRN, Name, HAR"
+		p:beanList-ref="beanList" />
+
+</beans>

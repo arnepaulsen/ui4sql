@@ -1,0 +1,84 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+		
+			
+	return true}
+	
+function worklog_toggle() {
+
+	if (document.Form1.Action.value == 'Post' ) {
+		return;
+	}
+	visi('worklog1');
+	visi('worklog2');		
+}
+
+
+</SCRIPT>
+<TABLE  >
+
+
+<TR class='bg1'><TD colspan=2>Message</TD></TR>
+<TR class="bg2"><TD colspan=2><font color=red>&nbsp;&nbsp;&nbsp;&nbsp;<KBD ID='msg'></KBD></font></TD></TR>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Service Request Prioritization Form</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD width='200'>Title</TD><TD width='650'><KBD ID='title_nm'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>SR #</TD><TD><KBD ID='sr_no'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Application</TD><TD ><KBD ID='application_id'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2>Facility Approval: (Choose all that apply)</td></tr>
+<TR CLASS='bg2'><TD width='200'>Domain Approved</TD><TD ><KBD ID='domain_apv_flag'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Regional Domain Approved</TD><TD ><KBD ID='reg_domain_apv_flag'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Facility Priority for Issue (1-10)</TD><TD ><KBD ID='fac_priority_cd'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Comments/Impacts of Change</td></tr>
+<TR CLASS='bg2'><TD width='200'>Comments</TD><TD width='650'><KBD ID='priority_comment_blob'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Configuration / Code</td></tr>
+<TR CLASS='bg2'><TD width='200'>Summary of Configuration</TD><TD width='650'><KBD ID='configuration_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Vendor Configuration</TD><TD width='650'><KBD ID='epic_code_blob'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>HC Configuration LOE</TD><TD ><KBD ID='config_loe_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Vendor LOE</TD><TD ><KBD ID='epic_loe_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Communication Class</TD><TD ><KBD ID='comm_class_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Training Effort</TD><TD ><KBD ID='train_hrs_tx'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Recommended Team Prioritization</TD><TD ><KBD ID='recomend_priority_cd'></KBD></TD></TR>
+
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Rationale for Prioritization</td></tr>
+<TR CLASS='bg2'><TD width='200'>Please Justify</TD><TD width='650'><KBD ID='priority_rationale_blob'></KBD></TD></TR>
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Leadership Prioritization Section</td></tr>
+<TR CLASS='bg2'><TD width='200'>Approved</TD><TD ><KBD ID='ip_apv_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Made By</TD><TD ><KBD ID='ip_approver_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Leadership Prioritization</TD><TD ><KBD ID='ip_leader_apv_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Communication Class</TD><TD ><KBD ID='comm_class_leader_cd'></KBD></TD></TR>
+<TR CLASS='bg2'><TD width='200'>Remedy Status</TD><TD ><KBD ID='status_cd'></KBD></TD></TR>
+
+
+<tr CLASS='bg1'><td colspan=2 bgcolor='yellow'>Action / Follow-Up / Outstanding Questions</td></tr>
+<TR CLASS='bg2'><TD width='200'></TD><TD ><KBD ID='notes_blob'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
+

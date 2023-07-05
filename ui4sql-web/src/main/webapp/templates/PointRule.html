@@ -1,0 +1,108 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+
+
+function CheckFloat (f) {
+
+	if (isFloat(f) != true) {
+		alert ('Please check all the fields for valid floating-point numbers');
+		return false;
+	}
+	return true;
+}
+function ValidateForm(){
+
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a name for the estimate.');
+		return false;
+	}
+	
+	
+	if (CheckFloat(document.Form1.module_chg_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.module_chg_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.module_chg_complex_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.module_new_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.module_new_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.module_new_complex_flt.value) == false) { return false;}
+
+
+	if (CheckFloat(document.Form1.interface_chg_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.interface_chg_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.interface_chg_complex_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.interface_new_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.interface_new_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.interface_new_complex_flt.value) == false) { return false;}
+
+
+	if (CheckFloat(document.Form1.data_chg_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.data_chg_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.data_chg_complex_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.data_new_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.data_new_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.data_new_complex_flt.value) == false) { return false;}
+	
+	
+	if (CheckFloat(document.Form1.gui_chg_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.gui_chg_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.gui_chg_complex_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.gui_new_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.gui_new_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.gui_new_complex_flt.value) == false) { return false;}
+	
+	
+	if (CheckFloat(document.Form1.report_chg_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.report_chg_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.report_chg_complex_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.report_new_simple_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.report_new_medium_flt.value) == false) { return false;}
+	if (CheckFloat(document.Form1.report_new_complex_flt.value) == false) { return false;}
+	
+	
+	
+		
+	return true;
+}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Function Point Calculation Rule</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width=150>Rule Name</TD><TD width=450  ><KBD ID='title_nm'></KBD></TD></TR>
+
+<tr class="bg1"><td colspan=2>Modules</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Changed</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='module_chg_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='module_chg_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='module_chg_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>New</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='module_new_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='module_new_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='module_new_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Electronic Interfaces</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Changed</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='interface_chg_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='interface_chg_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='interface_chg_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>New</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='interface_new_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='interface_new_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='interface_new_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Data</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Changed</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='data_chg_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='data_chg_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='data_chg_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>New</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='data_new_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='data_new_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='data_new_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+
+<tr class="bg1"><td colspan=2>User Interfaces</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Changed</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='gui_chg_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='gui_chg_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='gui_chg_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>New</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='gui_new_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='gui_new_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='gui_new_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Reports</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Changed</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='report_chg_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='report_chg_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='report_chg_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>New</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=70>Simple:</TD><TD ALIGN=LEFT WIDTH=30><KBD ID='report_new_simple_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Medium:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='report_new_medium_flt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Complex:</TD><TD ALIGN=LEFT WIDTH=40><KBD ID='report_new_complex_flt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>

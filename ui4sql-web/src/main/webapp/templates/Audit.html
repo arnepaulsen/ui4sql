@@ -1,0 +1,49 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	
+	return true
+ }
+
+</SCRIPT>
+
+<TABLE  >
+<tr class="bg1"><td  colspan=2><KBD ID='message'></KBD></td></tr>
+
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Process Audit Log</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TD></tr>
+<TR class="BG2"><TD width=150>Process</TD><TD  width="450"><KBD ID='process_id'></KBD></TD></TR>
+<TR class="BG2"><TD>Stage Audited</TD><TD><KBD ID='stageName'></KBD></TD></TR>
+<TR class="BG2"><TD>Project Manger</TD><TD><KBD ID='pm_uid'></KBD></TD></TR>
+
+<tr class="bg1"><td  colspan=2>Status</td></tr>
+<TR class="BG2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Audit Control No</TD><TD><KBD ID='audit_seq_no'></KBD></TD></TR>
+<TR class="BG2"><TD>Audit Date/Time</TD><TD><KBD ID='audit_date'></KBD></TD></TR>
+
+<tr class="bg1"><td  colspan=2>Exceptions</td></tr>
+<TR class="BG2"><TD>Deliverables Missing Exception</TD><TD><KBD ID='deliverable_exception_flag'></KBD></TD></TR>
+<TR class="BG2"><TD>Effort Days Exception</TD><TD><KBD ID='effort_exception_flag'></KBD></TD></TR>
+<TR class="BG2"><TD>Interface Count Exception</TD><TD><KBD ID='interface_exception_flag'></KBD></TD></TR>
+<TR class="BG2"><TD>Module Count Exception</TD><TD><KBD ID='module_exception_flag'></KBD></TD></TR>
+<TR class="BG2"><TD>Data Structure Count Exception</TD><TD><KBD ID='data_exception_flag'></KBD></TD></TR>
+<TR class="BG2"><TD>Function Points Exception</TD><TD><KBD ID='function_point_exception_flag'></KBD></TD></TR>
+
+<tr class="bg1"><td  colspan=2>Explanations</td></tr>
+<TR class="BG2"><TD>Description</TD><TD><KBD ID='desc_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Resolution</TD><TD><KBD ID='resolution_blob'></KBD></TD></TR>
+<TR class="BG2"><TD>Notes</TD><TD><KBD ID='notes_blob'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+		

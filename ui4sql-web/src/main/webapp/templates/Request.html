@@ -1,0 +1,59 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a title.');
+		return false;
+	}
+	
+	if (document.Form1.accepted_flag.checked == false ) {
+		document.Form1.accepted_flag.value = 'N';
+		document.Form1.accepted_flag.checked = true;
+	}
+	return true;
+	}
+
+</SCRIPT>
+<TABLE  >
+<tr class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Project Request</td><TD ALIGN=RIGHT><DIV ID='buttons'></DIV></TD></TR></TABLE></tr>
+<TR CLASS='bg2'><TD WIDTH='150'>Title</TD><TD WIDTH='450'><DIV ID='title_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Reference Id.</TD><TD><DIV ID='reference_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Version</TD><TD><DIV ID='version_nm'></DIV></TD></TR>
+<TR class="bg2"><TD>Requestor</TD><TD><DIV ID='requestor_uid'></DIV></TD></TR>	
+
+<TR class="bg0"><TD colspan=2>Status</TD></TR>
+<TR class="bg2"><TD>Status</TD><TD><DIV ID='status_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Priority</TD><TD><DIV ID='priority_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Note</TD><TD><DIV ID='status_tx'></DIV></TD></TR>
+<TR class="bg2"><TD>Owner</TD><TD><DIV ID='owner_uid'></DIV></TD></TR>	
+
+<TR class="bg0"><TD colspan=2>Attributes</TD></TR>
+<TR class="bg2"><TD>Reason</TD><TD><DIV ID='reason_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Est. Project Type</TD><TD><DIV ID='size_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Budgeted Request</TD><TD><DIV ID='budgeted_cd'></DIV></TD></TR>
+<TR class="bg2"><TD>Required Date</TD><TD><DIV ID='required_dt'></DIV></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Detail</TD></TR>
+<TR class="bg2"><TD>Description</TD><TD><DIV ID='desc_blob'></DIV></TD></TR>
+<TR class="bg2"><TD>Reason</TD><TD><DIV ID='reason_blob'></DIV></TD></TR>
+<TR class="bg2"><TD>Alternatives</TD><TD><DIV ID='alternative_blob'></DIV></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Outcome</TD></TR>
+<TR class="bg2"><TD>Accepted</TD><TD><DIV ID='accepted_flag'></DIV></TD></TR>	
+<TR class="bg2"><TD>Accepted Date</TD><TD><DIV ID='accept_dt'></DIV></TD></TR>	
+<TR class="bg2"><TD>Qualifications</TD><TD><DIV ID='qualify_blob'></DIV></TD></TR>
+<TR class="bg2"><TD>Rejection Notes (if any)</TD><TD><DIV ID='rejection_blob'></DIV></TD></TR>
+
+<tr class="bg1"></tr>
+<tr class="bg1"><td colspan=2>Audit</td></tr>
+<TR class="bg2"><TD>Added By</TD><TD><DIV ID='added_by'></DIV></TD></TR>
+<TR class="bg2"><TD>Updated By</TD><TD><DIV ID='updated_by'></DIV></TD></TR>
+<TR CLASS="bg2"><TD>Submitted By</TD><TD><DIV ID='submitted_by'></DIV></TD></TR>
+<TR class="bg2"><TD>Approved By</TD><TD><DIV ID='approved_by'></DIV></TD></TR>
+</table>

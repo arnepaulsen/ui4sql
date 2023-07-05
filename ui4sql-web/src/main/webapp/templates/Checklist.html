@@ -1,0 +1,370 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	if (document.Form1.title_nm.value.length == 0 ) {
+		alert('Please enter a name for the estimate.');
+		return false;
+	}
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<TR class="bg0"><TD COLSPAN=6><TABLE ><TR><TD ALIGN=LEFT>Project Checklist</TD><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class='bg1'></tr>
+<TR class='bg2'><TD width='50'>Reference</TD><TD colspan=5><KBD ID='reference_nm'></KBD></TD></TR>
+<TR class='bg2'><TD>Title</TD><TD colspan=5><KBD ID='title_nm'></KBD></TD></TR>
+<TR class='bg2'><TD>Version</TD><TD colspan=5><KBD ID='version_nm'></KBD></Td></TR>
+<TR class='bg2'><TD>Cut-Off Date</TD><TD colspan=5><KBD ID='version_date'></KBD></Td></TR>
+<TR class='bg2'><TD>Notes</TD><TD colspan=5><KBD ID='notes_blob'></KBD></Td></TR>
+
+
+
+<TR class='bg1'><TD width='50'>Item No.</TD><TD width='400'>Check Point</TD><TD width='50'>Response</TD><TD width='100'>Defect Category</TD><TD width='25'>Review Result</TD><Td width='150'>Remarks</Td></TR>
+
+
+<TR class='bg1'><TD colspan=6>General</TD></tr>
+
+<TR CLASS='BG2'>
+<TD>G1</TD>
+<TD ><p>Is the Project Charter artifact conforming to the approved template?</P></TD>
+<TD width='52'><KBD ID='g1_st'></KBD></TD>
+<TD>Standards Violation</TD>
+<TD><KBD ID='g1_rc'></KBD></TD>
+<TD><KBD ID='g1_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>G2</TD>
+<TD width='405'><p>Have all sections including exceptions been filled in?</P></TD>
+<TD width='52'><KBD ID='g2_st'></KBD></TD>
+<TD>Standards Violation</TD>
+<TD><KBD ID='g2_rc'></KBD></TD>
+<TD><KBD ID='g2_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>G3</TD>
+<TD width='405'><p>Are there any typo errors or spelling errors?</P></TD>
+<TD width='52'><KBD ID='g3_st'></KBD></TD>
+<TD>Incorrect (for Typo and spellings)</TD>
+<TD><KBD ID='g3_rc'></KBD></TD>
+<TD><KBD ID='g3_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>G4</TD>
+<TD width='405'><p>Does the Revision history show all revisions to the artifact ?</P></TD>
+<TD width='52'><KBD ID='g4_st'></KBD></TD>
+<TD>Standards Violation</TD>
+<TD><KBD ID='g4_rc'></KBD></TD>
+<TD><KBD ID='g4_rmk'></KBD></TD>
+</TR>
+
+<TR class='BG1'><TD colspan=6>Project Overview</TD></tr>
+
+<TR CLASS='BG2'>
+<TD>PO-1</TD>
+<TD width='450'><p>Has the Issue/Problem been defined which the Project is intended to Change ?</P></TD>
+<TD><KBD ID='po1_st'></KBD></TD>
+<TD>Incorrect or Incomplete</TD>
+<TD><KBD ID='po1_rc'></KBD></TD>
+<TD><KBD ID='po1_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-2</TD>
+<TD><p>Are the Project Objectives derived or connected to the Problem definition?</P></TD>
+<TD><KBD ID='po2_st'></KBD></TD>
+<TD>Inconsistent</TD>
+<TD><KBD ID='po2_rc'></KBD></TD>
+<TD><KBD ID='po2_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-3</TD>
+<TD><p>Have the Metrics been defined to measure the success of Project?</P></TD>
+<TD><KBD ID='po3_st'></KBD></TD>
+<TD>Inconsistent</TD>
+<TD><KBD ID='po3_rc'></KBD></TD>
+<TD><KBD ID='po3_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-4</TD>
+<TD><p>Is the current Business environment depicted?</P></TD>
+<TD><KBD ID='po4_st'></KBD></TD>
+<TD>Incorrect, and Incomplete</TD>
+<TD><KBD ID='po4_rc'></KBD></TD>
+<TD><KBD ID='po4_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-5</TD>
+<TD><p>Are the Customer's needs collected, prioritized  and documented?</P></TD>
+<TD><KBD ID='po5_st'></KBD></TD>
+<TD>Incorrect, Standards violation</TD>
+<TD><KBD ID='po5_rc'></KBD></TD>
+<TD><KBD ID='po5_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-6</TD>
+<TD><p>Are the Project level Critical to Quality Characteristics (CTQs) documented?</P></TD>
+<TD><KBD ID='po6_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po6_rc'></KBD></TD>
+<TD><KBD ID='po6_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-7</TD>
+<TD><p>Do the CTQs have a baseline and target value?</P></TD>
+<TD><KBD ID='po7_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po7_rc'></KBD></TD>
+<TD><KBD ID='po7_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>PO-8</TD>
+<TD><p>Are the potential project implementation releases or generations, identified and documented?</P></TD>
+<TD><KBD ID='po8_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po8_rc'></KBD></TD>
+<TD><KBD ID='po8_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-9</TD>
+<TD><p>Are there timelines and metrics associated with the implementation releases/generations?</P></TD>
+<TD><KBD ID='po9_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po9_rc'></KBD></TD>
+<TD><KBD ID='po9_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-10</TD>
+<TD><p>Are all stakeholders in the project identified and documented?</P></TD>
+<TD><KBD ID='po10_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po10_rc'></KBD></TD>
+<TD><KBD ID='po10_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>PO-11</TD>
+<TD><p>Are all stakeholders in the project identified and documented?</P></TD>
+<TD><KBD ID='po11_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='po11_rc'></KBD></TD>
+<TD><KBD ID='po11_rmk'></KBD></TD>
+</TR>
+
+<TR class='BG1'><TD colspan=6>Scope (In scope)</TD></tr>
+
+<TR CLASS='BG2'>
+<TD>SC-1</TD>
+<TD><p>Are the Customers, Associates, and Organizations identified as part of this project documented?</P></TD>
+<TD><KBD ID='sc1_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc1_rc'></KBD></TD>
+<TD><KBD ID='sc1_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-2</TD>
+<TD><p>Are the processes that will be impacted or changed by this project documented?</P></TD>
+<TD><KBD ID='sc2_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc2_rc'></KBD></TD>
+<TD><KBD ID='sc2_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-3</TD>
+<TD><p>Are the Technologies impacted by the project documented?</P></TD>
+<TD><KBD ID='sc3_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc3_rc'></KBD></TD>
+<TD><KBD ID='sc3_rmk'></KBD></TD>
+</TR>
+
+<TR class='BG1'><TD colspan=6>Scope (Out of Scope)</TD></tr>
+
+
+<TR CLASS='BG2'>
+<TD>SC-4</TD>
+<TD><p>Are the Customers, Associates, and organizations  that are not part of this project, documented as excluded?</P></TD>
+<TD><KBD ID='sc4_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc4_rc'></KBD></TD>
+<TD><KBD ID='sc4_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-5</TD>
+<TD><p>Are the processes that will not be impacted or not changed by this project documented as excluded from scope?</P></TD>
+<TD><KBD ID='sc5_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc5_rc'></KBD></TD>
+<TD><KBD ID='sc5_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-6</TD>
+<TD><p>Are the Technologies not impacted by the project documented as excluded from scope?</P></TD>
+<TD><KBD ID='sc6_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc6_rc'></KBD></TD>
+<TD><KBD ID='sc6_rmk'></KBD></TD>
+</TR>
+
+
+<TR class='BG1'><TD colspan=6>Scope (Deliverables, Constraints, Assumptions, Risks)</TD></tr>
+
+
+
+<TR CLASS='BG2'>
+<TD>SC-7</TD>
+<TD><p>Have the project constraints and boundaries within which the project has to operate been defined?</P></TD>
+<TD><KBD ID='sc7_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc7_rc'></KBD></TD>
+<TD><KBD ID='sc7_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>SC-8</TD>
+<TD><p>Have the effects on time and budget for each constraint been defined?</P></TD>
+<TD><KBD ID='sc8_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc8_rc'></KBD></TD>
+<TD><KBD ID='sc8_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-9</TD>
+<TD><p>Are the project assumptions for People, Process, and Technology  documented and confirmed?</P></TD>
+<TD><KBD ID='sc9_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc9_rc'></KBD></TD>
+<TD><KBD ID='sc9_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-10</TD>
+<TD><p>Have the execution risk pertaining to cost, quality, and timing been identified and defined?</P></TD>
+<TD><KBD ID='sc10_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc10_rc'></KBD></TD>
+<TD><KBD ID='sc10_rmk'></KBD></TD>
+</TR>
+
+<TR CLASS='BG2'>
+<TD>SC-11</TD>
+<TD><p>Have the business risks pertaining to the Customer, Associate, and Shareholder been identified and defined?</P></TD>
+<TD><KBD ID='sc11_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='sc11_rc'></KBD></TD>
+<TD><KBD ID='sc11_rmk'></KBD></TD>
+</TR>
+
+
+<TR class='BG1'><TD colspan=6>Impact</TD></tr>
+
+
+<TR CLASS='BG2'>
+<TD>I-1</TD>
+<TD><p>Have other work efforts/events that this project depends on been listed?</P></TD>
+<TD><KBD ID='i1_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='i1_rc'></KBD></TD>
+<TD><KBD ID='i1_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>I-2</TD>
+<TD><p>Have the work efforts/events that depend on this project been listed?</P></TD>
+<TD><KBD ID='i2_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='i2_rc'></KBD></TD>
+<TD><KBD ID='i2_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>I-3</TD>
+<TD><p>Have the indirect effects on process, people and technology been documented?</P></TD>
+<TD><KBD ID='i3_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='i3_rc'></KBD></TD>
+<TD><KBD ID='i3_rmk'></KBD></TD>
+</TR>
+
+
+<TR class='BG1'><TD colspan=6>Project Plan Summary</TD></tr>
+
+<TR CLASS='BG2'>
+<TD>PP-1</TD>
+<TD><p>Have the milestone dates been documented?</P></TD>
+<TD><KBD ID='pp1_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='pp1_rc'></KBD></TD>
+<TD><KBD ID='pp1_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>PP-2</TD>
+<TD><p>Has the project team been identified and does it include roles?</P></TD>
+<TD><KBD ID='pp2_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='pp2_rc'></KBD></TD>
+<TD><KBD ID='pp2_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>PP-3</TD>
+<TD><p>Have the project budgets been documented at a high level?</P></TD>
+<TD><KBD ID='pp3_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='pp3_rc'></KBD></TD>
+<TD><KBD ID='pp3_rmk'></KBD></TD>
+</TR>
+
+
+<TR CLASS='BG2'>
+<TD>PP-4</TD>
+<TD><p>Has the Charter been reviewed and approved?</P></TD>
+<TD><KBD ID='pp4_st'></KBD></TD>
+<TD>Incomplete</TD>
+<TD><KBD ID='pp4_rc'></KBD></TD>
+<TD><KBD ID='pp4_rmk'></KBD></TD>
+</TR>
+
+<TR class="bg1"><td colspan=6>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+
+
+
+</table>
+
+
+
+
+

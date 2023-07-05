@@ -1,0 +1,54 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	
+	return true}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class='bg0'><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>SQA Review Report</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class='bg1'></tr>
+<tr class='bg1'><td colspan=2 >Review Details</td></tr>
+<tr class='BG2'><td width=150>Deliverable</td><td width=450><KBD ID='deliverable_desc'></KBD></td></tr>
+
+<tr class='BG2'><td >Reference</td><td width='300'><KBD ID='reference_nm'></KBD></td></tr>
+<tr class='BG2'><td >DMAIC</td><td><KBD ID='dmaic_desc'></KBD></td></tr>
+<tr class='BG2'><td >Status</td><td><KBD ID='deliverable_status_cd'></KBD></td></tr>
+
+<tr class='BG2'><td >Review Passed</td><td width='100'><KBD ID='sqa_pass_flag'></KBD></td></tr>
+<tr class='BG2'><td >Review Description</td><td><KBD ID='sqa_review_desc'></KBD></td></tr>
+
+<tr class='bg1'><td colspan=2>Review</td></tr>
+<tr class='BG2'><td >Team Members/Role</td><td><KBD ID='sqa_review_team'></KBD></td></tr>
+<tr class='BG2'><td >Total Severity 1</td><td><KBD ID='sqa_sev_1_error_no'></KBD></td></tr>
+<tr class='BG2'><td >Total Severity 2</td><td><KBD ID='sqa_sev_2_error_no'></KBD></td></tr>
+<tr class='BG2'><td >Total Severity 3</td><td><KBD ID='sqa_sev_3_error_no'></KBD></td></tr>
+<tr class='BG2'><td >Hours Spent on Review</td><td><KBD ID='sqa_review_hours_no'></KBD></td></tr>
+
+
+<tr class='bg1'><td colspan=2 >Review Findings</td></tr>
+<tr class='BG2'><td >Major Concerns</td><td><KBD ID='sqa_major_concerns'></KBD></td></tr>
+<tr class='BG2'><td >Status of Previous Feedback</td><td><KBD ID='sqa_feedback_status'></KBD></td></tr>
+
+
+<tr class='bg1'><td colspan=2 >SQA Use Only</td></tr>
+<tr class='BG2'><td >Date Sent to SQAR</td><td><KBD ID='sqa_sent_sqar_date'></KBD></td></tr>
+<tr class='BG2'><td >Actioned Date</td><td><KBD ID='sqa_action_date'></KBD></td></tr>
+<tr class='BG2'><td >Date Ruturned from Author</td><td><KBD ID='sqa_author_return_date'></KBD></td></tr>
+<tr class='BG2'><td >Date Closed</td><td><KBD ID='sqa_close_date'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+

@@ -1,0 +1,45 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.first_name.value.length == 0 ) {
+		alert('Please enter a first name.');
+		return false;
+	}
+	
+	if (document.Form1.last_name.value.length == 0 ) {
+		alert('Please enter a last name.');
+		return false;
+	}
+	
+	
+	return true
+}
+
+
+</SCRIPT>
+<TABLE  >
+<TR class="bg0"><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>My Info</TD><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TR>
+<TR class='bg2'><TD WIDTH=150>User Id:</TD><TD width=450><KBD ID='handle'></KBD></TD></TR>
+<TR class='bg2'><TD>First Name</TD><TD><KBD ID='first_name'></KBD></TD></TR>	
+<TR class='bg2'><TD>Last Name</TD><TD><KBD ID='last_name'></KBD></TD></TR>
+<TR class='bg2'><TD>E-Mail</TD><TD><KBD ID='email_address'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Preferences</TD></TR>
+<TR class='bg2'><TD>Start-Up Project</TD><TD><KBD ID='default_project_id'></KBD></TD></TR>
+<TR class='bg2'><TD>Home Page</TD><TD><KBD ID='home_page_nm'></KBD></TD></TR>
+<TR class='bg2'><TD>Suite</TD><TD><KBD ID='user_suite_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Product</TD><TD><KBD ID='default_prod_cd'></KBD></TD></TR>
+<TR class='bg2'><TD>Screen Style</TD><TD><KBD ID='style_nm'></KBD></TD></TR>
+
+<TR class='bg1'><TD colspan=2>Audit</TD></TR>
+<TR class='bg2'><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR class='bg2'><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+</table>
+		

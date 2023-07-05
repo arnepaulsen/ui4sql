@@ -1,0 +1,42 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+	
+	return true;
+	
+	}
+
+</SCRIPT>
+<TABLE  >
+
+<tr class="bg0" ><TD COLSPAN=2><TABLE ><TR><TD ALIGN=LEFT>Order Set - Service Request Association</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<TR class="bg2"><TD width="150">Message</TD><TD  width="550"><KBD ID='msg'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Service Request</TD></TR>
+<TR class="bg2"><TD>SR No.</TD><TD><KBD ID='srno'></KBD></TD></TR>
+<TR class="bg2"><TD>Title</TD><TD><KBD ID='srtitle'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Relates to Order Set</TD></TR>
+<TR class="BG2"><TD>Order Set</TD><TD><table><tr><td width=300><KBD ID='order_set_id'></KBD></td><td><KBD ID='link'></KBD></td></tr></table></TD></TR>
+<TR class="bg2"><TD>Version</TD><TD><KBD ID='version_tx'></KBD></TD></TR>
+
+<TR class="bg0"><TD colspan=2>Notes</TD></TR>
+<TR class="bg2"><TD>Description</TD><TD><KBD ID='notes_tx'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+
+</table>
+
+
+
+		
+
+		
+		

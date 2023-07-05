@@ -1,0 +1,126 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){
+
+	if (document.Form1.project_name.value.length == 0 ) {
+		alert('Please enter a project name.');
+		return false;
+	}
+	
+	return true;
+	
+	
+	var dt = document.Form1.plan_start_date.value
+	if (isDate(dt)==false){ alert('bad plan start');	dt.focus;return false}
+
+	dt = document.Form1.plan_end_date.value
+	if (isDate(dt)==false){alert('bad plan end'); dt.focus;return false}
+
+	if (isInteger(document.Form1.est_days_no.value) == false ) {
+		alert("Please enter a valid estimated days number.");
+		return false;
+	}
+	
+	if (isInteger(document.Form1.est_months_no.value) == false ) {
+		alert("Please enter a valid months number.");
+		return false;
+	}
+	if (isInteger(document.Form1.est_roi_amt.value) == false ) {
+		alert("Please enter a valid ROI amount.");
+		return false;
+	}
+	if (isInteger(document.Form1.est_cost_amt.value) == false ) {
+		alert("Please enter a valid cost amount.");
+		return false;
+	}
+	
+	
+	return true
+ }
+
+</SCRIPT>
+
+<TABLE class="tmtable">
+<tr class="bg0"><TD class="bg0" COLSPAN=2><TABLE ><TR><TD class=bg0 ALIGN=LEFT>Project</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></TD></tr>
+<TR class="BG2"><TD width=150>Project Name</TD><TD width="450"><KBD ID='project_name'></KBD></TD></TR>
+<TR class="BG2"><TD width=150>Reference Id.</TD><TD><KBD ID='chng_req_nm'></KBD></TD></TR>
+<TR class="BG2"><TD width=150>Suite</TD><TD><KBD ID='team_cd'></KBD></TD></TR>
+<TR class="BG2"><TD width=150>Driver Type</TD><TD><KBD ID='type_cd'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Context </td></tr>
+<TR class="BG2"><TD>Process</TD><TD><KBD ID='process_id'></KBD></TD></TR>
+<TR class="BG2"><TD width=150>Commitment</TD><TD><KBD ID='commitment_id'></KBD></TD></TR>
+<TR class="BG2"><TD>Primary Application</TD><TD><KBD ID='primary_application_id'></KBD></TD></TR>
+
+<TR class="bg1"><td colspan=2>Drivers</td></tr>
+
+<TR class="BG2"><TD>Service Request #</TD><TD><table><tr><td width=80><KBD ID='sr_no'></KBD></td><td></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Incident #</TD><TD><table><tr><td width=80><KBD ID='incident_id'></KBD></td><td><KBD ID='incidentname'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Defect #</TD><TD><table><tr><td width=80><KBD ID='defect_id'></KBD></td><td><KBD ID='defectname'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Release Note #</TD><TD><table><tr><td width=80><KBD ID='release_note_id'></KBD></td><td><KBD ID='notename'></KBD></td></tr></table></TD></TR>
+
+<TR class="bg1"><td colspan=2>Solutions</td></tr>
+<TR class="BG2"><TD>Vendor CR#</TD><TD><table><tr><td width=80><KBD ID='cr_no'></KBD></td><td><KBD ID='crname'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Ad-Hoc RA#</TD><TD><table><tr><td width=80><KBD ID='ra_no'></KBD></td><td><KBD ID='adhocname'></KBD></td></tr></table></TD></TR>
+<TR class="BG2"><TD>Production RFC#</TD><TD><table><tr><td width=80><KBD ID='rfc_id'></KBD></td><td><KBD ID='rfcname'></KBD></td></tr></table></TD></TR>
+
+<TR class="bg1"><td colspan=2>People </td></tr>
+<TR class="BG2"><TD>Stakeholder</TD><TD><KBD ID='stakeholder_uid'></KBD></TD></TR>
+<TR class="BG2"><TD>Project Manger</TD><TD><KBD ID='pm_uid'></KBD></TD></TR>
+<TR class="BG2"><TD>Business Manager</TD><TD><KBD ID='business_mgr_uid'></KBD></TD></TR>
+<TR class="BG2"><TD>Team Leader</TD><TD><KBD ID='team_leader_uid'></KBD></TD></TR>
+<TR class="BG2"><TD>Vendor Contact</TD><TD><KBD ID='vendor_contact_tx'></KBD></TD></TR>
+
+<tr class="bg1"><td  colspan=2>Status </td></tr>
+<TR class="BG2"><TD>Status</TD><TD><KBD ID='status_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Progress</TD><TD><KBD ID='progress_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Current Rank</TD><TD><KBD ID='priority_cd'></KBD></TD></TR>
+<TR class="BG2"><TD>Current Stage</TD><TD><KBD ID='current_stage_id'></KBD></TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Plan Start</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='plan_start_date'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Plan End</TD><TD ALIGN=LEFT><KBD ID='plan_end_date'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Actual Dates</TD><TD ALIGN=LEFT><TABLE ><TR><td ALIGN=LEFT WIDTH=100><KBD ID='actual_start_date'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Actual End</TD><TD ALIGN=LEFT><KBD ID='actual_end_date'></KBD></TD></TR></TABLE>  </TD></TR>
+
+<tr class="bg1"></tr>
+<tr class="bg1"><td  colspan=2>Overview </td></tr>
+<tr class="BG2"><TD>Problem Statement</td><td width=500><KBD ID='problem_stmt'></KBD></td></tr>
+<tr class="BG2"><TD>Business Environment</td><td width=500><KBD ID='bsns_env'></KBD></td></tr>
+<tr class="BG2"><TD>Customer Needs </td><td width=500><KBD ID='cust_needs'></KBD></td></tr>
+
+<tr class="bg1"><td colspan=2>Estimates</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Effort FTE Days</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='est_days_no'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Actual</TD><TD ALIGN=LEFT><KBD ID='act_days_no'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Elapsed Months</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='est_months_no'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Actual</TD><TD ALIGN=LEFT><KBD ID='act_months_no'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Total Cost (000s)</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='est_cost_amt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Actual</TD><TD ALIGN=LEFT><KBD ID='act_cost_amt'></KBD></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Net ROI (000s)</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='est_roi_amt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT>Actual</TD><TD ALIGN=LEFT><KBD ID='act_roi_amt'></KBD></TD></TR></TABLE>  </TD></TR>
+
+<tr class="bg1"><td colspan=2>Funding</td></tr>
+<TR class="BG2"><TD ALIGN=LEFT>Operational</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='operation_amt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT></TD><TD ALIGN=LEFT></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Capital</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='capital_amt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT></TD><TD ALIGN=LEFT></TD></TR></TABLE>  </TD></TR>
+<TR class="BG2"><TD ALIGN=LEFT>Total</TD>  <TD ALIGN=LEFT><TABLE ><TR><TD ALIGN=LEFT WIDTH=100><KBD ID='total_amt'></KBD></TD><TD WIDTH=80 ALIGN=LEFT></TD><TD ALIGN=LEFT></TD></TR></TABLE>  </TD></TR>
+
+
+<tr class="bg1"><td colspan=2>Scope</td></tr>
+<tr class="BG2"><TD >In Scope</td><td width=500><KBD ID='scope_in'></KBD></td></tr>
+<tr class="BG2"><TD >Out Of Scope</td><td width=500><KBD ID='scope_out'></KBD></td></tr>
+
+<tr class="bg1"><td colspan=2>Impacts</td></tr>
+<tr class="BG2"><TD >Dependencies</td><td width=500><KBD ID='dependencies_tx'></KBD></td></tr>
+<tr class="BG2"><TD >Indirect Effects</td><td width=500><KBD ID='effects_tx'></KBD></td></tr>
+
+<tr class="bg1"><td  colspan=2>Project Plan Summary</td></tr>
+<tr class="BG2"><TD >Timeline </td><td><KBD ID='timeline_tx'></KBD></td></tr>
+<tr class="BG2"><TD >Team Organiziation /<br> Resources</td><td width=500><KBD ID='resources_tx'></KBD></td></tr>
+<tr class="BG2"><TD >Budget</td><td width=500><KBD ID='budget_tx'></KBD></td></tr>
+
+<TR class="bg1"><td colspan=2>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+		

@@ -1,0 +1,131 @@
+<!--
+ * UI4SQL V1.0 (https://ui4sql.net)
+ * Copyright 2022 PaulsenITSolutions 
+ * Licensed under MIT (http://github.com/arnepaulsen/ui4sql/LICENSE) 
+-->
+<SCRIPT >
+
+function ValidateForm(){return true}
+
+</SCRIPT>
+
+<TABLE  >
+<tr class='bg0'><TD COLSPAN=4><TABLE ><TR><TD ALIGN=LEFT>Tollgate Review</td><TD ALIGN=RIGHT><KBD ID='buttons'></KBD></TD></TR></TABLE></tr>
+<tr class='bg2'><td colspan=4><KBD ID='msg'></KBD></td></tr>
+
+<tr class='bg2'><td colspan=1 width=402>DMIAC</td>		<td colspan=3><KBD ID='dmaic_cd'></KBD></td></tr>
+<tr class='bg2'><td colspan=1 width=402>Reference</td>	<td colspan=3><KBD ID='reference_nm'></KBD></Td></TR>
+<tr class='bg2'><td colspan=1 width=402>Title</td>		<td colspan=3><KBD ID='title_nm'></KBD></Td></TR>
+<tr class='bg2'><td colspan=1 width=402>Version</td>		<td colspan=3><KBD ID='version_nm'></KBD></Td></TR>
+<tr class='bg2'><td colspan=1 width=402>Cut-Off Date</td><td colspan=3><KBD ID='version_date'></KBD></Td></TR>
+<tr class='bg2'><td colspan=1 width=402>Notes</td>		<td colspan=3><KBD ID='version_tx'></KBD></Td></TR>
+
+<tr class='bg1'><td width=400 colspan=2>General</td><td>Completed</td><Td>Remarks</Td></tr>
+
+<tr class='bg2'>
+<TD colspan=2 width=400>1. Is the project on schedule as per the MS Project Work Plan?</TD>
+<TD><KBD ID='s1_st'></KBD></TD><TD><KBD ID='s1_rmk'></KBD></TD></TR>
+
+<tr class='bg2'>
+<TD colspan=2 width=400>2. Is the ETVX for each phase available in Project Plan Approach document? <br>And has it been followed?</TD>
+<TD><KBD ID='s2_st'></KBD></TD><TD><KBD ID='s2_rmk'></KBD></TD></TR>
+
+<tr class='bg2'>
+<TD colspan=2 width=400>3. Are the project risks being identified and tracked? What are the current risks?</TD>
+<TD><KBD ID='s3_st'></KBD></TD><TD><KBD ID='s3_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>4. Project status report from Team member to PM/SM available?</TD><TD><KBD ID='s4_st'></KBD></TD>
+<TD><KBD ID='s4_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>5. Are the handover/Takeover records being maintained?</TD>
+<TD><KBD ID='s5_st'></KBD></TD><TD><KBD ID='s5_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>6. Are the records of meeting with business partners available?</TD>
+<TD><KBD ID='s6_st'></KBD></TD><TD><KBD ID='s6_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>7. Is the Audit done as per the schedule?</TD>
+<TD><KBD ID='s7_st'></KBD></TD><TD><KBD ID='s7_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>8. Are the NCR�s closed?  And Actions initiated?</TD>
+<TD><KBD ID='s8_st'></KBD></TD><TD><KBD ID='s8_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>9. How many days were the NCRs open?</TD>
+<TD><KBD ID='s9_st'></KBD></TD><TD><KBD ID='s9_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>10. Reports and minutes of previous Tollgate/project management reviews available? Have all action items been addressed?</TD>
+<TD><KBD ID='s10_st'></KBD></TD><TD><KBD ID='s10_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>11. Are all the metrics specified in the Data collection and Measurement Plan  been collected?</TD>
+<TD><KBD ID='s11_st'></KBD></TD><TD><KBD ID='s11_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>12. Has the estimation and re-estimation been done? Does the revised estimate look�feasible with the current information about the project available?</TD>
+<TD><KBD ID='s12_st'></KBD></TD><TD><KBD ID='s12_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>13. Have all the Deliverables Identified in the KDW been reviewed and approved?</TD>
+<TD><KBD ID='s13_st'></KBD></TD><TD><KBD ID='s13_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>14.  Have all the Required Deliverables been baselined? Are all the baseline documents available in PAL?</TD>
+<TD><KBD ID='s14_st'></KBD></TD><TD><KBD ID='s14_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>15. Problems and issues are being recorded, tracked and resolved in the Issues Log?</TD>
+<TD><KBD ID='s15_st'></KBD></TD><TD><KBD ID='s15_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>16. Is the escalation of unresolved issues documented and tracked?</TD>
+<TD><KBD ID='s16_st'></KBD></TD><TD><KBD ID='s16_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>17. Are the best practices and lessons learned shared on PAL?</TD>
+<TD><KBD ID='s17_st'></KBD></TD><TD><KBD ID='s17_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>18. What is the level of team member awareness on SSP/SSCP?</TD>
+<TD><KBD ID='s18_st'></KBD></TD><TD><KBD ID='s18_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>19. If there is any work ahead and Concession, has the work ahead and concession been 
+<br>documented as per the SSP project procedure PP�</TD>
+<TD><KBD ID='s19_st'></KBD></TD><TD><KBD ID='s19_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>20. Are Standards, Guidelines, Templates and checklists available for work items?</TD>
+<TD><KBD ID='s20_st'></KBD></TD><TD><KBD ID='s20_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>21. Does the Project Plan  Approcah Document address the mechanism for imparting training to the team?</TD>
+<TD><KBD ID='s21_st'></KBD></TD><TD><KBD ID='s21_rmk'></KBD></TD></TR>
+
+<tr class='bg2'><TD colspan=2 width=400>22. SSP /SSCP training attended by the project team?</TD>
+<TD><KBD ID='s22_st'></KBD></TD><TD><KBD ID='s22_rmk'></KBD></TD></TR>
+
+
+<tr class='bg0'><td colspan=2 width=400>Phase Questions</td><td>Completed</td><Td>Remarks</Td></tr>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a1_q'></KBD></TD><TD><KBD ID='a1_st'></KBD></TD><TD><KBD ID='a1_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a2_q'></KBD></TD><TD><KBD ID='a2_st'></KBD></TD><TD><KBD ID='a2_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a3_q'></KBD></TD><TD><KBD ID='a3_st'></KBD></TD><TD><KBD ID='a3_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a4_q'></KBD></TD><TD><KBD ID='a4_st'></KBD></TD><TD><KBD ID='a4_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a5_q'></KBD></TD><TD><KBD ID='a5_st'></KBD></TD><TD><KBD ID='a5_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a6_q'></KBD></TD><TD><KBD ID='a6_st'></KBD></TD><TD><KBD ID='a6_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a7_q'></KBD></TD><TD><KBD ID='a7_st'></KBD></TD><TD><KBD ID='a7_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a8_q'></KBD></TD><TD><KBD ID='a8_st'></KBD></TD><TD><KBD ID='a8_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a9_q'></KBD></TD><TD><KBD ID='a9_st'></KBD></TD><TD><KBD ID='a9_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a10_q'></KBD></TD><TD><KBD ID='a10_st'></KBD></TD><TD><KBD ID='a10_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a11_q'></KBD></TD><TD><KBD ID='a11_st'></KBD></TD><TD><KBD ID='a11_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a12_q'></KBD></TD><TD><KBD ID='a12_st'></KBD></TD><TD><KBD ID='a12_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a13_q'></KBD></TD><TD><KBD ID='a13_st'></KBD></TD><TD><KBD ID='a13_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a14_q'></KBD></TD><TD><KBD ID='a14_st'></KBD></TD><TD><KBD ID='a14_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a15_q'></KBD></TD><TD><KBD ID='a15_st'></KBD></TD><TD><KBD ID='a15_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a16_q'></KBD></TD><TD><KBD ID='a16_st'></KBD></TD><TD><KBD ID='a16_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a17_q'></KBD></TD><TD><KBD ID='a17_st'></KBD></TD><TD><KBD ID='a17_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a18_q'></KBD></TD><TD><KBD ID='a18_st'></KBD></TD><TD><KBD ID='a18_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a19_q'></KBD></TD><TD><KBD ID='a19_st'></KBD></TD><TD><KBD ID='a19_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a20_q'></KBD></TD><TD><KBD ID='a20_st'></KBD></TD><TD><KBD ID='a20_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a21_q'></KBD></TD><TD><KBD ID='a21_st'></KBD></TD><TD><KBD ID='a21_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a22_q'></KBD></TD><TD><KBD ID='a22_st'></KBD></TD><TD><KBD ID='a22_rmk'></KBD></TD></TR>
+<TR CLASS='bg2'><TD colspan=2 width=400><KBD ID='a23_q'></KBD></TD><TD><KBD ID='a23_st'></KBD></TD><TD><KBD ID='a23_rmk'></KBD></TD></TR>
+
+
+<TR class="bg1"><td colspan=4>Audit&nbsp;&nbsp;&nbsp;<a id=toggle href=# onClick="toggle();return false;">Show / Hide</a></TD></TR>
+<TR id='added_by' class="aud2"><TD>Added By</TD><TD colspan=3><KBD ID='added_by'></KBD></TD></TR>
+<TR id='updated_by' class="aud2"><TD>Updated By</TD><TD colspan=3><KBD ID='updated_by'></KBD></TD></TR>
+<TR id='submittedby' class="aud2"><TD><KBD ID='submitted_tag'></KBD></TD><TD colspan=3><KBD ID='submitted_by'></KBD></TD></TR>
+<TR id='reviewedby' class="aud2"><TD><KBD ID='reviewed_tag'></KBD></TD><TD colspan=3><KBD ID='reviewed_flag'></KBD><KBD ID='reviewed_by'></KBD></TD></TR>
+
+</table>
+
+
+
